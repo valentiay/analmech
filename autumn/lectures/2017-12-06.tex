@@ -1,0 +1,174 @@
+% \section{Coming soon}
+\begin{center}
+\line(1,0){250}
+\end{center}
+Вроде бы это еще не в другую сторону, но уже и не в ту (Тут был перерыв между лекциями)
+\begin{flalign*}
+& \v r = (x_1, \ldots, z_N)^T \in \mathbb{R}^{3N} &\\
+& \v F = (F_{1x}, \ldots, F_{Nz})^T \in \mathbb{R}^{3N} &\\
+& f_I = (\v , t) = 0, i = \overline{1,\ldots k} &\\
+& \v \varphi_i \grad_{\v r} \rho_i \in \mathbb{R}^{3N} &\\
+& \Phi = \left( \begin{matrix}
+\frac{\partial f_1}{\partial x_1} & \ldots & \frac{\partial f_1}{\partial z_N} \\
+\vdots & \ddots & \vdots \\
+\frac{\partial f_k}{\partial x_1} & \ldots & \frac{\partial f_k}{\partial z_N} \\
+\end{matrix} \right) &\\
+& \rank{\Phi} = k &\\
+\end{flalign*}
+Число степеней свободы --- размерность пространства виртуальных перемещений.
+$\delta \v r: \left( \pd{f_i}{\v r}, \delta \v r \right) = (\v \varphi_i, \delta \v r) = 0, \quad \forall i = 1, \ldots, k \Leftrightarrow \Phi d\v r = 0, \underline{n = 3N - k}$\\
+$\v R \in \R^{3N}$ --- реакции $(\v R, \delta \v r) = 0$ --- условия идеальной связи.
+\begin{center}
+\line(1,0){250}
+\end{center}
+% \begin{teo}
+% Принцип Даламбера-Лагранжа: если связи идеальные, то
+% \[
+% 	\v r(t) \Leftrightarrow (M\ddot{\v r} - \v F, \delta \v r) = 0
+% \]
+% \end{teo}
+% \begin{proof}
+% $\Rightarrow \ldots$\\
+$\Leftarrow$
+\begin{flalign*}
+& I &\\
+& (M \ddot{\v r} - \v F, \delta \v r) = 0 \xrightarrow{?} \ddot{\v r} = \ddot{\v r}(\v r, \dot{\v r}, t) &\\
+& (\v \varphi_i, \delta \v r) = 0 \quad \forall i = \overline{1, \ldots k} \Rightarrow &\\
+& \Rightarrow \delta \v r \perp \pi = \{ c_1\v \varphi_1 + c_2 \v \varphi_2 + \ldots + c_k \v \varphi_k,~~ c_i \in \mathbb{R},~~ i \in \overline{1, \ldots k} \} &\\
+&(M \ddot{\v r} - \v F, \delta r) = 0 \Rightarrow M\ddot{\v r} - \v F \in \pi \rightarrow &\\
+& \Rightarrow \exists \lambda_1, \ldots, \lambda_k: M\ddot{\v r} - \v F = \lambda_1 \v \varphi_1 + \ldots + \lambda_k \v \varphi_k = \Phi^T \v \lambda &\\
+& \v \lambda = (\lambda_1, \ldots, \lambda_k)^T \in \mathbb{R}^k \rightarrow \ddot{\v r} = M^{-1}\overline{F} + M^{-1}\Phi^T \v \lambda &\\
+\end{flalign*}
+\begin{flalign*}
+& II &\\
+& f_i(\v r, t) \equiv 0 &\\
+& \frac{d f_i}{d t} = \left( \underbrace{\frac{\partial f_i}{\partial \v r}}_{\v \varphi_i},~~ \dot{\v r} \right) + \frac{\partial f_i}{\partial t} = 0, \quad \forall i = \overline{1, \ldots k} &\\
+& \Phi \dot{\v r} + \v \beta(\v r, t) = 0 &\\
+& \Phi \dot{\v r} + \psi(\v r, \dot{\v r}, t) = 0 \Rightarrow &\\
+& \Phi M^{-1} \v F + \Phi M^{-1} \Phi^T \v \lambda + \v \psi = 0 \Rightarrow &\\
+& \Rightarrow \Phi M^{-1} \Phi^T \v \lambda = \v h(\v r, \dot{\v r}, t) &\\
+\end{flalign*}
+\begin{flalign*}
+III &\\
+\forall \v u \neq 0: & (\Phi M^{-1} \Phi^T\v u, \v u) = (M^{-1} \Phi^T \v u, \Phi^T \v u) = &\\
+& = (M^{-1}\v x, \v x) > 0, \text{т.к.} &\\
+& a) det M^{-1} = (det M)^{-1} \neq 0, &\\
+& b) \v x = \Phi^T \v u \neq 0, \quad \forall \v u \neq 0. &\\
+& \Rightarrow det(\Phi M^{-1} \Phi^T) \neq 0 \Rightarrow \v \lambda = (\Phi M^{-1} \Phi^T)^{-1} h(\v r, \dot {\v r}, t) = \lambda(\v r, \dot{\v r}, t) \Rightarrow &\\
+& \v R = M \ddot{\v r} - \v F = \v R(\v r, \dot{\v r}, t) &\\
+\end{flalign*}
+\end{proof}
+
+\begin{ntc}
+Принцип виртуальных перемещений справедлив и для неголономных систем и доказывается аналогично.
+\end{ntc}
+
+\begin{ntc}
+\[
+	\begin{cases}
+	M\ddot{\v r} - \v F = \Phi^T \v \lambda \\
+	R_i(\v r, t) = 0, i = 1, \ldots, k \\
+	\end{cases}
+	\text{ --- уравнения Лагранжа 1 рода (Это неточно)}
+\]
+\end{ntc}
+
+\subsection{Обобщенные силы}
+\begin{flalign*}
+& \v r = \v r(\v q, t), \quad (\v u = \v r_i(\v q, t)), \v q = (q_1, \ldots, q_n)^T &\\
+& \delta A = \sum\limits_{i = 1}^N (\v F_i, \delta \v r_i) = (\v F, \delta \v r) = \left( \v F, \sum\limits_{j = 1}^N \frac{\partial \v r}{\partial q_j} \delta q_j \right) = \sum\limits_{j = 1}^{N}\left( \v F, \frac{\partial \v r}{\partial q_j} \right)\delta q_i = \sum_{j = 1}^n Q_j\delta q_j = (\v Q, \delta \v q)
+\end{flalign*}
+
+\begin{df}
+\[
+	Q_j = (\v F, \frac{\partial \v r}{\partial q_j}) = \sum\limits_{i = 1}^{N}(\v F_i, \delta \v r_i)
+\]
+--- обобщенная сила, соответствующая координате $q_j$.
+\end{df}
+
+\begin{ass}
+Если координата $q_l$ --- декартова координата центра масс всей системы, то соответствующая ей обобщенная сила равна проекции главного вектора внешних сил системы на соответствующую декартову ось.
+\[
+	q_l = x_s \Rightarrow Q_l = (\v F, \v e_x)
+\]
+\end{ass}
+\begin{proof}
+\begin{flalign*}
+& \delta q_j = 0, \quad j \neq l \Rightarrow \delta \v r_i = \delta x_s \v e_x &\\
+& \delta A = \sum\limits_{i = 1}^{N}(\v F_i, \delta \v r_i) = \sum\limits_{i = 1}^{N}(\v F_i, \delta x_S\v e_x) = \left(\sum\limits_{i = 1}^{N}\v F_i, \v e_x\right) \delta x_s = Q_l \delta q_l &\\
+\end{flalign*}
+\end{proof}
+
+\begin{xmp}[АТТ]
+\begin{flalign*}
+& \v r_i = \v r_p + \v \rho_i = \v r_p + \sum\limits_{\alpha = 1}^3 \rho_{i\alpha} \v e_\alpha, &\\
+& \{ \v e_1, \v e_2, \v e_3 \} \text{ --- базис, связянный с телом.} &\\
+& \v r_i = \v r_i(\v q, t), \quad \v r_p = \v r_p(\v q, t), \quad \v e_\alpha = \v e_\alpha (\v q, t) &\\
+& \rho_{i\alpha} = const &\\
+& \left( \dot{\v e_\alpha} = \sum\limits_{j = 1}^N \frac{\partial \v e_\alpha}{\partial q_j}\dot q_j + \frac{\partial \v e_\alpha}{\partial t} \Rightarrow \frac{\partial \dot{\v e}_\alpha}{\partial \dot q_j} = \frac{\partial \v e_\alpha}{\partial q_j} \right) &\\
+& \delta e_\alpha = \sum_{j = 1}^N\pd{\v e_\alpha}{q_j}\delta q_j = \sum \pd{\dot{\v e_\alpha}}{\dot q_j} \delta q_j = \sum_{j = 1}^N \pdd{[\v \omega, \v e_\alpha]}{\dot q_j} \delta q_j = \sum_{j = 1}^N \left[\pd{\v \omega}{\dot q_j}, \v e_\alpha\right]\delta q_j &\\
+& \delta \v u = \delta \v r_p + \sum\limits_{\alpha = 1}^3 \rho_{i\alpha} \sum \left[ \frac{\partial \v \omega}{\partial \dot q_j}, \v e_\alpha \right] \delta q_i = &\\
+& = \delta \v r_p + \sum\limits_{j = 1}^N\left[ \frac{\partial \v \omega}{\partial \dot q_j}\delta q_j, \sum\limits_{\alpha = 1}^3 \rho_{i\alpha} \v e_\alpha \right] = &\\
+& = \delta \v r_p + \left[ \sum\limits_{j = 1}^N \pd{\v \omega}{\dot q_j}\delta q_j, \v \rho_j \right] = \delta \v r_p + [\v \omega_\delta, \v \rho_i], \quad \v \omega_\delta = \sum_{j = 1}^n \pd{\v \omega}{\dot q_j} \delta q_j
+\end{flalign*}
+\begin{flalign*}
+& \delta A = \sum_{i = 1}^N(\v F_i, \delta \v r_i) = \sum_{i = 1}^N(\v F_i, \delta \v r_p) + \sum_{i = 1}^N(\v F_i, [\v \omega_\delta, \v \rho]) = &\\
+& = (\sum \v F_i, \delta r_p) + \left(\v \omega_\delta, \sum_{i = 1}^N[\v \rho_i, \v F_i]\right) = (\v F, \delta \v r_p) + (\v \omega_\delta, \v M_p) &\\
+\end{flalign*}
+\end{xmp}
+
+\begin{cor}
+$\v F^{(i)} = 0$, $\v M_p^{(i)} = 0 \Rightarrow$ внутренние связи в твердом теле идеальны.
+\end{cor}
+\begin{xmp}[АТТ с неподвижной точкой]
+\begin{flalign*}
+& n = 3, &\\
+& q = (\varphi, \psi, \Theta)^T, \quad \v \omega = \dot \psi \v e_z + \Theta \v e_{x_1} + \dot \varphi \v e_\zeta &\\
+& \v \omega \delta = \delta \psi \v e_z + \delta \Theta \v e_{x_1} + \delta \varphi \v e_\zeta &\\
+& \delta A = \left( \v M_O, \delta \psi \v e_z + \delta \Theta \v e_x + \delta \varphi \v e_\zeta \right) = &\\
+& = (\v M_O, \v e_z)\delta \psi + (\v M_O, \v e_{x_1})\delta \Theta + (\v M_O, \v e_\zeta)\delta \varphi
+\end{flalign*}
+\end{xmp}
+
+\begin{ass}
+Если обобщенная координата --- это угол поворота силы относительно некоторой оси, то обобщенная сила --- это момент силы относительно этой же оси.
+\end{ass}
+
+\subsection{Уравнения Лагранжа второго рода}
+\begin{teo}
+Если связи, наложенные на механическую систему, идеальны и голономны, то уравнения ее движения имеют вид
+\[
+	\frac{d}{dt}\frac{\partial T}{\partial \dot{\v q}} - \frac{\partial T}{\partial \v q} = \v Q
+\]
+\end{teo}
+\begin{proof}
+\begin{flalign*}
+& \sum\limits_{i = 1}^N (M_i \ddot{\v r}_i - \v F_i, \delta \v r_i) = 0, \quad \v r_i = \v r_i(\v q, t) &\\
+& \sum\limits_{i = 1}^N (m_i \ddot{\v r}_i - \v F_i, \sum\limits_{j = 1}^n \frac{\partial \v r_i}{\partial q_j}\delta q_j) = 0 &\\
+& \sum\limits_{j = 1}^n \left( \sum\limits{i = 1}^N(m_i \ddot{ \v r_i} - \v F_i. \frac{\partial \v r_i}{\partial q_j}) \right)\delta q_j = 0 &\\
+& \delta q_1, \ldots, \delta q_n \text{ --- независимые} \Rightarrow &\\
+& \Rightarrow \sum\limits_{i = 1}^N \left( m_i \ddot{\v r_i} - F_i, \frac{\partial \v r_i}{\partial q_j} \right) = 0, \quad \forall j = \overline {1,\ldots n} &\\
+& \sum\limits_{i = 1}^N \left( m_i \ddot{\v r_i}, \frac{\partial \v r_i}{\partial q_j} \right) = \underbrace{\sum \limits_{i = 1}^N \left( \v F_i, \frac{\partial \v r_i}{\partial q_j} \right)}_{Q_j} &\\
+& \sum_{i = 1}^N\left( m_i, \ddot{\v r_i}, \pd{\v r_i}{\dot q_j} \right) = \frac{d}{dt}\left( \sum_{i = 1}^N \left( m_i \dot{\v r_i}, \pd{\v r_i}{q_j} \right) \right) - \sum_{i = 1}^N \left(m_i \dot{\v r_i}, \frac{d}{dt}\pd{\v r_i}{q_j}\right) = &\\
+& = \frac{d}{dt}\left( \sum_{i = 1}^N m_i\dot {\v r_i}, \pd{\dot {\v r_i}}{\dot q} \right) - \sum_{i = 1}^N\left(m_i\dot{\v r}, \pd{\dot{\v r_i}}{q_i}\right) = &\\
+& = \frac{d}{dt}\pdd{\sum_{i = 1}^N m_i \frac{(\dot{\v r_i}, \dot{\v r_i})}{2}}{\dot q_j} - \pdd{\sum_{i = 1}^N m_i\frac{(\dot {\v r_i}, \dot {\v r_i})}{2}}{q_j} = \frac{d}{dt}\pd{T}{\dot q_j} - \pd{T}{q_j} &\\
+\end{flalign*}
+\end{proof}
+
+\begin{cor}
+Связи идеальны и голономны, а силы потенциальны $\Rightarrow$
+\[
+	\frac{d}{dt} \frac{\partial L}{\partial \dot{\v q}} - \frac{\partial L}{\partial \v q} = 0, L = T - \Pi
+\]
+\end{cor}
+\begin{df}
+$L$ --- лагранжиан системы, система лагранжева.
+\end{df}
+\begin{flalign*}
+& \exists \Pi(\v r_1, \ldots, \v r_N, t), \quad \grad_{\v r_i} \Pi = -\v F_i &\\
+& \delta A = \sum_{i = 1}^N(\v F_i, \delta \v r_i) = (\v F, \delta \v r) = - \left( \pd{\Pi}{\v r}, \delta \v r \right) = &\\
+& = - \sum_{j = 1}^N \left( \pd{\Pi(\v r(\v q, t), t)}{\v r}, \pd{\v r}{\v q_j} \right) \delta q_j = -\sum_{j = 1}^N \pd{\Pi}{q_j}\delta q_j \Rightarrow &\\
+& \Rightarrow Q_j = - \pd{\Pi}{q_j} &\\
+& L = T - \Pi = T(\v q, \dot{\v q}, t) - \Pi(\v q, t) &\\
+& \pd{L}{\v q} = \pd{T}{\v q} - \pd{\Pi}{\v q} = \pd{T}{\v q} + \v Q
+\end{flalign*}

@@ -1,0 +1,162 @@
+\section{Уравнения Лагранжа}
+$\v r_1, \ldots, \v r_N \in \R^3$
+
+\begin{df}
+Механическими связями называются ограничения на положения и скорости материальных точек системы, которые выполняются при всех действующих на систему силах.
+\[
+	\v r = (x_1, y_1, z_1, \ldots, x_N, y_N, z_N)^T \in \R^{3N}
+\]
+\begin{equation}
+\label{29star}
+f_j(\v r, \dot {\v r}, t) = 0, \quad j = 1, \ldots, k \text{ --- уравнение связи.}
+\end{equation}
+\end{df}
+
+\subsection{Классификация связей}
+\begin{enumerate}
+\item \eqref{29star} --- двусторонная связь.
+\item $\frac{\partial f_\alpha}{\partial t} = 0$ --- стационарная связь (склерономная).\\
+$\frac{\partial f_\alpha}{\partial t} \neq 0$ --- нестационарная связь (реономная.)
+\item $f_\alpha(\v r, t) = 0$ --- геометрическая.
+\item $f_\alpha(\v r, \dot{\v r}, t) = 0$ --- дифференциальная связь.
+\end{enumerate}
+
+\subsubsection{Геометрические связи}
+\begin{df}
+$\Sigma = \{\v r : f_j(\v r, t) = 0, j = 1, \ldots, k \}$ --- пространство положений (конфигурационное пространство).
+\end{df} 
+\begin{df}
+$n = dim \Sigma$ --- количество степеней свободы.
+\end{df}
+\begin{df}
+$\v q = (q_1, \ldots, q_n)^T$ --- обобщенные локольные координаты.
+\end{df}
+$n = 3N - k$, где $k$ --- число уравнений связи, если \begin{enumerate}
+\item функции связей гладкие ($\grad_{\v r} f_j \neq 0, \forall i \in 1, \ldots, k$)
+\item $f_j$ --- независимые. ($\rank \left(\frac{\partial \v f}{\partial \v r}\right) = k$)
+\end{enumerate}
+\begin{df}
+Функции $f_1, \ldots, f_n$ функционально независимы, если $F(f_1, \ldots, f_n) = 0 \Leftrightarrow F \equiv 0$
+\end{df}
+\begin{xmp}[Независимые функции]
+$f_1(x) = x, f_2(x) = x^2, f_2 = f_1^2, F_2 = f_2 - f_1^2$.
+\end{xmp}
+\begin{xmp}
+\begin{flalign*}
+& f(\v r) = x^2 + y^2 + z^2 = 0 \Leftrightarrow x = y = z = 0 &\\
+& \grad f |_{x = 0} = 0 \qquad n = 0 \neq 3\cdot 1 - 1 = 2 &\\
+\end{flalign*}
+
+\end{xmp}
+\begin{xmp}
+\begin{flalign*}
+& |\v r_i - \v r_j| = c_{ij} = const &\\
+& k = \frac{N(N - 1)}{2} \qquad n = 6 \neq 3N - \frac{N(N - 1)}{2}, \quad N > 4
+\end{flalign*}
+\end{xmp}
+
+$\v r = \v r(\v q, t)$
+\begin{xmp}
+\begin{flalign*}
+& \v v_k = 0, n = 2, \v q = (x, \v \varphi)^T &\\
+& \v v_k = \v v_0 + [\v \omega, \v{OK}] = \dot x, \v e_x + [- \dot \varphi \v e_z, - R \v e_y] = (\dot x - R \dot \varphi)\v e_x = 0 \Leftrightarrow &\\
+& \Leftrightarrow \dot x - R \dot \varphi = 0 &\\
+& \int d x = \int R d\varphi &\\
+& x - x_0 = R(\varphi - \varphi_0) &\\
+\end{flalign*}
+\end{xmp}
+\begin{ntc}
+\[
+	f(\v r, t) \equiv 0 \Leftrightarrow \frac{\partial f}{\partial \v r}\dot{\v r} + \frac{\partial f}{\partial t}
+\]
+\end{ntc}
+\begin{df}
+Дифференциальная связь называется голономной (интегрируемой), если она может быть представлена в эквивалентной геометрической форме. В противном случае связь неголономна (неинтегрируема).
+\end{df}
+\begin{xmp}[конек Чаплыгина]
+\begin{flalign*}
+&\v v_k \parallel \v l, \quad n = 3, \v q = (x, y, \varphi)^T &\\
+& \v v_k = \dot x\v e_x + \dot y \v e_y \parallel \cos \varphi \v e_x + \sin \varphi \v e_y &\\
+& \frac{\dot y}{\dot x} = \tg \varphi \Rightarrow \dot y = \dot x \tg \varphi &\\
+& \text{Пусть } \exists f(x, y, \varphi, t) = 0 \Leftrightarrow \dot y = \dot x \tg \varphi &\\
+& \frac{\partial f}{\partial x}\dot x + \frac{\partial f}{\partial y}\dot y + \frac{\partial f}{\partial \varphi}\dot \varphi + \frac{\partial f}{\partial t} \Leftrightarrow \dot y = \dot x \tg \varphi &\\
+& \dot x\left( \pd{f}{x} + \pd{f}{y} \tg \varphi \right) + \pd{f}{\varphi} \dot \varphi + \pd{f}{t} = 0 \Leftrightarrow &\\
+& \Leftrightarrow \begin{cases}
+\pd{f}{t} = 0 \\
+\pd{f}{\varphi} = 0 \\
+\pd{f}{x} + \pd{f}{y} \tg \varphi = 0 \Leftrightarrow \pd{f}{x} = \pd{f}{y} = 0 \\
+\end{cases}
+\Leftrightarrow f = 0 &\\
+\end{flalign*}
+\end{xmp}
+\begin{flalign*}
+& \v a(\v r)\dot{ \v r} + b(\v r) = 0 \text{ --- интегрируема, если } &\\
+& \exists f: \pd{f}{\v r} = \v a, \pd{f}{t} = b \Leftrightarrow \Phi = 
+\left(
+\begin{matrix}
+\pd{a_1}{q_1} & \ldots & \pd{a_1}{q_n} & \pd{a_1}{t} \\
+\vdots & \ddots & \vdots & \vdots \\
+\pd{a_n}{q_1} & \ldots & \pd{a_n}{q_n} & \pd{a_n}{t} \\
+\end{matrix}
+\right) &\\
+\end{flalign*}
+Критерий ($n = 3$) $a_1\dot q_1 + a_2\dot q_2 + a_3\dot q_3 = 0$ --- интегрируемая $\Leftrightarrow \v a \rot \v a = 0$
+
+\subsection{Действительные и виртуальные перемещения}
+\begin{flalign*}
+& \v r = \v r(\v q, t) &\\
+& \v v = \dot{\v r} = \frac{d \v r}{d t} = \pd{\v r}{\v q} \dot{\v q} + \pd{\v r}{t} &\\
+& d \v r = \pd{\v r}{\v q} d \v q + \pd{\v r}{t}dt \text{ --- действительные перемещения.} &\\
+& \Sigma = \{ \v r, f_j(\v r) = 0, j = 1, \ldots, k \} &\\
+& \sum_{i = 1}^n \pd{f_j}{\v r_i}d\v r_i + \pd{f_j}{t}dt = \pd{f_j}{\v r}d\v r + \pd{f_j}{t}dt = 0 &\\
+& \delta \v r = \sum_{i = 1}^N \pd{\v r}{q_i}\delta q_i \text{ --- виртуальные перемещения.} &\\
+& \pd{f_j}{\v r} \delta \v r = 0, \quad j = 1, \ldots, k &\\
+\end{flalign*}
+\begin{ntc}
+Если связи стационарные, то пространство действительных и виртуальных перемещений совпадают\footnote{Написано неразборчиво, доверять этому утверждению не стоит.}.
+\end{ntc}
+
+\subsection{Идеальные связи и общие уравнения динамики. Принцип освобождаемости связи. (Уравнения Лагранжа первого рода)}
+Если к активным силам, действующим на механическую систему, добавляются силы, с помощью которых реализуется уравнения связи, то систему можно рассматривать как свободную.
+
+$\v R_i$ --- сила реакции, действующая на $m_i$
+\[
+	m_i \ddot{\v r_i} = \v R_i + \v F_i
+\]
+\begin{df}
+Связи идеальные, если при любом виртуальном перемещении системы выполняется равенство
+\[
+	\sum_{i = 1}^n (\v R_i, \delta \v r_i) = 0
+\]
+\end{df}
+
+\begin{flalign*}
+& \v R_i = m_i \ddot{\v r_i} - \v F_i &\\
+& \sum_{i = 1}^N (m_i \ddot{\v r_i}, \delta \v r_i) = 0 &\\
+\end{flalign*}
+
+\subsubsection{Принцип Даламбера-Лагранжа\protect\footnote{Также принцип виртуальных перемещений.}}
+\begin{ass}
+Если связи, наложенные на мезаническую систему идеальные, то при любом ее движении и любом виртуальном перемещении выполнено равенство
+\begin{equation}
+	\label{29sstar}
+	\sum_{i = 1}^N(m_i \ddot{\v r_i} - \v F_i, \delta \v r_i) = 0
+\end{equation}
+\end{ass}
+\begin{ass}[Обратное]
+Если связи идеальные и какое-то движение удовлетворяет \eqref{29sstar}, то это движение является действительным движением системы.
+\end{ass}
+\begin{proof}
+$\Rightarrow$\\
+Если связи идеальны, то
+\begin{flalign*}
+& \v r = \v r(t) \Leftrightarrow \sum_{i = 1}^N(m_i \ddot{\v r_i} - \v F_i, \delta \v r_i) = 0 &\\
+& \ddot{\v r_i} = \ddot{\v r_i}(\v r_1, \ldots, \v r_N, \dot{\v r}_N, \ldots, \dot{\v r}_N, t) &\\
+& M = \diag(m_1, m_1, m_1, m_2, m_2, m_2, \ldots, m_N, m_N, m_N) &\\
+& \v R = (R_{1x}, R_{1y}, R_{1z}, \ldots, R_{Nx}, R_{Ny}, R_{Nz})^T &\\
+& \v F = (F_{1x}, F_{1y}, F_{1z}, \ldots, F_{Nx}, F_{Ny}, F_{Nz})^T &\\
+& \eqref{29sstar} \Leftrightarrow (M \ddot{\v r} - \v F, \delta \v r) = 0, \v R = M\ddot{\v r} - \v F &\\
+& \delta \v r = \pd{f}{\v r} &\\
+& \ddot{\v r} = \ddot{\v r}(\ddot{\v r}, \dot{\v r}, t) \Rightarrow \v R = \v R(\v r, \dot{\v r}, t) &\\
+\end{flalign*}
+% \end{proof}

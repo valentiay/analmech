@@ -1,0 +1,116 @@
+\documentclass{article}
+
+\usepackage{geometry}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[T1, T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{graphics}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{wrapfig}
+\usepackage[dvips]{graphicx}
+\graphicspath{{img/}}
+\usepackage{float}
+\usepackage{cancel}
+
+\hypersetup{
+colorlinks,
+citecolor=black,
+filecolor=black,
+linkcolor=black,
+urlcolor=black
+}
+
+\geometry{
+a4paper,
+total={170mm,260mm},
+left=20mm,
+top=20mm,
+}
+
+\newenvironment{fl*}
+ {\setlength{\abovedisplayskip}{0pt}\setlength{\belowdisplayskip}{0pt}%
+  \csname flalign*\endcsname}
+ {\csname endflalign*\endcsname\ignorespacesafterend}
+
+\newenvironment{fl}
+ {\setlength{\abovedisplayskip}{0pt}\setlength{\belowdisplayskip}{0pt}%
+  \csname flalign\endcsname}
+ {\csname endflalign*\endcsname\ignorespacesafterend}
+
+\renewcommand{\v}[1]{{\overline{#1}}}
+\newcommand{\dv}[1]{\dot{\v{#1}}}
+\newcommand{\norm}[1]{{\parallel #1 \parallel}}
+\newcommand{\abs}[1]{{\left| #1 \right|}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdd}[2]{\frac{\partial}{\partial #2} \left(#1\right)}
+\newcommand{\lline}{\begin{center}\line(1,0){450}\end{center}}
+\allowdisplaybreaks
+
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\re}{Re}
+% \DeclareMathOperator{\tg}{tg}
+
+\newtheorem*{df}{Определение}
+\newtheorem{teo}{Теорема}
+\newtheorem{lem}{Лемма}
+\newtheorem{prp}{Предложение}
+\newtheorem{hyp}{Предположение}
+\newtheorem*{ass}{Утверждение}
+\newtheorem*{cor}{Следствие}
+\newtheorem*{ntc}{Замечание}
+\newtheorem*{xmp}{Пример}
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+% \setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{2}
+
+\author{Муницына Мария Александровна}
+\title{Лекции по аналитической механике. Весенний семестр.}
+
+\begin{document}
+  \label{title}
+  \vfill
+  \begin{titlepage}
+  \maketitle
+  \begin{center}
+  {\itshape\small Набор и рисунки: Александр Валентинов}
+
+  {\itshape\small За рукописные конспекты спасибо Павлу Цаю}
+
+  {\itshape\small Об ошибках писать: \url{https://vk.com/valentiay}}
+  \vfill
+  {\itshape\small Горизонтальные черты обозначают границы между лекциями.}  
+  \vfill
+
+  \end{center}
+  \thispagestyle{empty}
+  \end{titlepage}
+
+  \pagestyle{fancy}
+  \renewcommand{\footrulewidth}{0.2mm}
+  \fancyhead{}
+  % \fancyhead[L,R]{}
+  \fancyhead[L]{\hyperref[title]{М.А. Муницына}} 
+  \fancyhead[R]{\hyperref[title]{Лекции по аналитической механике. Весенний семестр.}} 
+  \fancyfoot[C]{\thepage}
+  
+  \pagebreak
+  \tableofcontents
+  \pagebreak
+  
+  \input{lectures/2018-02-07} \lline
+  \input{lectures/2018-02-14} \lline
+  \input{lectures/2018-02-18} \lline
+  \input{lectures/2018-02-28} \lline
+\end{document}

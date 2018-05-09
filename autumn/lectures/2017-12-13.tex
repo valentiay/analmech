@@ -1,0 +1,198 @@
+\begin{flalign*}
+& \v q = (q_1, \ldots, q_n)^T, \quad \dot{\v q} =  (\dot q_1, \ldots, \dot q_n), \quad \v r_i = r_i(\v q, t) &\\
+& T = \frac{1}{2} \sum_{i = 1}^N m_i \dot{\v r_i}^2 =  \underbrace{\frac{1}{2}\sum_{i = 1}^N m_i \left( \sum_{j = 1}^N \pd{\v r_i}{q_j} + \pd{\v r_i}{t} \right)^2}_{\text{структура кинетической энергии}} = T_2 + T_1 + T_0 &\\
+& T_0 = \frac{1}{2} \sum_i \left( \pd{\v r_i}{t} \right)^2 &\\
+& T_1 = \sum_j \underbrace{\sum_i m_i \left( \pd{\v r_i}{\v q_j}, \pd{\v r_i}{t} \right)}_{b_j} \dot q_j = \sum_j b_j\dot q_j = (\v b, \dot{\v q}) &\\
+& \v b = (b_1, \ldots, b_n)^T, \v b = \v b(\v q, t) &\\
+& T_2 = \frac{1}{2} \sum_{j, k} \underbrace{\sum_i m_i \left( \pd{\v r_i}{q_k}, \pd{\v r_i}{q_j} \right)}_{a_{jk}} \dot q_j \dot q_k = \frac{1}{2}(A\dot {\v q}, \dot{\v q}), \quad A = (a_{jk}), A = A^T
+\end{flalign*}
+\begin{ass}
+$A$ --- положительно определенная матрица.
+\end{ass}
+\begin{proof}
+\begin{flalign*}
+& \delta \v q = (\delta q_1, \ldots, \delta q_n)^T, \delta \v r = \sum_{j = 1}^n \pd{\v r}{q_j} \delta q_j &\\
+& \delta \v r = 0 \Leftrightarrow \delta \v q = 0 &\\
+& (A\delta \v q, \delta \v q) = \sum_{j = 1}^N m_i \sum_{j = 1}^n \left( \pd{\v r_i}{q_j}, \delta a_j \right)^2 = \sum_{i = 1}^N m_i(\delta r_i)^2 = (M\delta \v r, \delta \v r) > 0, \forall \delta \v q \neq 0 &\\
+\end{flalign*}
+\end{proof}
+\begin{cor}
+$\det A \neq 0$.
+\end{cor}
+
+\subsection{Свойства уравнений Лагранжа}
+\paragraph*{Уравнения Лагранжа:}
+\begin{enumerate}
+\item Связи идеальны и голономны:
+\[
+	\frac{d}{dt}\pd{T}{\dot{\v q}} - \pd{T}{\v q} = \v Q
+\]
+\item Связи идеальны и голономны, а активные силы потенциальны:
+\[
+	\frac{d}{dt}\pd{L}{\dot{\v q}} - \pd{L}{\v q} = 0
+\]
+\item Связи идеальны и голономны, а активные силы не потенциальны:
+\[
+	\frac{d}{dt}\pd{L}{\dot{\v q}} - \pd{L}{\v q} = \v Q^*
+\]
+\end{enumerate}
+Где $L = T - \Pi, \quad \v Q^*$ --- обобщенные силы, вызванные непотенциальными активными силами.\\
+$\v Q^*(\v q, \dot{\v q}, t)$ --- обобщенный потенциал, если $\exists V(\v q, \dot{\v q}, t)$.
+\[
+	\frac{d}{dt}\pd{V}{\dot{\v q}} - \pd{V}{\v q} = \v Q^*  \Rightarrow L = T - \Pi - V
+\]
+\[
+	\frac{d}{dt}\pd{L}{\v q} - \pd{L}{\v q} = 0
+\]
+\begin{enumerate}
+\item Ковариантность по отношению к выбору обобщенных координат
+\[
+	\v q \longrightarrow T(\v q, \dot{\v q}, t),\quad \v Q (\v q, \dot{\v q}, t) \longrightarrow \frac{d}{dt}\pd{T}{\dot{\v q}} - \pd{T}{\v q} = \v Q
+\]
+\[
+	\v q' \longrightarrow  T'(\v q', \dot{\v q}, t) = T(\v q, (\v q', t),\; \dot {\v q'}(\dot{\v q'}, \v q', t),\; t),\quad  \v Q'
+\]
+\item Калибровочная инвариантность
+\begin{ass}
+Уравнения Лагранжа не меняются при добавлении кинетической энергии полной производной гладкой функции от обобщенных координат и времени.
+\[
+	T' = T + \frac{d}{dt}f(\v q, t)
+\]
+\end{ass}
+\begin{proof}
+\begin{flalign*}
+& \frac{d}{dt}f(\v q, t) = \sum_{i = 1}^n \pd{f}{q_i} \dot q_i + \pd{f}{t} &\\
+& \pd{\dot f}{\dot q_i} = \pd{f}{q_i} \qquad \frac{d}{dt} \pd{\dot f}{\dot q_i} = \sum_{k = 1} \pd{^2 f}{q_k \partial q_i} \dot q_k + \pd{^2 f}{t \partial q_i} = \sum_{k = 1}^n \pd{^2 f}{q_i \partial q_k} \dot q_k + \pd{^2 f}{q_i \partial t} = \pd{\dot f}{q_i} \Rightarrow &\\
+& \Rightarrow \frac{d}{dt}\pd{\dot f}{\dot{\v q}} - \pd{\dot f}{\v q} = 0 \Rightarrow \frac{d}{dt}\pd{T'}{\dot{\v q}} - \pd{T'}{\v q} = \frac{d}{dt}\pd{T}{\dot{\v q}} - \pd{T}{\v q} = \v Q
+\end{flalign*}
+\end{proof}
+\begin{ass}
+В Лагранжевой системе
+\[
+	L' = c_1 L + \dot f + c_2, \quad c_1 \neq 0, \quad c_1 = const, c_2 = const
+\]
+\end{ass}
+\item Разрешимо относительно $\ddot{ \v q}$
+\begin{proof}
+\begin{flalign*}
+& \pdd{A \dot{\v q}, \dot{\v q}}{\dot q_i} = \pdd{\sum_{j, k}q_{jk}\dot q_j \dot q_k}{\dot q_i} = &\\
+& = \sum_k a_{ik} \dot q_k + \sum_j a_{ji}\dot q_j = 2\sum_k a_{ik}\dot q_k &\\
+& \pdd{A \dot{\v q}, \dot{\v q}}{\dot{\v q}} = 2A\dot{\v q} &\\
+& \left( \pd{T_2}{\dot{\v q}}, \dot{\v q} \right) = 2T_2\text{ (формально, теорема об однородных функциях)} &\\
+& \frac{d}{dt}\pd{T}{\dot{\v q}} = \frac{d}{dt}\left( \frac{1}{2} (A \dot{\v q}, \dot{\v q}) + (\v b, \dot{\v q}) + T_0 \right) = \frac{d}{dt}\left( A(\v q, t) \dot{\v q} + \v b(\v q, t) \right) = &\\
+& = A\ddot{\v q} + \v \beta(\v q, \dot{\v q}, t) &\\
+& \pd{T}{\v q} = \pdd{T_2 + T_1 + T_0}{\v q} = \v \varphi(\v q, \dot{\v q}, t) &\\
+& A \ddot{\v q} + \v \beta - \v \varphi = \v Q \Rightarrow A \ddot{\v q} = \v \psi(\v q, \dot{\v q}, t) &\\
+\end{flalign*}
+\begin{equation}
+\label{lastone}
+\det A \neq 0 \Rightarrow \ddot{\v q} = A^{-1} \v \psi(\v q, \dot{\v q}, t) = f(\v q, \dot{\v q, t})
+\end{equation}
+\end{proof}
+\begin{ntc}
+Система \eqref{lastone} может быть записана в форме Коши:
+\[
+	\begin{cases}
+	\dot{\v q} = \v v \\
+	\dot{\v v} = f(\v q, \dot{\v q}, t) \\
+	\end{cases}
+	\qquad
+	\begin{matrix}
+	& \v x = (q_1, \dots, q_k, v_1, \ldots, v_n)^T \in \R^{2n} \\
+	& \dot{\v x} = \v F(\v x, t) \\
+	\end{matrix}
+\]
+\end{ntc}
+\end{enumerate}
+
+\subsection{Первые интегралы Лагранжевой системы координат}
+\[
+	\frac{d}{dt}\pd{L}{\dot{\v q}} - \pd{L}{\v q}, \quad L = T - \Pi
+\]
+\subsubsection{Циклический интеграл}
+\begin{df}
+$q_1$ --- циклическая координата, если $\pd{L}{q_1} = 0$.
+\end{df}
+\begin{ass}
+\[
+	\pd{L}{q_1} = 0 \Rightarrow \pd{L}{\dot{\v q}} = c = const
+\]
+\end{ass}
+\begin{proof}
+\[
+	\pd{L}{q_1} = 0 \Rightarrow \frac{d}{dt} \pd{L}{\dot q_1} = 0 \Rightarrow \pd{L}{\dot{\v q_1}}	= c = const
+\]
+\end{proof}
+\begin{xmp}[Движение точки в центральном поле]
+\begin{flalign*}
+& L = T - \Pi = \frac{m}{2}\left( \dot r^2 + r^2 \dot\varphi^2 \right) - \Pi(r), \quad F = F(r) &\\
+& \pd{L}{\varphi} = 0 \Rightarrow \pd{L}{\dot \varphi} = m r^2 \dot \varphi = c  = const
+\end{flalign*}
+\end{xmp}
+\begin{xmp}
+Волчок Лагранжа.
+\end{xmp}
+
+\subsubsection{Обобщенный интеграл (интеграл Пенлеве-Якоби)}
+\begin{ass}
+\[
+	\pd{L}{t} = 0 \Rightarrow E = \left( \pd{L}{\v q}, \dot{\v q} \right) - L = const
+\]
+\end{ass}
+\begin{proof}
+\begin{flalign*}
+& \pd{L}{t} = \left( \frac{d}{dt} \pd{L}{\dot{\v q}}, \dot{\v q} \right) + \left( \pd{L}{\dot{\v q}}, \dot{\v q} \right) - \left( \pd{L}{\dot{\v q}}, \dot{\v q} \right) - \pd{L}{t} = \left( \frac{d}{dt}\pd{L}{\dot{\v q}} - \pd{L}{\v q}, \dot{\v q} \right) - \pd{L}{t} = \pd{L}{t} &\\
+& \pd{L}{t} = 0 \Rightarrow \frac{d}{dt}E = 0 \Rightarrow E = const &\\
+\end{flalign*}
+\end{proof}
+\begin{ntc}
+\begin{flalign*}
+& L = T - \Pi = T_2 + T_1 + T_0 - \Pi &\\
+& E = \left( \pd{L}{\dot {\v q}}, \v q \right) - L = \underbrace{\left( \pd{T_2}{\dot{\v q}}, \dot{\v q} \right)}_{2T_2} + \underbrace{\left( \pd{T_1}{\dot {\v q}, \dot{\v q}} \right)}_{T_1} + 0 - T_2 - T_1 - T_0 + \Pi = T_2 - T_0 + \Pi &\\
+& \text{если } T = T_2 \text{, то } E = T_2 + \Pi = T + \Pi \text{ --- полная энергия} &\\
+& \text{если } T \neq T_2 \text{, то } E = T_2 - T_0 + \Pi \text{ --- обобщенная энергия} &\\
+\end{flalign*}
+\end{ntc}
+
+\begin{cor}
+Если связи идеальные, голономные и стационарные, а активные силы консервативны, то
+\[
+	T + \Pi = const
+\]
+\end{cor}
+\begin{proof}
+\begin{enumerate}
+\item Связи идеальные, голономные, значит силы потенциальны.
+\item Связи стационарны $ \Rightarrow \v r_i(\v q, t) = \v r_i(q)$
+\[
+ 	\pd{\v r}{t} = 0 \Rightarrow T_1 = 0, T_0 = 0, T = T_2.
+\] 
+\item
+\[
+	\pd{\Pi}{t} = 0 \Rightarrow \pd{L}{t} = 0
+\]
+\[
+	\Rightarrow E = T_2 + \Pi - T + \Pi = const
+\]
+\end{enumerate}
+\end{proof}
+
+\paragraph*{Обобщение}
+\begin{flalign*}
+& \frac{d}{dt} \pd{L}{\dot{\v q}} - \pd{L}{\v q} = \v Q^*, L = T_2 - \Pi(\v q) &\\
+& \frac{dE}{dt} = \left( \frac{d}{dt}\pd{L}{\dot{\v q}} - \pd{L}{\v q}, \dot{\v q} \right) + 0 = (Q^*, \dot{\v q})
+\end{flalign*}
+\begin{ntc}
+\[
+	(\v Q, \dot{\v q}) = \sum_j Q_j^*\dot q_j = \sum_{j = 1}^n\left( \sum_{i = 1}^N(\v F_i^*, \pd{\v r_i}{q_j}) \right)\dot q_j = \sum_{i = 1}^N\left( \v F_i^*, \sum \pd{\v r_i}{q_j}\dot q_j \right) = \sum_{i = 1}^N (\v F_i^*, \v v_i) \text{, т.к.} \pd{\v r_i}{t} = 0
+\]
+\end{ntc}
+\begin{df}
+$E = (\v Q^*, \dot{\v q}) \equiv 0  \quad \forall\dot{\v q}$ --- $\v Q^*$ --- гироскопическая
+\end{df}
+\begin{df}
+$E = (\v Q^*, \dot{\v q}) \leqslant 0$ --- $\v Q^*$ --- диссипативная
+\end{df}
+\begin{df}
+$E = (\v Q^*, \dot{\v q}) < 0 \forall \quad \dot{\v q} \neq 0$ --- $\v Q^*$ --- гироскопическая
+\end{df}

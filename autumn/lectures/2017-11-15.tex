@@ -1,0 +1,175 @@
+\subsection{Случай Эйлера}
+\begin{df}
+Случаем Эйлера называется задача о движении твердого тела с неподвижной точкой при отсутствии внешних сил (момента внешних сил) (по инерции).
+\[
+	\v M_0 = 0
+\]
+\end{df}
+
+\begin{gather}
+\label{ten1}
+\begin{cases}
+ A\dot p + (C - B)qr = 0 \\
+ B\dot q + (A - C)rp = 0 \\
+ C\dot r + (B - A)qp = 0 \\
+\end{cases}
+\end{gather}
+\[
+	T = \frac{1}{2} \left( Ap^2 + Bq^2 + Cr^2 \right) = h = const
+\]
+\[
+	\v k_O = Ap\v e_\xi + Bq \v e_\eta + Cr \v e_\zeta = \v k = const
+\]
+
+\begin{teo}
+Динамические уравнения Эйлера в случае Эйлера интегрируются в квадратурах.
+\end{teo}
+\begin{proof}
+\begin{flalign*}
+& \begin{cases}
+\left( Ap^2 + Bq^2 + Cr^2 \right) = 2h \\
+A^2p^2 + B^2q^2 + C^2r^2 = k^2
+\end{cases} &\\
+& 1) A = B = C \qquad \eqref{ten1} \Rightarrow \begin{cases}
+p = p_0 = const \\
+q = q_0 = const \\
+r = r_0 = const \\
+\end{cases} &\\
+& A \neq B \begin{cases}
+B(A - B) q^2 + C(A - C)r^2 = 2hA - k^2 \\
+A(B - A) p^2 + C(B - C)r^2 = 2hB - k^2 \\ 
+\end{cases} &\\
+& \begin{cases}
+q = \pm f_1(r) \\
+p = \pm f_2(r) \\
+\end{cases} &\\
+& \eqref{ten1} \Rightarrow C\dot r \pm (B - A)f_1(r)f_2(r) = 0 &\\
+& \frac{dr}{dt} = \pm \frac{(B - A)f_1(r)f_2(r)}{C} &\\
+& \pm \int\limits_0^r \frac{d\rho}{f_1(\rho)f_2(\rho)} = \frac{B - A}{C} (t - t_0) \Rightarrow r = r(t) \Rightarrow &\\
+& \begin{cases}
+q = \pm f_1(r(t)) = q(t) \\
+p = \pm f_2(r(t)) = p(t) \\
+\end{cases}
+\end{flalign*}
+\end{proof}
+
+\subsubsection*{Геометрическая интерпретация Мак-Куллока}
+\begin{flalign*}
+& Ap^2 + Bq^2 + Cr^2 = 2h &\\
+& A^2p^2 + B^2q^2 + C^2r^2 = k^2 &\\
+& k_\xi = Ap, \quad k_\eta = Bq, \quad k_\zeta = Cr &\\
+& S = \eta \v k:\;\; k_\xi^2 + k_\eta^2 + k_\zeta^2 = k^2 &\\
+& \Phi = \left\{ \v k:  \frac{k_\xi^2}{A} + \frac{k_\eta^2}{B} + \frac{k_\zeta^2}{C} = 2h \right\} \text{ --- эллипсоид Мак-Куллока} &\\
+\end{flalign*}
+При движении волчка Эйлера\footnote{Твердое тело с неподвижной точкой, для которого выполняется случай Эйлера.} эллипсоид Мак-Куллока обкатывает неподвижный конец вектора кинетического момента по линии пересечения со сферой соответсвующего радиуса. При этом проекция угловой скорости эллипсоида на ось кинетического момента постоянна.
+\[
+	(\v k, \v \omega) = (J_0 \v \omega, \v \omega) = 2T = const.
+\]
+\begin{flalign*}
+& A \geqslant B \geqslant C \Rightarrow &\\
+\Rightarrow & A^2p^2 + ABq^2 + ACr^2 \geqslant &\\
+\geqslant & A^2p^2 +B^2q^2 + C^2r^2 \geqslant &\\
+\geqslant & ACp^2 + BCq^2 + C^2r^2 &\\
+& 2TA \geqslant k^2 \geqslant 2TC &\\
+& \sqrt{2TA} \geqslant K \geqslant \sqrt{2TC} &\\
+& k = \sqrt{2TA} &\\
+& k = \sqrt{2TC} &\\
+& k = \sqrt{2TB} &\\
+& k_\xi^2 \left( 1 - \frac{B}{A} \right) + K_\eta^2\left( 1 - \frac{B}{C} \right) = 0&\\
+\end{flalign*}
+
+\subsubsection*{Геометрическая интерпретация Пуансо}
+При движении волчка Эйлера его эллипсоид инерции катится без скольжения по неподвижной плоскости, ортогональной вектору кинетического момента.
+
+$P$ --- точка пересечения эллипсоида инерции с мгновенной осью вращения.
+\[
+	(J_0\v r, \v r) = 1 \text{ --- эллипсоид инерции}
+\]
+\begin{flalign*}
+& \v{OP} = \v \rho: \begin{cases}
+(J_0 \v \rho, \v \rho) = 1 \\
+\v \rho = \lambda \v \omega \\
+\end{cases} &\\
+& (J_0\v \omega, \v \omega) \lambda^2 = L,\;\; 2T\lambda^2 = 1,\;\; \lambda = \frac{1}{\sqrt{2T}} = const &\\
+& \v n = \frac{\rho \grad f(\v r)}{|\grad f(\v r)|} = \frac{J_O\v r}{| J_O \v r|} &\\
+& \v n_P = \frac{J_O \v \rho}{|J_O \v \rho|} = \frac{J_O \v \omega \lambda}{|J_O \v \omega|\lambda} = \frac{\v k}{|\v k|} = const &\\
+& \pi \perp \v n_P,\;\; P \ni \pi &\\
+& (\v{OP}, \v n_P) = \left( \lambda \v \omega, \frac{J_O \v \omega}{|J_O \v \omega|} \right) = \frac{\lambda}{k} 2T = \frac{\sqrt{2T}}{k} = const &\\
+\end{flalign*}
+
+\subsubsection{Динамически симметричный волчок Эйлера}
+\begin{teo}
+Движение динамически симметричного волчка Эйлера всегда является регулярной прецессией.
+\end{teo}
+\begin{proof}
+\begin{flalign*}
+& \begin{cases}
+k_\xi = k\sin \Theta \sin \varphi \\
+k_\eta = k\sin \Theta \cos \varphi \\
+k_\zeta = k\cos \Theta \\ 
+\end{cases} &\\
+& k_\xi = Ap,\quad k_\eta = Bq = Aq, \quad k_\zeta = Cr &\\
+& \begin{cases}
+p = \dot \psi \sin \Theta \sin \varphi + \dot \Theta \cos \varphi \\
+q = \dot \psi \sin \Theta \cos \varphi + \dot \Theta \sin \varphi \\
+r = \dot \psi \cos \Theta + \dot \varphi \\
+\end{cases} &\\
+& C \dot r = 0 \Rightarrow r = r_0 = const &\\
+& k \cos \Theta = Cr_0 \Rightarrow \cos \Theta = \frac{Cr_0}{k} = const \Rightarrow \Theta = const\quad (\dot \Theta = 0) &\\
+& \begin{cases} k \sin \Theta \sin \varphi = A \dot \psi \sin \Theta \sin \varphi \\
+k\sin \Theta \cos \varphi = A \dot \psi \sin \Theta \cos \varphi \\
+\end{cases}
+\Rightarrow k = A \dot \psi \Rightarrow \dot \psi = \frac{k}{A} = const &\\
+& \dot \varphi = r - \dot \psi \cos \Theta = r_0 - \frac{k}{A}\frac{Cr_0}{k} = r_0\left( 1 - \frac{C}{A} \right) = const
+\end{flalign*}
+\end{proof}
+\subsection{Вынужденная регулярная прецессия динамически симметричного волчка}
+$OXYZ$ --- неподвижная система отсчета.\\
+$O\xi\eta\zeta$ --- связана с телом ($O\zeta$ - ось симметрии). \\
+$Ox'y'Z$ --- подвижная система отсчета. \\
+\[
+	\v \omega_{\text{пер}} = \dot \psi \v e_z
+\]
+\begin{flalign*}
+& \v M_O = \frac{d \v k_O}{dt} = \v k_O + [\v \omega_{\text{пер}}, \v k_O] &\\
+& \v k_O = Ap\v e_{x'} + Aq\v e_{y''} + Cr \v e_\zeta &\\
+& (\v e_{y''} \perp \v e_\zeta, \v e_{y2} \perp \v e_{x'}) &\\
+& \v \omega_{\text{абс}} = \dot \psi \v e_z + \dot \varphi \v e_\zeta = (\dot \psi + \dot \psi \cos \Theta)\v e_\zeta + \dot \psi \sin \Theta \cdot \v e_{y''} &\\
+& \begin{cases}
+p = 0 \\
+q = \dot \psi \sin \Theta = const \\
+r = \dot \psi \cos \Theta + \dot \varphi = const \\
+\end{cases}
+\Rightarrow \dot{ \v k}_O = 0 &\\
+& \v M_O = \begin{vmatrix}
+\v e_{x'} & \v e_{y''} & \v e_\zeta \\
+0 & \dot \psi \sin \Theta & \dot \psi \cos \Theta \\
+0 & A \dot \psi \sin \Theta & C\dot \psi \cos \Theta + C\dot \varphi \\
+\end{vmatrix}
+= \v e_{x'} \dot \psi \sin \Theta \cdot (C\dot \varphi + C \dot \psi \cos \Theta - A \dot \psi \cos \Theta) = &\\
+& = \v e_{x'} \dot \psi \dot \varphi \sin \Theta \cdot C \left( 1 + \frac{C - A}{C} \frac{\dot \psi}{\dot \varphi} \cos \Theta\right) \Rightarrow &\\
+\end{flalign*}
+\[
+	\v M_0 = C [\v \omega_1, \v \omega_2] \left(1 + \frac{C - A}{C}\frac{\dot \psi}{\dot \varphi}\cos \Theta \right) \text{ --- точная формула гироскопии.}
+\]
+\begin{flalign*}
+& \v \omega_1 = \dot \psi \v e_z &\\
+& \v \omega_2 = \dot \varphi \v e_\zeta &\\
+& [\v \omega_1, \v \omega_2] = \dot \psi \dot \varphi \sin \Theta \v e_{x'} &\\
+\end{flalign*}
+
+\subsection{Случай Лагранжа}
+Случаем Лагранжа называется задача о движении динамически симметричного твердого тела с неподвижной точкой в поле силы тяжести. Считаем, что центр масс тела лежит на оси его динамической симметрии.
+
+\begin{flalign*}
+& \v M_O = [\v r_\zeta, m \v g] = [l \v e_\zeta, -mg \v e_z] = [l\, \v e_\zeta, -mg(\cos \Theta \v e_\zeta + \sin \Theta \cdot \sin \varphi \v e_\xi + \sin \Theta \cos\varphi \cdot \v e_\eta)] = &\\
+& = - mg l \sin \Theta (\sin \varphi \v e_\eta - \cos \varphi \v e_\xi) &\\
+& \begin{cases}
+A \dot p + (C - A)qr = mg l \sin \Theta \cos \varphi \\
+A \dot q + (A - C)pr = - mg l \sin \Theta \sin \varphi \\
+C\dot r + 0 = 0 \\
+p = \dot \psi \sin \Theta \sin \varphi + \dot \Theta \cos \varphi \\
+q = \dot \psi \sin \Theta \cos \varphi - \dot \Theta \sin \varphi \\
+r = \dot \psi \cos \Theta + \dot \varphi \\
+\end{cases}
+\end{flalign*}

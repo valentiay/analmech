@@ -1,0 +1,217 @@
+\section{Динамика твердого тела}
+\begin{df}
+Моментом инерции твердого тела относительно оси называется сумма произведений масс точек тела на квадрат расстояния до этой оси:
+\begin{equation}
+	\label{nine.one}
+	J_l = \sum m_i d_i^2,~~ d_i = dist(\v r_i, l);~~~ \left( J_l = \int\limits_W d^2 dm \right)
+\end{equation}
+\begin{equation}
+	\label{nine.two}
+	J_l \sum m_i([\v r_i, \v l])^2 = \sum m_i (\v r_i - (\v r_i, \v l_i)^2)
+\end{equation}
+\end{df}
+
+\begin{teo}[Гюйгенса-Штейнера]
+\[
+	J_l = J_{l'} + md^2,~~ d = dist(l, l')
+\]
+\end{teo}
+\begin{proof}
+\[
+	J_l = \sum m_i ([\v r_S + \v \rho_i, \v l])^2 = \sum m([\v r_S, \v l]^2) + \sum m_i[\v \rho_i, \v l]^2 + 2 \sum m_i \left( (\v r_S, \v l) \cdot (\v \rho_i, \v l) \right) = 
+\]
+\[ 
+	= m \cdot d^2 + J_{l'} + 2(\v r_S, \v \rho) \cdot \left( \sum m_i \v \rho_i, \v l \right) = J_{l'} + d^2 m
+\]
+\end{proof}
+
+
+\noindent $\v r_i = x_i\v e_x + y_i \v e_y + z_i \v e_z$
+\begin{df}
+\[
+\begin{array}{l}
+J_x = \sum m_i (y_i^2 + z_i^2) \\
+J_y = \sum m_i (z_i^2 + x_i^2) \\
+J_z = \sum m_i (x_i^2 + y_i^2) \\
+\end{array} \text{ --- осевые моменты инерции}
+\]
+\end{df}
+
+\paragraph*{Свойство 1} \[
+	J_x + J_y \geqslant J_z
+\]
+\begin{proof}
+\[
+	J_x + J_y = \sum m_i(x_i^2 + y_i^2) + 2\sum m_i, z_i \geqslant J_z
+\]
+\end{proof}
+
+\begin{ntc} Равенство достигается в случае плоского тела
+\[
+	J_x + J_y = J_z \Leftrightarrow z_i = 0~~ \forall m
+\]
+\end{ntc}
+
+\begin{df}
+\[
+\begin{array}{l}
+J_{xy} = \sum m_i x_i y_i \\
+J_{yz} = \sum m_i y_i z_i \\
+J_{xz} = \sum m_i x_i z_i \\
+\end{array}
+\text{ --- центробежные моменты инерции.}
+\]
+\end{df}
+
+\begin{df} \[
+\left(
+\begin{matrix}
+J_x & -J_{xy} & -J_{xz} \\
+-J_{xy} & J_y & -J_{yz} \\
+-J_{xz} & -J_{yz} & J_z \\
+\end{matrix}
+\right) \text{ --- тензор инерции тела в точке $O$}
+\]
+\end{df}
+
+\begin{flalign*}
+& \v l = \alpha\v e_x + \beta \v e_y + \gamma \v e_z,~~ \alpha^2 + \beta^2 + \gamma^2 = 1 &\\
+& J_l = \sum m_i \left( (x_i^2 + y_i^2 + z_i^2)(\alpha^2 + \beta^2 + \gamma^2) - (x_i \alpha + y_i \beta + z_i \gamma)^2 \right) = &\\
+& = \sum m_i(y_i^2 + z_i^2)\alpha^2 + \sum m_i(x_i^2 + z_i^2)\beta^2 + \sum m_i (x_i^2 + y_i^2)\gamma^2 - &\\
+& - 2 \left( \sum m_i x_i y_i \right)\alpha\beta - 2 \left( \sum m_i y_i z_i \right) \beta\gamma - 2 \left( \sum m_i x_i y_i \right) \alpha \beta= &\\
+& = J_x \alpha^2 + J_y \beta^2 - 2J_{xy} \alpha\beta - 2J_{yz}\beta\gamma - 2J_{xz}\alpha\gamma = (J_O \v l, \v l) &\\
+\end{flalign*}
+
+\begin{flalign*}
+& Ox'y'z' &\\
+& \v l' = \alpha' \v e_{x'} + \beta' \v e_{y'} + \gamma' \v e_{z'},~~ J'_0 &\\
+& \v l' = A \v l,~~ A^T = A^{-1} &\\
+& J_l = (J'_0 \v l', \v l') = (J'_0\cdot A \v l, A \v l) = (A^T J'_0 A \v l, \v l) = (J_O \v l, \v l) \Leftrightarrow &\\
+& \Leftrightarrow J_O = A^T J_O' A &\\
+\end{flalign*}
+
+\begin{df}
+\[ 
+\Sigma \left\{ \v r,~~ (J_O \v r, \v r) = 1 \right\} \text{ --- эллипсоид инерции тела в точке $0$}
+\]
+\end{df}
+\begin{ntc}
+\[
+	(J_O\v r, \v r) = 1 \Leftrightarrow J_x x^2 + J_y y^2 + J_z z^2 - 2J_{xy}xy - 2J_{yz}yz - 2J_{xz}xz = 1
+\]
+\end{ntc}
+\begin{ntc}
+\[
+	(J_O\v r, \v r) = 1 \Leftrightarrow \underbrace{\left( J_O \frac{\v r}{| \v r |}, \frac{\v r}{| \v r |} \right)}_{J_{\v r}},~~ | r |^2 = 1 \Leftrightarrow |\v r| = \sqrt{\frac{1}{J_{\v r}}}
+\]
+\end{ntc}
+
+\begin{flalign*}
+& \exists O \xi \eta \zeta,~~ A \xi^2 + B \eta^2 + C \zeta^2 = 1 \equiv \Sigma &\\
+\end{flalign*}
+\begin{df}
+$A, B, C$ --- главные моменты инерции тела в точке $O$
+\end{df}
+\begin{df} 
+$O\xi$, $O\eta$, $O\zeta$ --- главные оси инерции в точке $O$
+\end{df}
+\begin{df}
+$S$ --- центр масс, тогда $S\xi$, $S\eta$, $S\zeta$ --- главные центральные моменты 
+\end{df}
+\begin{flalign*}
+& det(J_O - \lambda E) = 0,~~ \lambda - A, B, C \rightarrow \v a, \v b, \v c = \v e_\xi \v e_\eta \v e_\zeta &\\
+& A = B (\lambda \text{ --- корень 2ой кратности, тогда $O\zeta$ --- ось динамической симметрии}) &\\
+\end{flalign*}
+\begin{ntc}
+Если однородное твердое тело имеет ось геометрической симметрии, то она является главной в любой своей точке.
+\end{ntc}
+\begin{flalign*}
+& \text{$Oz$ --- ось симметрии, $m_i = m'_i$.} &\\
+& J_{xz} = \sum\limits_{i = 1}^N m_i x_i z_i = \sum\limits_{i = 0}^{N / 2} (m_i x_i z_i - m x_i z_i) = 0 &\\
+& J_{yz} = 0 &\\
+& Oz \text{ --- главная} &\\
+\end{flalign*}
+\begin{ntc}
+Если однородное твердое тело имеет плоскость симметрии, то ось, перпендикулярная этой плоскости, является главной в точке пересечения с плоскостью.
+\end{ntc}
+
+\subsection{Твердое тело с неподвижной точкой ($ \v v_O = 0$)}
+\begin{teo}
+\[
+	T = \frac{1}{2} (J\v \omega, \v \omega),~~ \v K_O = J_O \v \omega
+\]
+\end{teo}
+\begin{proof}
+\begin{flalign*}
+& l: l \parallel \v \omega,~~ O \in l (\text{O --- мгновенная ось вращения}) &\\
+& T = \frac{1}{2}\sum m_i v_i^2 = \frac{1}{2}\sum m_i ([\v \omega, \v r_i])^2 = \frac{1}{2} \sum m_i ([\v l, \v r_i])^2 \cdot \omega^2 = &\\
+& \frac{1}{2}J_l \omega^2 = \frac{1}{2}(J_O, \v l, \v l)\omega^2 = \frac{1}{2}(J_O \v \omega, \v \omega) &\\
+& \v K_O = \sum m_i [\v r_i, [\v \omega, \v r_i]] = \sum m_i (\v r_i^2 \cdot \v \omega - \v r_i (\v \omega, \v r_i)) &\\
+& \v \omega = \omega_x \v e_x + \omega_y \v e_y + \omega_z \v e_z &\\
+& (\v K_O, \v e_x) = \sum m_i[(x_i^2 + y_i^2 + z_i^2)\omega_x - (\omega_x x_i + \omega_y y_i + \omega_z z_i)] x_i = &\\
+& = J_x \omega_x - J_{xy} \omega_y - J_{xy} \omega_z &\\
+& (\v K_O, \v e_y) = J_{xy} \omega_x - J_y \omega_y - J_{xz} \omega_z &\\
+& (\v K_O, \v e_z) = J_{xz} \omega_x - J_{xz} \omega_y - J_z \omega_z &\\
+\end{flalign*}
+\end{proof}
+\begin{cor}
+Пусть $O\xi$, $O\eta$, $O\zeta$ --- главные оси инерции:
+\[
+	J_O = diag(A, B, C),~~ \v \omega = p\v e_{\xi} + q\v e_{\eta} + r\v e_{\zeta} 
+\]
+\[ 
+	T = \frac{1}{2} (Ap^2 + Bq^2 + Cr^2),~~ \v K_O = Ap \v e_\xi + Bq \v e_\eta + Cr \v e_\zeta 
+\]
+\end{cor}
+
+\subsection{Произвольное движение тела}
+\begin{teo}
+\[ 
+	T = \frac{1}{2} m \v v^2_S + \frac{1}{2} (J_S \v \omega, \v \omega) 
+\]
+\[ 
+	\v K_O = [\v r_S, m \v v_S] + J_S \v \omega 
+\]
+\end{teo}
+\begin{proof}
+\[ 
+T = \frac{1}{2} m \v v_S^2 + T^{\text{кен}} = \frac{1}{2} m v_S^2 + \frac{1}{2}(J_S \v \omega, \v \omega) 
+\]
+\end{proof}
+
+\begin{cor}
+$S_\xi, S_\eta, S_\zeta$ --- главные центральные оси
+\[
+	T = \frac{1}{2}m v_S^2 + \frac{1}{2}(Ap^2 + Bq^2 + Cr^2)
+\]
+\[
+	\v K_O = [\v r_S, m \v v_S] + Ap \v e_\xi + Bq \v e_\eta + Cr \v e_\zeta
+\]
+\end{cor}
+\begin{cor}
+\noindent $\v \omega || \v e_z,~~ \v e_z = const$:
+\[
+	T = \frac{1}{2}m v_S^2 + \frac{1}{2}\underbrace{(J_S \v e_z, \v e_z)}_{J_z} \omega^2 = \frac{1}{2} m v_S^2 = \frac{1}{2}J_z\omega^2
+\]
+\[
+	\v K_O = [\v r_S, m \v v_S] + \underbrace{J_S \v \omega}_{J_z \v \omega \Leftrightarrow J_{xy} = J_{yz} = 0}~~\not\parallel \v e_z
+\]
+\end{cor}
+
+\section{Динамика твердого тела с неподвижной точкой}
+\begin{flalign*}
+& \frac{d \v K_O}{dt} = \v M_O &\\
+& O\xi, O\eta, O\zeta \text{ --- главные оси} &\\
+& \v K_O = Ap\v e_\xi + Bq\v e_\eta + Cr\v e_\zeta &\\
+& \frac{d \v K_O}{dt} = \dot{ \v K_O} + [\v \omega, \v K_O] &\\
+& \Rightarrow A\dot p\v e_\xi = B \dot q \v e_\eta + C \dot r \v e_\zeta + \begin{vmatrix}
+\v e_\xi & \v e_\eta & \v e_\zeta \\
+p & q & r \\
+Ap & Bq & Cr \\
+\end{vmatrix} = M_\xi \v e_\xi + M_\eta \v e_\eta + M_\zeta \v e_\zeta &\\
+& \begin{cases}
+A\dot p + (C - B)qr = M_\xi \\
+B\dot q + (A - C)rp = M_\eta \\
+C\dot r + (B - A)qp = M_\zeta \\
+\end{cases}
+\end{flalign*}

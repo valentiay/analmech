@@ -1,0 +1,156 @@
+\section{Основные теоремы динамики}
+\subsection{Основные динамические величины}
+\begin{df}
+$ \v P = \sum\limits_{i = 1}^N m_i\v v_i $ --- импульс.
+$ \v K_O = \sum\limits_{i = 1}^N[\v r_i, m_i\v v_i] $ --- кинематический момент относительно точки $O$.
+$ K_l = (\v K_0, \v e_l)$ --- кинематический момент относительно оси $l$.
+\end{df}
+\begin{ntc}
+$ O \in l,~~ \v e_l \parallel \v l$; $K_l$ не зависит от точки $O$.
+\end{ntc}
+\begin{df}
+$ T = \frac{1}{2} = \sum m_i v_i^2 = \frac{1}{2}m_i(\v v_i, \v v_i)$ --- кинетическая энергия.
+\end{df}
+\begin{df}
+$S$ --- центр масс системы: \[ \v r_S = \frac{\sum m_i \v r_i}{m} \]
+\end{df}
+\[ \v P = \sum m_i \frac{d \v r_i}{d\tau} = \frac{d}{dt}\lb \sum m_i \v r_i \rb = \frac{d}{dt}(m\v r_S) = m\v v_S \]
+\[ \boxed{\v P = m\v v_S} \]
+\begin{df}
+Осями Кенига называется система отсчета с началом в центра масс системы и осями, параллельными неподвижным. (Движется поступательно вместе с центром масс)
+\end{df}
+\[ \v r_i = \v R + \v \rho_i \]
+\begin{df}
+\[ \v K_{\text{кен}} = \sum [\v \rho_i, m \dot{\v \rho_i}] \]
+\end{df}
+\[ T_\text{кен} = \frac{1}{2}\sum m_i \dot \rho_i^2 \]
+
+\begin{teo}[Формулы Кенига]
+\[ \v K_O = [\v r_S, m \v v_S] + \v K_{\text{кен}} \]
+\[ T = \frac{1}{2}m v_S^2 + T_{\text{кен}} \]
+\end{teo}
+\begin{proof}
+\begin{flalign*}
+& \v K_0 = \sum[\v R + \v \rho, m_i \dot{\v R} + m_i \dot{\v \rho}_i] = \left[\v R,  \left(\sum m_i\right)\dot{\v R}\right] + \left[\v R, \sum m_i\dot{\v \rho_i}\right] + &\\
+& + \left[\sum m_i\v \rho_i, \dot {\v \rho}_i \v R\right] + \sum[\v \rho_i m_i \dot{\v \rho}_i] = [\v r_S, m \v v_S] + \v K_{\text{кен}} &\\
+& T = \frac{1}{2} \sum m_i (\dot{\v R}_i + \dot{\v \rho}_i, \dot{\v R}_i + \dot{\v \rho}_i) = \frac{1}{2} \lb \sum m_i \rb \dot{\v R}^2 + \frac{1}{2}\sum m_i\dot{\v \rho}_i^2 + &\\
+& + \underbrace{\sum m_i (\v R, \v \rho)}_0 = \frac{1}{2}mv_S^2 + T_{\text{кен}} &\\ 
+\end{flalign*}
+\end{proof}
+
+\begin{teo}[Об изменении импульса]
+\[ \dot{\v P} = \sum \v F_i^{(e)} = \v F \]
+\end{teo}
+\begin{proof}
+\[ \dot{\v P}_i = \frac{d}{dt}\sum m_i\v v_i = \sum m_i \v w_i = \sum \v F_i^{(e)} + \underbrace{\sum \v F_i^{(i)}}_0 = \v F \]
+\end{proof}
+
+\begin{teo}[Формула движения центра масс]
+\[ m \v w_S = \v F \]
+\end{teo}
+\begin{cor}
+\[ \v F = 0 \Rightarrow \v w_S = 0 \Rightarrow \v v_S = \v v_0 = const \Rightarrow \v r_S = \v v_0(t - t_0) + \v r_0 \]
+\end{cor}
+\begin{cor}
+\[ (\v F, \v e_x) = 0 \Rightarrow (\dot {\v P}, \v e_x) = 0 \Rightarrow \v v_x = const \]
+\end{cor}
+\begin{teo}[Теорема об изменении кинетического момента относительно неподвижного полюса]
+\[ \dot{\v K}_O = \sum [\v r_i, \v F_i^{(e)}] = \v M_O \]
+\end{teo}
+\begin{proof}
+\begin{flalign*}
+& \frac{d}{dt} \v K_O = \frac{d}{dt}\lb\sum [\v r_i, m_i\v v_i] \rb = \sum \left[\frac{d \v r_i}{dt}, m_i\v v_i\right] + \sum [\v r_i, m_i\dot{\v v}_i] = &\\
+& = \sum[\v r_i, \v F_i^{(e)}] + \sum[\v r_i, \v F_i^{(i)}] = \v M_O &\\
+\end{flalign*}
+\end{proof}
+
+\begin{cor}
+\[ \v M_O = 0 \Rightarrow \v K_O = const \]
+\end{cor}
+\begin{cor}
+\[ M_l = (\v M_O, \v e_l) = 0,~~ \v e_l = const \Rightarrow K_l = const \]
+\end{cor}
+\begin{proof}
+\[ \frac{d}{dt} K_l = \frac{d}{dt}(\v K_O, \v e_l) = \lb \frac{d\v K_O}{dt}, \v e_l \rb + 0 = (\v M_O, \v e_l) = M_l \]
+\end{proof}
+
+\begin{cor}
+\[ \dot K_l = M_l \]
+\end{cor}
+\paragraph{Формула преобразования кинетического момента при смене полюса}
+\[ \v K_B = \v K_A + [\v P, \v{AB}] \]
+\begin{proof}
+\begin{flalign*}
+& \v K_B = \sum [\v{BA} + \v \rho_i, m_i\v v_i] = [\v{BA}, m_i\v v_i] + \v K_A = \v K_A + [\v P, \v{AB}] &\\
+\end{flalign*}
+\end{proof}
+\paragraph{Формула преобразования момента сил при смене полюса}
+\[ \v M_B = \v M_A + [\v F, \v{AB}] \]
+\begin{proof}
+Аналогично.
+\end{proof}
+
+\begin{teo}
+\[ \dot{\v K_A} = \v M_A + [\v P, \v v_A] \]
+\end{teo}
+\begin{proof}
+\begin{flalign*}
+& \v K_A = \v K_O + [\v P, \v r_A],~~ (\v v_0 \equiv 0) &\\
+& \dot{\v K}_A = \dot{\v K_O} + [\dot {\v P}, \v r_A] + [\v P, \dot {\v r}_A] = \v M_O + [\v F, \v r_A] + [\v P, \v v_A] = &\\
+& \v M_A + [\v P, \v v_A] &\\
+\end{flalign*}
+\end{proof}
+
+\begin{cor}[Первая теорема Кенига]
+\[ \dot{\v K}_{\text{кен}} = \v M_S \]
+\end{cor}
+\begin{proof}
+\begin{flalign*}
+& \v K_{\text{кен}} = \v K_S;~~ \dot{\v K}_{\text{кен}} = \v{M}_S + [\v P, \v v_S] = \v{M}_S + [m \v v_S, \v v_S] = \v M_S
+\end{flalign*}
+\end{proof}
+
+\begin{teo}[Об изменении кинетической энергии]
+\[ \dot T = \sum (\v F_u{(e)}, \v v_i) + \sum (\v F_i^{(i)}, \v v_i) \]
+\end{teo}
+\begin{proof}
+\begin{flalign*}
+& T = \frac{1}{2}\sum m_i (\v v_i, \v v_i) &\\
+& \dot T = \sum (\v v_i, m \dot{\v v}_i) = \sum (\v v_i, m \v w_i) = \sum (\v v_i, \v F_i^{(e)} + \v F_i^{(i)}) &\\
+\end{flalign*}
+\end{proof}
+\[ dT = \sum (\v F_i^{(e)}, d\v r_i) + \sum (\v F_i^{(i)}, d\v r_i) \]
+
+\begin{ass}[Вторая теорема Кенига]
+\[ \dot{\v T_{\text{кен}}} = \sum (\v F_i, \dot{\v \rho}_i) \]
+\end{ass}
+\begin{proof}
+\begin{flalign*}
+& \dot T_{\text{кен}} = \dot T - (m\dot{\v v}_S, \v v_S) = \sum (\v F_i, \v v_i) - \sum (\v F_i, \v v_S) &\\
+& \dot {\v \rho}_i = \v v_i^{\text{отн}} = \v v_i^{\text{абс}} - \v v_i^{\text{пер}} = \v v_i - \v v_S &\\
+& \dot T_{\text{кен}} = \lb \v F_i, \v v_i - \v v_S \rb = \sum (\v F_i, \dot{\v \rho}_i) &\\
+\end{flalign*}
+\end{proof}
+
+Пусть $\v r_i^{(e)} = - grad_{\v r_i} \Pi(\v r_i, \ldots, \v r_N)$ (внешние силы консервативны).
+\[ \sum(\v F_i^{(e)}, d\v r_i) = - \sum \lb \frac{\partial \Pi}{\partial \v r_i}, d\v r_i \rb = -d\Pi \]
+\[ dT = - d\Pi \Rightarrow d(T + \Pi) = 0 \Rightarrow T + \Pi = const \]
+
+\begin{teo}[Закон сохранения полной механической энергии]
+Если все внешние силы, действующие на систему консервативны, то полная энергия системы сохраняется.
+\end{teo}
+\subsection{Основные теоремы динамики в неинерциальных системах отсчета}
+\[ m_i \v w_i = \v F_i^{(e)} + \v F_i^{(i)} + \v F_i^{(\text{пер})} + \v F_i^{(\text{кор})} \]
+\[ \dot{\v P} = \v F + \v F^{\text{пер}} + \v F^{\text{кор}} \]
+\[ \v F^{\text{пер}} = \sum \v F^{\text{пер}} = -\sum m_iw_i^{\text{пер}};~~~ \v F^{\text{кор}} = \sum \v F_i^{\text{кор}} = - \sum m_i\cdot 2\cdot [\v w_\text{кор}, \v v_i] \]
+\[ \dot{\v K}_0 = \v M_O + \v M_O^{\text{пер}} + \v M_O^{\text{кор}} \]
+\[ \v M_O^{\text{кор}} = \sum [\v r_i, \v F_i^{\text{пер}}];~~~ \v M_O^{\text{кор}} = \sum [\v r_i, \v F_i^{\text{кор}}] \]
+\[ \dot T = \sum (F_i, \v v_i) + \sum (\v F_i^{\text{пер}}, \v v_i) + 0 \]
+\[ \sum (\v F_i^{\text{кор}}, \v v_i) = \sum (-2m_i[\v \omega_{\text{пер}}, v_i], \v v_i) = 0 \]
+
+\begin{xmp}[Система отсчета Кенига]
+\begin{flalign*}
+& \dot{\v K}_S = \dot{\v K}_{\text{кен}} = \v M_S; &\\
+& \dot T_S = \sum(\v F_i, \v v_i);~~~~~ \dot{\v P} = \v F - \sum m_i \v w_S = \v F - m \v w_S &\\
+\end{flalign*}
+\end{xmp}

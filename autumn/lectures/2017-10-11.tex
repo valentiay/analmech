@@ -1,0 +1,177 @@
+  %2017-10-11
+  \begin{teo}
+  Преобразование, заданное кватернионом $\Lambda = \cos \nu + \v e \sin \nu$ соответствует повороту пространства вокруг вектора $\v e$ на угол $2\nu$
+  \end{teo}
+  \begin{proof}~
+  \begin{enumerate}
+  \item 
+  \begin{flalign*}
+  & \Lambda = \lambda_0 + \v \lambda &\\
+  & \v \lambda' = f(\v \lambda) = \Lambda \circ \v \lambda \circ \v \Lambda = (\lambda_0 + \v \lambda) \circ \v \lambda \circ (\lambda_0 - \v \lambda) = &\\
+  \end{flalign*}
+  \begin{flalign*}
+  & (\lambda_0 + \v \lambda) \circ (- \lambda^2 + \lambda_0 \v \lambda) = -\lambda_0\v \lambda ^2 - \lambda_0\v \lambda ^2 + \lambda_0^2 + \lambda_0^2 \v \lambda = &\\
+  & = \v \lambda(\lambda_0^2 + \v \lambda^2) \Rightarrow \v \lambda \text{ --- неподвижная ось} \Rightarrow &\\
+  & \Rightarrow \v e = \frac{\v \lambda}{\sin \nu} \text{ --- ось поворота} &\\
+  & \v a \in \pi \perp \v e &\\
+  & \v a' = f(\v a) = (\cos \nu + \v e \sin \nu) \circ \v a \circ (\cos \nu - \v e \sin \nu) = &\\
+  & = (\cos \nu + \v e \sin \nu ) \circ ([\v a, \v e] \cdot \sin \nu + \cos \nu \v a - \sin \nu [\v a, \v e]) = &\\
+  & \cos^2 \nu \v a + \cos \nu \sin \nu (\v a, \v e) + \cos\nu \sin\nu = \ldots &\\
+  \end{flalign*}
+  \item
+  \begin{flalign*}
+  & \overline a' = ((\cos \frac{\varphi}{2} + \v e\sin\frac{\varphi}{2}) \circ \overline a) \circ (\cos \frac{\varphi}{2} + \overline e \sin \frac{\varphi}{2}) = &\\ 
+  & = (\overline a \cos \frac{\varphi}{2} + [\overline e, \overline a] \sin \frac{\varphi}{2}) \circ (\cos \frac{\varphi}{2} - \overline e \sin\frac{\varphi}{2}) = &\\ 
+  & = \overline a \cos^2 \frac{\varphi}{2} + 2[\overline e, \overline a]\cos\frac{\varphi}{2}\sin\frac{\varphi}{2} - \overline a \sin^2 \frac{\varphi}{2} = &\\ 
+  & = \overline a \cos \varphi + [\overline e, \overline a]\sin \varphi &\\
+  \end{flalign*} 
+  \[ \abs {\overline a'} = \abs{\overline a} \]
+  \end{enumerate}
+  \end{proof}  
+  \begin{cor}
+  \[ \Lambda = \lambda_0 + \lambda_1\ea + \lambda_2\eb + \lambda_3\ec = \lambda_0 + \lambda_1\ea' + \lambda_2\eb' + \lambda_3\ec' \]
+  \end{cor}
+  \begin{df}
+  \[\lambda_0,~ \lambda_1,~ \lambda_2,~ \lambda_3 \text{ --- Параметры Родрига-Гамильтона}\]
+  \end{df}
+  \begin{cor}[Теорема Эйлера о конечном повороте]
+  Любые два положения твердого тела с неподвижной точкой могут быть получены одно из другого одним поворотом вокруг некоторой оси, проходящей через неподвижную точку на некоторый угол
+  \end{cor}
+  \begin{proof}~
+  \begin{enumerate}
+  \item \[ \forall E, E'~~ \exists \Lambda:\; E \rightarrow E'\]
+  \item \[ \forall \Lambda \overline r \rightarrow \overline r' \Leftrightarrow \text{Поворот вокруг $e$ на $\varphi$} \]
+  \end{enumerate}
+  \end{proof}
+  \begin{flalign*}
+  & E \xrightarrow{\Lambda_1} E' \xrightarrow{\Lambda_2} E'',~ E \xrightarrow{\Lambda} &\\
+  & \overline r' = \Lambda_1 \circ \overline r \circ \overline \Lambda,~ \overline r'' = \Lambda_2 \circ \overline r' \circ \overline \Lambda &\\
+  & \overline r'' = \Lambda_2 \circ \Lambda_1 \circ \overline r \circ \overline \Lambda \circ \overline \Lambda_2 = \Lambda \circ \overline r \circ \overline \Lambda,~~ \Lambda = \Lambda_2 \circ \Lambda_1 &\\
+  \end{flalign*}
+
+  \[ \boxed{\Lambda = \Lambda_2 \circ \Lambda_1} \text{ --- формула сложения поворотов} \]
+
+  \begin{flalign*}
+  & \Lambda_2 = \lambda_0^{(2)} + \sum\limits_{k=1}^{3} \lambda_k^{(2)} \overline e_k'' = \lambda_0^{(2)} +  \sum\limits_{k=1}^{3} \lambda_k^{(2)} \overline e_k' &\\
+  & \Lambda_2^* = \lambda_0^{(2)} + \sum\limits_{k=1}^{3} \lambda_k^{(2)}\overline e_k \text{ --- собственный к $\Lambda_2$ кватернион} &\\
+  & \overline e_k' = \Lambda_1 \circ \overline e_k \circ \overline \Lambda_1,~~ \Lambda_2  =\lambda_0^{(2)} + \sum\lambda_k^{(2)}\Lambda_1 \circ \overline  e_k  \circ \overline \Lambda_1 = &\\
+  & = \Lambda_1 \circ (\lambda_0^{(2)} + \sum \lambda_k^{(2)} \overline e_k) \circ \overline \Lambda_1 = \Lambda_1 \circ \Lambda_2^* \circ \overline \Lambda_1 &\\
+  & \Lambda = \Lambda_2 \circ \Lambda_1 = \Lambda_1 \circ \Lambda_2^* \circ (\overline \Lambda_1 \circ \Lambda_1) = \Lambda_1^* \circ \Lambda_2^*,~~ \Lambda_1^* = \Lambda_1
+  \end{flalign*}
+
+  \[ \boxed{\Lambda = \Lambda_1^* \circ \Lambda_2^*} \]
+  --- формула сложения поворотов в параметрах Родрига-Гамильтона
+
+  \section{Кинематика твердого тела в кватернионном описании}
+  \begin{teo}
+  Угловая скорость твердого тела определяется равенством:
+  \[ \overline \omega = 2\dot \Lambda \circ \overline \Lambda \]
+  где $\Lambda$ - кватернион, задающий положение твердого тела относительно неподвижного базиса
+  \end{teo}
+  \begin{proof}~
+  \begin{enumerate}
+  \item 
+  \begin{flalign*}
+  & B = \dot{\Lambda} \circ \overline \Lambda &\\
+  & B + \overline B = \dot \Lambda \circ \overline \Lambda + \overline {\left( \dot \Lambda \circ \overline \Lambda \right)} = \dot \Lambda \circ \overline \Lambda + \Lambda \circ \dot {\overline \Lambda} = &\\ 
+  & = \frac{d}{dt}(\Lambda \circ \overline \Lambda) = \frac{d}{dt}(\norm \Lambda) = 0 \Rightarrow B = -\overline B &\\
+  \end{flalign*}
+  \item 
+  \begin{flalign*}
+  & \dot{\overline e}_k' = [\overline \omega, \overline e_k] &\\
+  & \overline e_k' = \Lambda \circ \overline e_k \circ \overline \Lambda,~~ \overline e_k = \overline \Lambda \circ \overline e_k' \circ \Lambda  &\\
+  & \dot{\overline e}_k' = \dot \Lambda \circ \overline e_k \circ \Lambda + \Lambda \circ \overline e_k \circ \dot{\overline \Lambda} =  &\\
+  & \dot \Lambda \circ (\overline \Lambda \circ \overline e_k' \circ \Lambda) \circ \overline \Lambda + \Lambda \circ (\overline \Lambda \circ \overline e_k' \circ \Lambda) \circ \dot{\overline \Lambda} = &\\
+  & = \dot \Lambda \circ \overline \Lambda \circ \overline e_k' + \overline e_k' \circ \Lambda \circ \dot{\overline \Lambda} = B \circ \overline e_k' + \overline e_k' \circ \overline B = &\\
+  & [2\overline B, \overline e_k] \Rightarrow 2\overline B = \overline \omega &\\
+  \end{flalign*}
+  \end{enumerate}
+  \end{proof}
+  \begin{xmp}
+  \[ \Lambda = \cos \frac{\varphi}{2} + \overline e \sin \frac{\varphi}{2} \]
+  \begin{flalign*}
+  & \overline \omega = 2(-\sin \frac{\varphi}{2} \cdot \frac{\dot \varphi}{2} + \dot{\overline e}\sin\frac{\varphi}{2} + \overline e \cos \frac{\varphi}{2} \cdot \frac{\dot \varphi}{2}) \circ (\cos \frac{\varphi}{2} + \overline e \sin \frac{\varphi}{2}) = &\\
+  & =\cos \frac{\varphi}{2} \cdot \sin \frac{\varphi}{2} \cdot \dot \varphi+ \cos \frac{\varphi}{2} \cdot \sin \frac{\varphi}{2} \cdot \dot \varphi + \overline e \sin^2 \frac{\varphi}{2} \cdot \dot \varphi \:+ &\\ 
+  & + \overline e \cos^2 \frac{\varphi}{2} \cdot \dot \varphi + 2\dot{\overline e} \sin \frac{\varphi}{2}\cos \frac{\varphi}{2} + 2[\overline e, \dot{\overline e}]\sin^2 \frac{\varphi}{2} =
+  \overline e \dot \varphi + \dot{\overline e}\sin \varphi + 2[\overline e, \dot{\overline e}]\sin^2 \frac{\varphi}{2} &\\
+  \end{flalign*}
+  \end{xmp}
+  \begin{ntc}~
+  \begin{enumerate}
+  \item \[ \overline \omega = \overline e \dot \varphi \Leftrightarrow \left[
+  \begin{array}{l}
+  \varphi = 0 \\
+  \dot{\overline e} = 0 \\
+  \end{array}
+  \right.\]
+  \item \[ \varphi \ll 1.~~ \overline \omega \approx \overline e \varphi + \dot{\overline e} \varphi = \frac{d}{dt}(\overline e \varphi) \]
+  \item \[ \overline \omega = \lim_{\Delta t \rightarrow 0} \frac{\Delta \overline e \Delta \varphi}{\Delta t},~~ E(t) \xrightarrow{\Delta \Lambda} E(t + \delta t),~ \Delta \Lambda = \cos \frac{\Delta \varphi}{2} + \Delta \overline e \sin \frac{\varphi}{2} \]
+  \end{enumerate}
+  \end{ntc}
+  \paragraph*{Уравнение Пуассона}
+  \[\omega = 2\dot \Lambda \circ \overline \Lambda\]
+  \begin{equation}
+  \label{c.1}
+  \boxed{\dot \Lambda = \frac{1}{2}\overline \omega \Lambda} \text{ --- кинематическое уравнение Пуассона}
+  \end{equation}
+  \[\omega = p\overline e_1' + q \overline e_2' + r\overline e_3',~~ \overline \omega^* = p\overline e_1 + q\overline e_2 + r \overline e_3\]
+  \begin{equation}
+  \label{c.2} 
+  \dot \Lambda = \frac{1}{2} \Lambda \circ \overline \omega^*
+  \end{equation}
+  \subsection{Интегрирование уравнения Пуассона}
+  \begin{equation} 
+  \label{upper_system}
+  \dot{\overline x} = \overline f(\overline x, t)
+  \end{equation}
+  \begin{df}
+  Функция $\Phi(\overline x, t)$ называется первым интегралом системы \re{upper_system}, если
+  \[ \Phi(\overline x(t), t) = const \]
+  где $\overline x(t)$ --- решение системы \re{upper_system}
+  \end{df}
+  \begin{ass}
+  Система \re{c.1} имеет первый интеграл вида
+  \[\norm \Lambda = const \]
+  \end{ass}
+  \begin{proof}
+  \[ \frac{d}{dt}(\norm \Lambda) = \frac{d}{dt}(\Lambda \circ \overline \Lambda) = \dot \Lambda \circ \overline \Lambda + \Lambda \circ \dot{\overline \Lambda} = \frac{1}{2} \overline \omega \circ \Lambda \circ \overline \Lambda \ldots \]
+  \end{proof}
+  \begin{ass}
+  Общее решение системы \re{c.1} имеет вид:
+  \[ \Lambda(t) = \Lambda'(t) \cdot C\]
+  где $\Lambda'$ - частное решение, $C = const$.
+  \end{ass}
+  \begin{proof}
+  $\Lambda$, $\Lambda'$ - Нетривиальные решения \re{c.1}
+  \[ \dot \Lambda = \frac{1}{2}\overline \omega \circ \Lambda,~~ \dot{\Lambda}' = \frac{1}{2}\overline \omega \circ \Lambda'\]
+  \[ M = (\Lambda')^{-1} \circ \Lambda,~~ \Lambda = \Lambda' \circ M \]
+  \[ \re{c.2} \Rightarrow \begin{cases}
+  \dot \Lambda' \circ M + \Lambda' \circ \dot M = \frac{1}{2} \overline \omega \circ \Lambda' \circ M \\
+  \dot \Lambda' = \frac{1}{2}\overline \omega \circ \Lambda'
+  \end{cases}  \Leftrightarrow \]
+  \[ \Lambda' \circ \dot M = 0 \Leftrightarrow \dot M = 0 \Leftrightarrow M = C = const \]
+  \end{proof}
+  \begin{cor}
+  \begin{equation}
+  \label{c.3} 
+  \dot \Lambda = \frac{1}{2} \overline \omega \circ \Lambda,~~ \Lambda(\varphi) = 1 
+  \end{equation}
+  \end{cor}
+
+  \noindent Случай 1. Вращение вокруг неподвижной оси $\overline \omega = \overline e \omega$, $\overline e = const$:
+  \[\re{c.3} \Rightarrow \Lambda \cos \frac{\varphi}{2} + \overline e \sin \frac{\varphi}{2},~~ \varphi = \int\limits_0^t \omega(\tau)d\tau \] \\
+  Случай 2. Регулярная прецессия:
+  \[\overline \omega  = \overline \omega_1 + \overline \omega_2\]
+  \[\Lambda_z = \cos \frac{\psi}{2} + \overline e_z \sin\frac{\varphi}{2}, \psi = \int\limits_0^t \omega_1(\tau)d\tau\]
+    \[\Lambda_{\zeta} = \cos \frac{\psi}{2} + \overline e_{\zeta} \sin\frac{\varphi}{2}, \varphi = \int\limits_0^t \omega_2(\tau)d\tau\]
+  1 способ: \\
+  $O\zeta$ --- ось тела (подвижная)
+  \[ \Lambda_1 = \Lambda_z,~~ \Lambda_2 = \Lambda_\zeta \]
+  $Oxyz$ --- неподвижный базис, $Oxz = O\nu\zeta(0)$
+  \begin{flalign*}
+  & \Lambda_2^* = \cos \frac{\varphi}{2} + \overline e_\xi(0)\sin\frac{\varphi}{2} = \cos \frac{\varphi}{2} + (\sin \Theta \overline e_x + \cos \Theta \overline e_z)\sin \frac{\varphi}{2} &\\
+  & \Lambda = (\cos \frac{\psi}{2} + \overline e_z \sin \frac{\psi}{2}) \circ \Lambda_2 = \ldots &\\
+  \end{flalign*}
+  2 способ: \\
+  $O\zeta$ --- неподвижна (ось тела в начальный момент времени)
+  \[ \Lambda_1 = \Lambda_\zeta,~~ \Lambda_2 = \Lambda_z \]

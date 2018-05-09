@@ -1,0 +1,159 @@
+\section{Движение в центральном поле}
+\subsection{Законы сохранения}
+В центральном поле
+\[
+	m \ddot{ \v r} = \v F,\quad \v F = F(r) \frac{\v r}{r}
+\]
+
+\paragraph*{Закон сохранения энергии:}
+\[
+	\Pi = -\int F(r) dr,~~~ \frac{\partial \Pi}{\partial t} = 0 \Rightarrow T + \Pi = h = const
+\]
+\paragraph*{Закон сохранения кинетического момента:}
+\[
+	\v M_O = \left[ \v r, F(r) \frac{\v r}{r} \right] = 0 \Rightarrow \dot{\v k}_O = 0 \Rightarrow \v k_O = [\v r, \v m\v v] = \v k = const
+\]
+\begin{cor}
+Траектория точки в центральном поле всегда является плоской кривой.
+\end{cor}
+\begin{proof}
+\[
+	[\v r, m\v v] = \v k \perp \alpha \Rightarrow \v r \in \alpha \quad \forall t,\,\alpha = const
+\]
+\end{proof}
+
+\begin{cor}
+\[
+	r^2 \dot \varphi = c = const
+\]
+\end{cor}
+\begin{proof}
+\[
+	| \v k | = |[ \v r, m \v v]| = |[r \v e_r,\, m (\dot {r } \v e_r + r \dot \varphi \v e_\varphi)] | = mr^2|\dot \varphi||\v e_z| = const \Rightarrow r^2\dot \varphi = const
+\]
+\end{proof}
+
+\paragraph*{Геометрический смысл}
+\begin{flalign*}
+& S = \iint dS = \int\limits_{\varphi_0}^\varphi d\varphi\int\limits_0^{r(\varphi)} rdr = \int\limits_{\varphi_0}^\varphi \frac{r^2(\varphi)}{2}d \varphi &\\
+& \dot S = \frac{dS}{d\varphi}, \quad \dot \varphi = \frac{r^2}{2}\varphi = \frac{c}{2} = const &\\
+& \sigma = \dot s = \frac{c}{2} \text{ --- секториальная скорость}
+\end{flalign*}
+
+\subsection{Формулы Бине}
+
+\begin{teo}[Формулы Бине]
+При движении точи в центральном поле справедливы следующие равенства:
+\[
+	v^2 = c^2 \left( \left[ \frac{d}{d\varphi}\left( \frac{1}{r} \right) \right]^2 + \frac{1}{r^2} \right)
+\]
+\[
+	F = - \frac{mc^2}{r^2} \left( \frac{d^2}{d\varphi^2}\left( \frac{1}{r} \right) + \frac{1}{r}\right)
+\]
+\end{teo}
+\begin{proof}
+\begin{flalign*}
+& v^2 = \dot r^2 + r^2 \dot \varphi^2 &\\
+& \v w = (\ddot r - r \dot \varphi^2)\v e^r + (r \ddot \varphi + 2\dot r \dot \varphi)\v e_\varphi &\\
+& m \v w = F \v e_r \quad 
+\begin{cases}
+m(\ddot r - r \dot \varphi) = F \\
+r \ddot \varphi + 2 \dot r \dot \varphi = 0 \Rightarrow \frac{d}{dt}(r^2 \dot \varphi) = 0 \\
+\end{cases} &\\
+& \dot r = \frac{dr}{d\varphi} \quad \dot \varphi = \frac{dr}{d\varphi}\frac{c}{r^2} = -c \frac{d}{d\varphi}\left( \frac{1}{r} \right) &\\
+& \ddot r = \frac{d \dot r}{d \varphi}\dot \varphi = -\frac{c^2}{r^2} \frac{d^2}{d\varphi^2}\left( \frac{1}{r} \right) &\\
+& v^2 = c^2 \left[ \frac{d}{d\varphi}\left( \frac{1}{r} \right) \right]^2 + r^2 \frac{c^2}{r^4} = c^2 \left( \left[ \frac{d}{d\varphi} \left( \frac{1}{r} \right)\right]^2 + \frac{1}{r^2} \right) &\\
+& F = - \frac{mc^2}{r^2} \left( \frac{d^2}{d\varphi^2}\left( \frac{1}{r} \right) + \frac{1}{r}\right) &\\
+\end{flalign*}
+\end{proof}
+
+\noindent Определим траекторию.
+\begin{flalign*}
+& T + \Pi = h, \quad T = \frac{m}{2}v^2 &\\
+& \frac{mc^2}{2} \left[ \frac{d}{d\varphi}\left( \frac{1}{r} \right) \right]^2 + \underbrace{\frac{mc^2}{2r^2} + \Pi(r)}_{\Pi_c(r)} = h &\\
+& \pm \sqrt{\frac{mc^2}{2}}\frac{d}{d\varphi}\left( \frac{1}{r} \right) = \sqrt{h - \Pi_c(r)} &\\
+& \text{Замена: } \frac{1}{r} = u \quad \pm \sqrt{\frac{mc^2}{2}} \int\limits_{1/r_0}^{1/r} \frac{du}{\sqrt{h - \Pi_c(u)}} = \varphi - \varphi_0 \Rightarrow r(\varphi) &\\
+& \dot \varphi = \frac{c}{r^2(\varphi)} \Rightarrow \int\limits_{\varphi_0}^\varphi r^2(\varphi) d \varphi = \int\limits_{t_0}^t cdt = c(t - t_0)
+\end{flalign*}
+
+\subsection{Движение точки в центральном гравитационном поле}
+\[
+	F = -\gamma \frac{mM}{r^2}, \quad \Pi(r) = -\gamma \frac{mM}{r}
+\]
+\begin{flalign*}
+\varphi & = \pm \sqrt{\frac{mc^2}{2}}\int \frac{du}{\sqrt{h - m\frac{c^2}{2u^2} + \gamma mM u}} = \pm \int\frac{du}{\sqrt{\frac{2h}{mc^2} - u^2 + \frac{2\gamma M}{c^2}u}} = &\\
+& = \pm \int \frac{du}{\sqrt{\frac{2h}{mc^2} + \frac{\gamma^2M^2}{c^4} - \left( u - \frac{\gamma M}{c^2} \right)^2}} = \pm \arccos \frac{\frac{1}{r} - \frac{\gamma M}{c^2}}{\sqrt{\frac{2h}{mc^2} + \frac{\gamma^2M^2}{c^4}}} + \varphi_0 &\\
+& \frac{1}{r} = \frac{\gamma M}{c^2} + \sqrt{\frac{2h}{mc^2} + \frac{\gamma^2 M}{c^4}}\cos(\varphi - \varphi_0) &\\
+& \frac{c^2}{\gamma m} = p, \quad \sqrt{\frac{2h}{mc^2}p^2 + 1} = e \Rightarrow r = \frac{p}{1 + e\cos(\varphi - \varphi_0)}
+\end{flalign*}
+То есть $\varphi_0$ зависит от $c$ и $h$.
+
+\begin{ntc}
+$\varphi_0 = 0 \quad (\varphi' = \varphi - \varphi_0)$
+\end{ntc}
+
+\begin{ass}
+Траектория точки в центральном гравитационном поле является коническим сечением.
+\begin{itemize}
+\item $e = 0$: $\left( h^* := h = - \frac{mc^2}{2p^2} = - \frac{m\gamma^2M^2}{2c^2} \right)$ --- окружность.
+\item $0 < e < 1$: $\left( h^* < h < 0 \right)$ --- эллипс.
+\item $e = 1$: $\left( h = 0 \right)$ --- парабола.
+\item $e > 1$: $\left( h > 0 \right)$ --- гипербола.
+\end{itemize}
+\end{ass}
+
+\begin{xmp}[Первая космическая скорость]
+\begin{flalign*}
+& v_1 =\; ? &\\
+& \frac{mv^2}{2} - \gamma \frac{mM}{R} = -\frac{m\gamma^2M^2}{2c^2} = - \frac{m\gamma^2 M^2}{2R^2v_1^2} &\\
+& c = R^2 \dot \varphi = R v_1 \text{ (окружность)} &\\
+& v_1^2 - \frac{2\gamma M}{R} + \frac{\gamma^2 M^2}{R^2v_1^2} = 0 &\\
+& \left( v_1 - \frac{\gamma M}{R v_1} \right)^2 = 0 \Rightarrow v_1 = \sqrt{\frac{\gamma M}{R}} &\\
+\end{flalign*}
+\end{xmp}
+
+\begin{xmp}[Вторая космическая скорость]
+\begin{flalign*}
+& \frac{mv_2^2}{2} - \frac{\gamma mM}{R} = 0 \Rightarrow v_2^2 = \frac{2\gamma M}{R} &\\
+\end{flalign*}
+\end{xmp}
+
+\begin{teo}[Законы Кеплера]~
+\begin{enumerate}
+\item Планеты движутся по эллипсам, в одном из фокусов которых находится солнце.
+\item Радиус-вектор планеты заметает равные площади за равные промежутки времени.
+\item $\frac{T^2}{a^3} = const$ (где $a$ ---большая полуось эллипса) для планет из одной системы.
+\end{enumerate}
+\end{teo}
+\begin{proof}
+\begin{flalign*}
+& \dot s = \frac{c}{2} &\\
+& T = \frac{2\pi ab}{c} &\\
+& a =\;? &\\
+& r = \frac{p}{1 + e \cos \varphi}, \quad b^2 = (1 - e^2)a^2 &\\
+& a = \frac{1}{2} \left( \frac{p}{1 + e} + \frac{p}{1 - e} \right)= \frac{p}{1 - e^2} = \frac{pa^2}{b^2} \Rightarrow b^2 = pa &\\
+& \text{Тогда } T^2 = \frac{4\pi^2a^2b^2}{c^2} = \frac{4\pi^2a^2pa}{c^2} = \frac{4\pi^2a^3c^2}{c^2 \gamma M} = \frac{4 \pi^2a^3}{\gamma M} \Rightarrow &\\
+& \frac{T^2}{a^3} = \frac{4\pi^2}{\gamma M} = const &\\
+\end{flalign*}
+\end{proof}
+
+\subsection{Задача двух тел}
+\begin{flalign*}
+& \v F_{12} = - \frac{\gamma m_1 m_2}{|\v r_1 - \v r_2|^3}(\v r_1 - \v r_2) &\\
+& \v F_{21} = - \frac{\gamma m_1 m_2}{|\v r_1 - \v r_2|^3}(\v r_2 - \v r_1) &\\
+& \text{Теорема о движении центра масс: } (m_1 + m_2)\ddot{\v r}_S = 0 \Rightarrow &\\
+& \Rightarrow \text{Система Кенига --- инерциальная система отсчета} (\v F^{(e)} = 0) &\\
+& \v \rho_1 = \v r_1 - \v r_S = \v r_1 - \frac{m_1\v r_1 + m_2\v r_2}{m_1 + m_2} = \frac{m_2}{m}(\v r_1 - \v r_2) &\\
+& \v \rho_2 = \frac{m_1}{m}(\v r_2 - \v r_1) &\\
+& \text{Тогда второй закон Ньютона в системе Кенига имеет вид:} &\\
+& m_1 \ddot{\v \rho}_1 = - \frac{\gamma m_1 m_2}{m^3 \rho_1^3 / m_2^3} \frac{m \v \rho_1}{m_2} = -\frac{\gamma m_1 m_2^3}{m^2 \rho_1^3} \v \rho_1 = -\gamma_1 \frac{m_1m}{\rho_1^3} \v \rho_1 \text{, где } \gamma_1 = \frac{\gamma m_2^3}{m^3} &\\
+& m_2 \ddot{\v \rho}_2 = - \gamma_2\frac{m_2 m}{\rho_2^3} \v \rho_2 \text{, где } \gamma_2 = \frac{\gamma m_1^3}{m^3} &\\
+\end{flalign*}
+
+\paragraph*{Уточнение законов Кеплера}
+\begin{enumerate}
+\item Планеты движутся по эллипсам, в одном из фокусов которого находится центр масс системы.
+\item Сохраняется.
+\item $ \frac{T^2}{a^3} = \frac{4\pi}{\gamma_{1,2} m}$ --- зависит от $m_1$ ($m_2$).
+Т.е. $ \frac{T_1^2}{a_1^3} \neq \frac{T_2^2}{a_2^3}$ при $m_1 \neq m_2$, но если $m_1 \gg m_2$, тогда $\frac{m_2}{m_1 + m_2} \ll 1 \Rightarrow |\v \rho_1| \ll 1$, значит $\gamma_1 \ll \gamma$, $\gamma_2 \approx \gamma$
+\end{enumerate}

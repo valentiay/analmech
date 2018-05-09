@@ -1,0 +1,155 @@
+\subsection{Элементы теории устойчивости}
+\begin{equation}
+\label{stable}
+\dv x = f(\v x), \, \v x \in \R^n, \, \v f \in C^1: \R^n \rightarrow \R \quad \v x(t) = \v x(t, \v x(0)) \text{ --- начальные условия.}
+\end{equation}\
+
+\begin{df}
+$ \v x = \v x_0 $ --- положение равновесия \eqref{stable}, если $\v f(\v x_0) = 0$ ($\v x(t, \v x_0 \equiv \v x_0$) $\v x_0 = 0$ без ограничения общности. 
+\end{df}
+
+\begin{df}
+Равновесие \eqref{stable} устойчиво по Ляпунову, если для любого $\varepsilon > 0$ существует $\delta > 0 $, что любое решение с начальными условиями в $\delta$-окрестности равновесия существует при всех $t > 0$ и находится в $\varepsilon$-окрестности.
+\[
+	\forall \varepsilon > 0 \ \exists \delta > 0 \ \abs{\v x(0)} < \delta \Rightarrow \abs{\v x(t)} < \varepsilon, \ \forall t > 0.
+\]
+\end{df}
+
+\begin{df}
+$\v x = 0$ --- неустойчивое, если
+\[
+	\exists \varepsilon > 0 \ \forall \delta > 0 \ \exists \v x(0), t_1 > 0: \abs{x_0} < \delta \ \abs{\v x(t_1, \v x_0)} > \varepsilon
+\]
+\end{df}
+
+\begin{df}
+$\v x = 0$ --- устойчиво асимптотически, если
+\begin{enumerate}
+\item $\v x = 0$ --- устойчиво,
+\item $\lim\limits_{t \rightarrow +\infty} \v x(t, \v x(0)) = 0$. 
+\end{enumerate}
+\end{df}
+
+\subsection{Прямой метод Ляпунова}
+\begin{fl*}
+& V(x) &\\
+& \dot V = \pd{V}{\v x} \dv x = \pd{V}{\v x} \v f &\\
+\end{fl*}
+
+\begin{df}
+$\dot V$ --- производная функции $V$ по времени вдоль решения \eqref{stable}.
+\end{df}
+
+\begin{teo}[Ляпунова (об устойчивости)]
+Если существует гладкая функция $V(x)$ определенная в $\varepsilon$-окрестности равновесия $x = 0$ системы \eqref{stable}, удовлетворяющая следующим условиям:
+\begin{enumerate}
+\item 
+\[
+	V(0) = 0, \ \forall x \in U_\varepsilon \setminus \{ 0 \},
+\]
+\item
+\[
+	\dot v \leqslant 0 \ \forall \v x \in U_\varepsilon,
+\]
+\end{enumerate}
+то $x = 0$ --- устойчиво по Ляпунову.
+\end{teo} 
+\begin{proof}
+\begin{fl*}
+& 1) \forall \varepsilon > 0, \ \exists \sigma = \min V(\v x), \abs{ \v x } = \varepsilon &\\
+& 2) V \in C^1 \Rightarrow \exists \delta: V(\v x) < \sigma \ \forall \v x : \abs{\v x} < \delta &\\
+& 3) \forall \v x_0: \ \abs{\v x_0} < \delta \ V(\v x(t)) < \sigma \Rightarrow \abs{\v x_0(t)} < \varepsilon \quad (\v x_0(t) = \v x(t, \v x_0)) &\\
+\end{fl*}
+\end{proof}
+
+\begin{ntc}
+\begin{fl*}
+& 1) v(0) = 0, v(\v x) > 0 \ \forall \v x \in U_\varepsilon \setminus \{0\} \Rightarrow \text{ $V$ --- положительно определенная функция в 0} &\\
+& 2) v(0) = 0, v(\v x) < 0 \ \forall \v x \in U_\varepsilon \setminus \{0\} \Rightarrow \text{ $V$ --- отрицательно определенная функция в 0} &\\
+& 3) v(0) = 0, v(\v x) \geqslant (\leqslant) \: 0 \ \forall \v x \in U_\varepsilon \setminus \{0\} \Rightarrow \text{ $V$ --- знакопостоянная функция в 0} &\\
+\end{fl*}
+\end{ntc}
+
+\begin{xmp}~\\
+$V(x_1, x_2) = x_1^2 + x_2^2$ --- положительно определена в $x_1 = x_2 = 0$ \\
+$V(x_1, x_2) = x_1^2$ --- не является положительно определенной в $x_1 = x_2 = 0$
+\end{xmp}
+
+\begin{ntc}
+Если в условии теоремы Ляпунова в условии $2)$ поставить строгое неравенство, устойчивость станет асимптотической.
+\end{ntc}
+
+\begin{teo}{Барбашина-Красовского}
+Если $\exists V(x) \in C^1 : U_\varepsilon \rightarrow \R$, то
+\begin{enumerate}
+\item 
+\[
+	V(0) = 0 \ V(\v x) > 0 \ \forall \v x \in U_\varepsilon \setminus \{ 0 \},
+\]
+\item
+\[
+	\dot v \leqslant 0 \  \forall \v x \in U_\varepsilon,
+\]
+\item множество $\{\v x : \dot v (\v x) = 0\}$ не содержит целиком решения системы \eqref{stable}, кроме равновесия $\v x = 0 \Rightarrow \v x = 0$ --- установившееся асимптотически.
+\end{enumerate}
+\end{teo}
+
+\begin{ntc}
+Если $\dot V < 0$, то $\{ x: \dot V = 0 \} = \{ 0 \}$.
+\end{ntc}
+
+\begin{proof}
+Пусть $\v x = 0$ установившееся, но не асимптотическое, т.е. 
+\begin{fl*}
+& I)\  \exists \v x_0(t) \ \abs{\v x_0 (t)} < \varepsilon, \ \v x_0 \not \rightarrow 0 \text{, т.е.} &\\
+& \exists \delta, \{t_k\}, \ t_{k + 1} > t_k \ \delta < \abs{\v x_0(t_k)} < \varepsilon &\\
+& II)\ \exists \{k_s\} \  \v x_s = \v x_0(t_{k_s}) \xrightarrow{s \rightarrow +\infty} \v x_* &\\
+& \abs{\v x_s} > \delta \Rightarrow \abs{\v x_*} > \frac{\delta}{2} &\\
+& III)\ V(\v x_0(t)) &\\
+& 1),\; 2) \Rightarrow \exists V = \lim_{t \rightarrow + \infty} V(x_0(t)) &\\
+& v \in C^1 \Rightarrow v = V(\v x_*) &\\
+\end{fl*}
+\begin{fl}
+\label{triplesec}
+& \boxed{\forall t \ V(\v x_0(t)) \geqslant v} &\\
+\end{fl}
+\begin{fl*}
+& IV)\ \text{Рассмотрим} \v x_s(t) = \v x(t, \v x_s) = \v x_0(t + t_{k_s}, \v x_0) &\\
+& V)\ \v x_*(t) = \v x(t, \v x_*) &\\
+& v(\v x_*) = v, \ 2),\; 3) \Rightarrow \exists t^*: \underbrace{V(\v x_*(t_*))}_{v_*} < v &\\
+& VI)\ v \text{ --- непрерывная б.т. } \v x_*(t_*) &\\
+& \forall \varepsilon_1 > 0 \ \exists \delta_1 > 0 \ \forall x \ \abs{\v x - \v x_*(t_*)} < \delta_1 \Rightarrow \abs{V(\v x) - V(x_*(t_*))} < \varepsilon_1 &\\
+& \text{Решения \eqref{stable} непрерывно и зависит от начальных условий ($t < \infty$)} &\\
+& \forall \varepsilon_2 > 0 \ \exists \delta_2 > 0 \ \forall x \ \abs{\v x - \v x_*(t_*)} < \delta_2 \Rightarrow \abs{\v x(t_*) - x_*(t_*)} < \varepsilon_2 &\\
+& \forall \varepsilon_3 > 0 \ \exists s: \abs{\v x_s - x_*} < \varepsilon_3 \forall s > S &\\
+& \varepsilon_1 = v - v_* > 0 \rightarrow S: \ \abs{V(\v x_s(t_*)) - \underbrace{V(\v x_*(t_*))}_{v_*}} < v - v_* &\\
+& V(\v x_s(t_*)) - v_* < v - v_* \text{ --- противоречие с \eqref{triplesec}}
+\end{fl*}
+\end{proof}
+
+\begin{teo}[Красовского]
+$\exists V \in C^1: U_\varepsilon \rightarrow \R$ и область $\Omega$:
+\begin{enumerate}
+\item $V(0) = 0,\  V(\v x) > 0\  \forall \v x \in U_\varepsilon \cap \Omega$ \\
+$\v x = 0 \in \partial \Omega, V(\v x) = 0 \ \forall \v x \in \partial \Omega$
+\item $\dot v \leqslant 0 \ \forall \v x \in U_\varepsilon \cap \Omega$
+\item $\{ \v x: \dot v = 0 \} \Rightarrow \v x = 0$ --- неустойчивое.
+\end{enumerate}
+\end{teo}
+\begin{proof}
+\begin{flalign*}
+& \exists \v x = 0 \text{ --- устойчивое, т.е. } &\\
+& \forall \varepsilon > 0 \exists \delta > 0: \abs{\v x_0} < \delta \Rightarrow \abs{\v x_0(t)} < \varepsilon &\\
+& 1), 2) \Rightarrow \exists \delta: \abs{\v x_0(t)} > 0 \Rightarrow \exists\{ x_s \} \rightarrow \v x_*, &\\
+& V(\v x_s(t)) \leqslant V(\v x_*) = v &\\
+& \v x_*(t),\  3) \Rightarrow \exists t_* > 0: (\v x_*(t_*)) > v \text {--- противоречие как в предыдущей теореме} &\\
+\end{flalign*}
+\end{proof}
+
+\begin{ntc}
+$\dot v > 0$ --- теорема Четаева.
+\end{ntc}
+
+\begin{xmp}[Волчок Эйлера]
+MISSING
+\end{xmp}

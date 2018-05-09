@@ -1,0 +1,175 @@
+\section{Динамика}
+\subsubsection*{Принцип детерминированности Ньютона}
+\[ \v r_i(t) = \varphi_i(\v r_1, \ldots, \v r_N, \dot {\v r}_1, \ldots, \dot{\v r}_N, t_0, t)~~ \forall t_0 \]
+\[ \ddot{\v r}_i(t) = \frac{d^2 \varphi_i}{dt^2} = f_i(\v r_1, \ldots, \v r_N, \dot {\v r}_1, \ldots, \dot{\v r}_N, t_0, t)  \]
+\[ \v r_i(t_0) = f_i (\ldots, t)~~ \forall t_0 \]
+\begin{equation}
+\label{seven.one}
+\ddot{\v r}_i(t_0) = f_i (\v r_1, \ldots, \v r_N, \dot{\v r}_1, \ldots, \dot{\v r}_N, t)~~ \forall t_0 
+\end{equation}
+
+\begin{xmp}
+$ f = 0 \Rightarrow \ddot{\v r} = 0,~ \v r = \v r_0 + \dot{\v r}_0(t - t_0) $ \\
+(Закон инерции Галилео-Ньютона); если $m_i$ - масса точки $\v r_i$
+\[ m_i\ddot{\v r}_i = \v F_i;~~ \v F_i = m_i\v f_i \text{ --- \emph{сила}} \]
+\end{xmp}
+\subsubsection*{Преобразование Галилея}
+$\v r \rightarrow r^* = \underbrace{A\v r}_{\text{Ортог. пр.}} + \v v_0 t + \v r_0,~~ t^* = t + t_0$ \\
+$ A = const,~~ \v v_0 = const,~~ \v r_0 = const$
+
+\subsubsection*{Принцип относительности Галилея}
+\begin{flalign*}
+& m_i \ddot{\v r}_i = \v F_i(\v r_1, \ldots \v r_N, \dot{\v r}_1, \ldots, \dot{\v r}_N, t) &\\
+& m_i \ddot{\v r}_i^* = \v F_i(\v r_1^*, \ldots \v r_N^*, \dot{\v r}_1^*, \ldots, \dot{\v r}_N^*, t^*) &\\
+& \frac{d\v r_i^*}{dt^*} = \frac{d \v r_i^*}{dt} \cdot 1 &\\
+& \ddot{\v r}_i^* = A\ddot{\v r} \Rightarrow \v F_i^* = A \v F_i &\\
+\end{flalign*}
+Принцип относительности: 
+\[ \v F_i^*(\v r_1^*, \ldots \v r_N^*, \dot{\v r}_1^*, \ldots, \dot{\v r}_N^*, t^*) = \v F_i(\v r_1^*, \ldots \v r_N^*, \dot{\v r}_1^*, \ldots, \dot{\v r}_N^*, t^*) \]
+\begin{xmp}
+$ n = 1 $:\\
+$\v F = A \v F,~~ \forall A \Leftrightarrow \v F = 0$
+\end{xmp}
+\begin{xmp}
+$r^* = \v r,~~ t^* = t - t_0,~~ t = t_0 \Rightarrow \v F_i(\ldots, t) = \v F_i(\ldots, 0)$
+\end{xmp}
+
+\subsubsection*{Закон равенства действия и противодействия}
+\[ \v F_{ij} = -\v F_{ji},~~ \v F_{ij} \parallel \v r_j - \v r_i \]
+
+\subsubsection*{Принцип суперпозиции}
+\begin{flalign*}
+& \v F_i = \sum\limits_{i \neq j} \v F_{ij} \text{ (Для замкнутых систем)} &\\
+& \v F_i = \v F_i^{(e)} + \v F_i^{(i)} &\\
+& \v F_i^{(e)} \text{ --- внешняя сила} &\\
+& \v F_i^{(i)} \text{ --- внутренняя сила} &\\
+& \text{Система неинерциальная} &\\
+& \v w_i^{\text{абс}} = \v w_i^{\text{отн}} + \v w_i^{\text{пер}} + \v w_i^{\text{кор}} &\\
+& m_i \ddot{\v \rho}_i = \v F_i + \v F_i^{\text{отн}} + \v F_i^{\text{пер}} &\\
+& \v w_i^{\text{отн}} = \ddot{\v \rho}_i;~ \v F_i^{\text{отн}} = -m_i\v w_i^{\text{отн}};~ \v F_i^\text{пер} = -m_i(\v w_0 + [\v \varepsilon, \v \rho] + [\v \omega, [\v \omega, \v \rho_i]]) &\\
+\end{flalign*}
+
+\begin{df}
+$ \v M_O = [\v r, \v F] $ --- момент силы $\v F$ относительно $O$
+\end{df}
+\begin{df}
+$M_l = (\v M_O, \v l)$ --- момент силы $\v F$ относительно оси $\v l$
+\end{df}
+
+\begin{ass}
+$M_l$ не зависит от выбора точки $O$.
+\end{ass}
+\begin{proof}
+\begin{flalign*}
+& M_l = (\v M_O, \v l) = ([\v r, \v F], \v l) = ([\v r' + \v{O'O}, \v F], \v l) = &\\
+& = ([\v r', \v F], \v l) + (\underbrace{[\lambda\v l, \v F]}_0, \v l) \Rightarrow M_l = (\v M_O, \v l) &\\
+\end{flalign*}
+\end{proof}
+
+\begin{df} 
+$(\v F, d\v r)$ --- элементарная работа ($dA$, $d'A$, $\delta A$, $A_{\text{эл}}$)
+\end{df}
+
+\subsection{Стационарные силы}
+\noindent $ F = \v F(\v r, \dot{\v r} $ --- стационарная сила \\
+$ W = (\v F, \v v) \leqslant 0 $,~~$\v F(\v r, \dot{\v r})$ --- диссипативная сила \\
+\begin{xmp}~
+\begin{itemize}
+\item $\v F = -kN\frac{\dot{\v r}}{|\dot{\v r}|}$ --- сухое трение
+\item $\v F = - \beta \dot{\v r}$ --- вязкое трение
+\end{itemize}
+\end{xmp}
+\noindent $W = (\v F, \v v) \equiv 0$,~~ $\v F$ --- гироскопическая сила \\
+\begin{xmp}
+$\v F^{\text{кор}} = -m \v w^{\text{кор}} = -2m[\v \omega, \v v]$ \\
+$(\v F^{\text{кор}}, \v v) = -2m([\v \omega, \v v], \v v) = 0 $
+\end{xmp}
+
+\subsection{Позиционные силы}
+$\v F = \v F(r, t)$ --- позиционная сила (силовое поле)
+
+\begin{df} 
+$\v F(\v r, t)$ --- потенциальная сила.
+\[ \exists u(\v r, t):~~ \v F = \grad_r u \]
+$u$ --- силовая функция, $\Pi = -u$ --- потенциальная энергия.
+\end{df}
+
+\begin{xmp}
+$F = F(x, t)\v e_x = \frac{\partial u}{\partial \v r} = \frac{\partial u}{\partial x} \v e_x + \frac{\partial u}{\partial y} \v e_y$ \\
+$ U = \int F(x, t)dx $
+\end{xmp}
+
+\begin{df}
+Потенциальная сила $\v F(\v r)$ - консервативная.
+\end{df}
+\begin{xmp} 
+$ F = - \frac{\gamma m}{r^2} \cdot \frac{\v r}{r} $ --- консервативная, т.к. \\
+$ U = \int(\v F, d\v r) = -\int \frac{\gamma m}{r^3} (\v r, d\v r) = -\int \frac{\gamma m}{r^3} d\lb \frac{(\v r, \v r)}{2} \rb = $ \\
+$ = -\int\frac{\gamma m}{r^3} d\frac{r^2}{2} = -\int\frac{\gamma m}{r^2}dr = \frac{\gamma m}{r};~~ n = -\frac{\gamma m}{r}$ \\
+$ U = \int (\v F, d\v r)$
+\end{xmp}
+
+\subsubsection{Критерий потенциальности}
+\begin{ass}
+\[ \v F(\v r) = F_x\v e_x + F_y\v e_y + F_z\v e_z \text{ --- потенциальная } \Leftrightarrow 
+\begin{cases}
+\frac{\partial F_x}{\partial y} = \frac{\partial F_y}{\partial x} \\
+\frac{\partial F_y}{\partial z} = \frac{\partial F_z}{\partial y} \\
+\frac{\partial F_z}{\partial x} = \frac{\partial F_x}{\partial z} \\
+\end{cases} \]
+\end{ass}
+\begin{proof}~\\
+
+\begin{flalign*}
+& \Rightarrow &\\
+& u \in c^2 &\\
+& \frac{\partial F_x}{\partial y} = \frac{\partial^2 u}{\partial y \partial x} = \frac{\partial^2 u}{\partial x \partial y} = \frac{\partial F_y}{\partial x} &\\
+\end{flalign*}
+
+\begin{flalign*}
+& \Leftarrow &\\
+& u = \int\limits_{\v r_0}^{\v r} F_x(\xi, y, z)d\xi + \int\limits_{\v r_0}^{\v r} F_x(x_0, \eta, z)d\eta + \int\limits_{\v r_0}^{\v r} F_x(x_0, y_0, \zeta)d\zeta &\\
+\end{flalign*}
+\end{proof}
+
+\begin{cor}
+$F(\v r)$ --- потенциальная сила $\Leftrightarrow$ $\oint\limits_C(\v F, d\v r) = 0,~~ \forall C$
+\begin{proof}
+\[ \oint\limits_{C = \delta W} (\v F, d \v r) = - \int\limits_W(\frac{\partial F_x}{\partial y} - \frac{\partial F_y}{\partial x})dxdy + \ldots = 0 \]
+\end{proof}
+\end{cor}
+
+Система точек $\v F_i = \v F_i^{(e)} + \v F_i^{(i)}$.
+
+\[ F_i^{(i)} = \sum\limits_{j \neq i} \v F_ij;~ \v F_{ij} = - \v F_{ji} = F_{ij}(|\v r_i - \v r_j|)\frac{\v r_j - \v r_i}{|\v r_j - \v r_i|} \]
+
+\subsection{Свойства внутренних сил}~
+\begin{enumerate}
+	\item \[ \sum\limits_{i = 1}^N \v F_i^{(i)} = 0 \]
+	\begin{proof}
+	\[ \sum_{i = 1}^N \v F_i^{(i)} = \sum\limits_{i = 1}^N \sum\limits_{j < i} \v F_{ij} + \sum\limits_{i = 1}^N\sum\limits_{j > i}\v F_{ij} = \sum\limits_{i = 1}^N(\v F_{ij} - \v F_{ji}) = 0 \]
+	\end{proof}
+	\item \[ \sum\limits_{i = 1}^N[\v r_i, \v F_i^{(i)}] = 0 \]
+	\begin{proof}
+	\[ \sum\limits_{i = 1}^N \sum\limits_{j < i} [\v r_i, \v F_{ij}] + \sum\limits_{i = 1}^N \sum\limits_{j < i} [\v r_j, \v F_{ij}] = \sum\limits_{i = 1}^N \sum\limits_{j < i} [\v r_i - \v r_j, \v F_{ij}] = 0 \]
+	\end{proof}
+	\item Внутренние силы потенциальны, т.е.
+	\[ \exists u(\v r_1, \ldots, \v r_n):~ \v F_i^{(i)} = grad_{\v r_i} u \]
+	\begin{proof}
+	\begin{flalign*}
+	& u_ij(| \v r |) = \int\limits_0^{|\v r|}F_{ij}(\v \rho)d\rho &\\
+	& u = \sum\limits_{i, i < j} u_{ij} ~~~~ \frac{\partial u}{\partial \v r_i} = \sum\limits_{i, i < j} \frac{\partial u_{ij}}{\partial \v r_i} = \sum \frac{\partial u_{ij}}{\partial|\v r_i - \v r_j|} \cdot \frac{\partial|\v r_i - \v r_j|}{\partial \v r_i} &\\
+	& |\v r_i - \v r_j| = \sqrt{(x_i - x_j)^2 + (y_i - y_j)^2 + (z_i - z_j)^2} &\\
+	& \frac{\partial|\v r_i - \v r_j|}{\partial x_i} = \frac{(x_i - x_j)}{|\v r_i - \v r_j|} ~~~~ \text{Аналогично для $y_i$ и $z_i$} &\\
+	& \frac{\partial| \v r_i - \v r_j|}{\partial r_i} = \frac{\v r_i - \v r_j}{|\v r_i - \v r_j|} &\\
+	& \frac{\partial u}{\partial \v r_i} = \sum\limits_{i, j,~ i < j}F_{ij}(\v r_i - \v r_j) \cdot \frac{\v r_i - \v r_j}{|\v r_i - \v r_j|} = \v F_i^{(i)} &\\
+	\end{flalign*}
+	\end{proof}
+	\item Работа внутренних сил в тердом теле равна нулю.
+	\begin{proof}
+	\begin{flalign*}
+	& \sum(\v F_i^{(i)}, v_i) = \sum(\v F_i^{(i)}, \v v_s + [\v \omega, \v \rho_i]) = &\\
+	& = \left( \underbrace{\sum\v F_i^{(i)}}_{0}, \v v_s \right) + \left(\v \omega, \underbrace{\sum [\v \rho_i, \v F_i^{(i)}]}_0\right) = 0 &\\
+	\end{flalign*}
+	\end{proof}
+\end{enumerate}
