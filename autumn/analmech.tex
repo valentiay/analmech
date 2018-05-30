@@ -16,6 +16,7 @@
 \usepackage[dvips]{graphicx}
 \graphicspath{{img/}}
 \usepackage{float}
+\usepackage{datetime}
 
 \hypersetup{
 colorlinks,
@@ -73,6 +74,9 @@ top=20mm,
 % \setcounter{secnumdepth}{0}
 \setcounter{tocdepth}{2}
 
+\newdate{date}{09}{02}{2018}
+\date{\displaydate{date}}
+
 \author{Муницына Мария Александровна}
 \title{Лекции по аналитической механике. Осенний семестр.}
 
@@ -82,12 +86,16 @@ top=20mm,
   \begin{titlepage}
   \maketitle
   \begin{center}
-  {\itshape\small Набор и рисунки: Александр Валентинов}
+  {\itshape\small Набор и рисунки: Александр Валентиновю \\
+  За рукописные конспекты спасибо Павлу Цаю и Никите Свешникову, \\ 
+  а всему ПМФ ФИВТ спасибо за помощь с исправлением ошибок.}
 
-  {\itshape\small Спасибо Павлу Цаю и Никите Свешникову за рукописные конспекты, \\ а также всему ПМФ ФИВТ за помощь с исправлением ошибок.}
-
-  % {\itshape\small Об ошибках писать: \url{https://vk.com/valentiay}}
-  \vfill
+  \vspace{1em}
+  
+  {\itshape\small Fork me on github: \url{https://github.com/valentiay/analmech}}
+  
+  \vspace{1em}
+  
   {\itshape\small Горизонтальные черты обозначают границы между лекциями.}
   \vfill
 
