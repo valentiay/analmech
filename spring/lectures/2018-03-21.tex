@@ -1,0 +1,188 @@
+\subsection{Первый интеграл и понижение порядка в уравнении Гамильтона}
+\begin{df}
+$q_k$ --- циклическая переменная, если $\pd{H}{q_k} = 0 \left( \pd{L}{q_k} = -\pd{H}{q_k} \right)$.
+\end{df}
+
+\begin{ass}
+Если $q_k$ --- циклическая координата, то $p_n = const$.
+\end{ass}
+\begin{proof}
+\begin{flalign*}
+& \dot p_n = -\pd{H}{q_n} = 0 \Rightarrow p_n = const. &\\
+\end{flalign*}
+\end{proof}
+
+\begin{ass}
+Если $\pd{H}{t} = 0$, то $H = const$.
+\end{ass}
+\begin{proof}
+\begin{flalign*}
+& \frac{dH(q, p, t)}{t} = \left( \pd{H}{q}, \dot q \right) + \left( \pd{H}{p}, \dot p \right) + \pd{H}{t} = \pd{H}{t} = 0 \Rightarrow H = const &\\
+\end{flalign*}
+\end{proof}
+
+\begin{flalign*}
+& \pd{H}{q_n} = 0 \Rightarrow p_n = const = \beta &\\
+& H = H(q_1, \ldots, q_{n - 1}, p_1, \ldots, p_{n - 1}, \beta, t) &\\
+& \tilde q = (q_1, \ldots, q_{n - 1})^T, \quad \tilde p = (p_1, \ldots, p_{n - 1})^T &\\
+& H = H(\tilde q, \tilde p, \beta, t) &\\
+& \begin{cases}
+\dot{\tilde q} = \pd{H(\tilde q, \tilde p, \beta, t)}{\tilde p} \\
+\dot{\tilde p} = \pd{H(\tilde q, \tilde p, \beta, t)}{\tilde q} \\
+\end{cases}
+\end{flalign*}
+
+\begin{ass}
+При $\beta = const$ (заданном значении циклического интеграла $\beta$) уравнения движения системы имеют вид
+\[
+\begin{cases}
+\dot{\tilde q} = \pd{H(\tilde q, \tilde p, \beta, t)}{\tilde p} \\
+\dot{\tilde p} = \pd{H(\tilde q, \tilde p, \beta, t)}{\tilde q} \\
+\end{cases}
+\Leftrightarrow
+\left.\left(\begin{cases}
+\dot q = \pd{H}{p} \\
+\dot p = -\pd{H}{q} \\
+\end{cases}\right)\right|_{\beta = const}
+\]
+\end{ass}
+
+\begin{flalign*}
+& \begin{cases}
+\tilde q = \tilde q (t, c_1, \ldots, c_{2n - 2}, \beta) \\
+\tilde p = \tilde p (t, c_1, \ldots, c_{2n - 2}, \beta) \\
+\end{cases} (*) &\\
+& p_n = \beta = const &\\
+& \dot q_n = \left.\left( \pd{H(\tilde q, \tilde p, t, \beta)}{p_n} \right)\right|_{(*)} = f(t, c_1, \ldots, c_{2n - 2}, \beta) &\\
+& \frac{dq_n}{dt} = f \Rightarrow q_n = \int\limits_0^t f(\tau, c_1, \ldots, c_{2n - 2}, \beta)d\tau + c_{2n - 1} &\\
+\end{flalign*}
+
+\begin{flalign*}
+& \pd{H}{t} = 0 \Rightarrow H(q, p) = const = h &\\
+& \text{Пусть } \pd{H}{p_n} \neq 0 \Rightarrow p_n = p_n(q_1, \ldots, q_n, p_1, \ldots, p_{n - 1}, h) = -K(\tilde q, \tilde p, \tau, h), &\\
+& \text{где } \tilde q = (q_1, \ldots, q_{n - 1})^T, \; \tilde p = (p_1, \ldots, p_{n - 1})^T,\; \tau = q_n 
+\end{flalign*}
+
+\begin{df}
+$K(\tilde q, \tilde p, \tau, h)$ --- функция Уиттекера.
+\end{df}
+
+\begin{ass}
+Уравнения Гамильтона на фиксированном уровне интеграла энергии локально эквивалентны уравнениям Уиттекера
+\[
+	\begin{cases}
+	\tilde q' = \pd{K}{\tilde p} \\
+	\tilde p' = -\pd{K}{\tilde q} \\
+	\end{cases},
+	\quad
+	\tilde q' = \frac{d\tilde q}{d\tau}, \; \tilde p' = \frac{d\tilde p}{d\tau}.
+\]
+\end{ass}
+\begin{proof}
+\begin{flalign*}
+& H(\tilde q, \tau, \tilde p, -K) \equiv h &\\
+& 0 = \pd{H}{p_i} - \pd{H}{p_n} \cdot \pd{K}{p_i} = \dot q_i - \dot q_n \cdot \pd{K}{p_i} \Rightarrow \frac{\dot q_i}{\dot q_n} = \pd{K}{p_i} \Rightarrow \frac{dq_i}{d\tau} = \pd{K}{p_i}, \quad i = 1, \ldots, n - 1 &\\
+& \frac{dH}{dq_i} = 0 = \pd{H}{q_i} - \pd{H}{p_n}\pd{K}{q_i} = - \dot p_i - \dot q_n \pd{K}{q_i} \Rightarrow \frac{\dot p_i}{\dot q_n} = -\pd{K}{q_i} \Rightarrow \frac{dp_i}{d\tau} = -\pd{K}{q_i}, \quad i = 1, \ldots, n - 1 &\\
+& \tilde q = \tilde q(\tau, c_1, \ldots, c_{2n - 2}) &\\
+& \tilde p = \tilde p(\tau, c_1, \ldots, c_{2n - 2}) &\\ &\\
+& p_n = - K(\tilde q(q_m, c_1, \ldots, c_{2n-2}), \tilde p(q_n, c_1, \ldots, c_{2n - 2}), q_n, h) = p_n(q_n, c_1, \ldots, c_{2n - 2}, h) &\\
+& \dot q_n = \pd{H}{p_n} = f(q_n, c_1, \ldots, c_{2n - 2}, h) &\\
+& \int\limits_0^t\frac{dq_n}{f(q_n, c_1, \ldots, c_{2n-2}, h)} = t + c_{2n - 1} &\\
+\end{flalign*}
+\end{proof}
+
+\subsection{Скобки Пуассона}
+\begin{df}
+Скобкой Пуассона двух функций $F(q, p)$ и $G(q, p)$ называется
+\[
+	\{F, G\} = \left( \pd{F}{q}, \pd{G}{p} \right) - \left( \pd{F}{p}, \pd{G}{q} \right) = \sum_{i = 1}^n \left( \pd{F}{q_i}\pd{G}{p_i} - \pd{F}{p_i} - \pd{G}{q_i}\right)
+\]	
+\end{df}
+
+\begin{enumerate}
+\item Линейность
+\begin{flalign*}
+& \{F, \alpha_1 G_1 + \alpha_2 G_2\} = \alpha_1\{F, G_1\} + \alpha_2\{F, G_2\} &\\
+& \alpha_1 = const, \alpha_2 = const &\\
+\end{flalign*}
+\item Антикоммутативность
+\begin{flalign*}
+& \{F, G\} = -\{G,F\}
+\end{flalign*}
+\item Тождество Якоби-Пуассона\footnote{Доказательство не доведено до конца}
+\begin{flalign*}
+& \{F, \{G, W\}\} + \{G, \{W, F\}\} + \{W, \{F, G\}\} = 0 &\\
+& \{F, \{G, W\}\} = \sum_{i = 1}^n \pd{F}{q_i}\pdd{\sum_{j = 1}^n\left(\pd{G}{q_j}\pd{W}{p_j} - \pd{G}{p_j}\pd{W}{q_j}}{p_i}\right) - &\\
+& - \sum_{i = 1}^n \pd{F}{p_i}\pdd{\sum_{j = 1}^n\left(\pd{G}{q_j}\pd{W}{p_j} - \pd{G}{p_j}\pd{W}{q_j}}{q_i}\right) = \ldots &\\
+\end{flalign*}
+\item Правило Лейбница
+\begin{flalign*}
+& \{F_1F_2, G\} = F_1\{F_2, G\} + F_2\{F_1, G\} &\\
+\end{flalign*}
+\item $\{\varphi(F_1, \ldots, F_k), G\} = \sum\limits_{i = 1}^k \pd{\varphi}{F_i}\{F_i, G\}$
+\item \begin{flalign*}
+& F = F(q, p, t), \; G = G(q, p, t) &\\
+& \pdd{\{F, G\}}{t} = \left\{\pd{F}{t}, G\right\} + \left\{F, \pd{G}{t}\right\} &\\
+& \pdd{\{F, G\}}{q_i} = \left\{\pd{F}{q_i}, G\right\} + \left\{F, \pd{G}{q_i}\right\} &\\
+& \pdd{\{F, G\}}{p_i} = \left\{\pd{F}{p_i}, G\right\} + \left\{F, \pd{G}{p_i}\right\} &\\
+\end{flalign*}
+\end{enumerate}
+
+\begin{xmp}
+\begin{flalign*}
+& \begin{cases}
+\dot q = \pd{H}{p} \\
+\dot p = -\pd{H}{q} \\
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+\dot q_i = \{q_i, H\} \\
+\dot p_i = \{p_i, H\} \\
+\end{cases} &\\
+\end{flalign*}
+\end{xmp}
+
+\begin{ass}
+Функция $F(q, p, t)$ --- первый интеграл системы с гамильтонианом $H(q, p, t)$ тогда, и только тогда, когда
+\[
+	\pd{F}{t} + \{F, H\} = 0.
+\]
+\end{ass}
+\begin{proof}
+\begin{flalign*}
+& \pd{F}{t} = \left( \pd{F}{q}, \dot q \right) + \left( \pd{F}{p}, \dot p \right) + \pd{F}{t} = \{F, H\} + \pd{F}{t} &\\
+\end{flalign*}
+\end{proof}
+\begin{ntc}
+\[
+	\frac{dF}{dt} = 0 \Leftrightarrow \pd{F}{t} + \{F, H\} = 0
+\]
+\end{ntc}
+\begin{teo}[Якоби-Пуассона]
+Скобка Пуассона двух первых интегралов в уравнении Гамильтона также является первым интегралом этих уравнений.
+\end{teo}
+\begin{proof}
+Пусть $F_1$ и $F_2$ --- первые интегралы системы с гамильтонианом $H$.
+\begin{flalign*}
+& \pd{F_1}{t} + \{F_1, H\} = 0, \; \pd{F_2}{t} + \{F_2, H\} = 0 &\\
+& \pdd{\{F_1, F_2\}}{t} + \{\{F_1, F_2\}, H\} = \left\{ \pd{F_1}{t}, F_2 \right\} + \left\{ F_1, \pd{F_2}{t} \right\} - \{H, \{F_1, F_2\}\} = &\\
+& = \{F_2, \{F_1, H\}\} + \{F_1, \{H, F_2\} \} + \{H, \{F_1, F_2\}\} = 0 \Leftrightarrow \{F_1, F_2\} \text{ --- первый интеграл.} &\\
+\end{flalign*}
+\end{proof}
+
+\begin{flalign*}
+& L = \frac{1}{2}(A\dot q, \dot q) + (B, \dot q) - \Pi(q, t) &\\
+& H = \frac{1}{2}(A^{-1}(p - B), (p - B)) + \Pi(1, t) = \underbrace{\frac{1}{2}(A^{-1}p, p)}_{H_2} - \underbrace{(A^{-1}p, B)}_{H_1} + \underbrace{\Pi(q, t) + \frac{1}{2}(A^{-1}B, B)}_{H_0}
+\end{flalign*}
+
+\begin{ass}
+$H = H(q_1, \ldots, q_{n - 1}, p_1, \ldots, p_{n - 1}, f(q_n, p_n), t) \Rightarrow f(q_n, p_n) = const = \alpha$
+\end{ass}
+\begin{df}
+$q_n, p_n$ --- отделяющиеся переменные
+\end{df}
+\begin{proof}
+\begin{flalign*}
+& \pd{f}{t} + \{f, H\} = 0 + \pd{f}{q_n} \pd{H}{p_n} - \pd{f}{p_n}\pd{H}{q_n} = \pd{f}{q_n}\pd{H}{f}\pd{f}{p_n} - \pd{f}{p_n} \pd{H}{f} \pd{f}{q_n} = 0
+\end{flalign*}
+\end{proof}
