@@ -1,0 +1,44 @@
+\begin{flalign*}
+& L = L(q, \dot q, t) &\\
+& \gamma = \{q(t), t \in [t_1, t_2]\; q(t_1) = q_1,\; q(t_2) = q_2\} \text{ --- какая-то траектория} &\\
+& \Omega = \{q(t) \in C^2, t \in [t_1, t_2]\; q(t_1) = q_1,\; q(t_2) = q_2\} &\\
+& \gamma \in \Omega &\\
+\end{flalign*}
+
+\begin{df}
+Кривая, соответствующая решению уравнения Лагранжа системы с лагранжианом $L$ называется прямым путем системы. Остальные пути называются окольными.
+\end{df}
+\begin{ntc}
+Прямой путь не единственный.
+\end{ntc}
+\begin{df}
+$S$ --- функционал действия по Гамильтону
+\[
+	S = S(q(t))_{q(t) \in \Omega} = \int\limits_{t_1}^{t_2} L(q(t), \dot q(t), t) dt.
+\]
+\end{df}
+\begin{df}
+Семейство кривых $q^\varepsilon(t) = q(t, \varepsilon)^{t \in [t_1, t_2]}_{\varepsilon \in [-\varepsilon_0, \varepsilon_0]}, \; q^\varepsilon(t) \in \Omega$ --- вариация кривой $q(t)$, если 
+\begin{enumerate}
+\item $q(t_0) = q(t)\; \forall t \in [t_1, t_2]$,
+\item $q(\varepsilon, t_1) = q_1,\; q(\varepsilon, t_2) = q_2,\; \forall \varepsilon \in [-\varepsilon_0, \varepsilon_0]$.
+\end{enumerate}
+\end{df}
+\begin{df}
+$\delta S = \left( \frac{d}{d\varepsilon}\vert_{\varepsilon = 0} S(q^\varepsilon(t)) \right)\delta \varepsilon$ --- вариация функционала $S$, соответствующая $q(t)$ при вариации $q^\varepsilon(t)$.
+\end{df}
+
+\subsection{Принцип Гамильтона}
+\begin{ass}
+Вариация функционала действия на некотором пути равный нулю тогда, и только тогда, когда путь прямой.
+\[
+	\delta S = 0\; \forall q^\varepsilon(t) \Leftrightarrow \left.\left( \pdd{\pd{L}{\dot q}}{t} - \pd{L}{q} \right)\right|_{q = q^\varepsilon(t, 0)}
+\]
+\end{ass}
+\begin{proof}
+\begin{flalign*}
+& S(q^\varepsilon(t)) = \int\limits_{t_1}^{t_2}L(q^\varepsilon(t), \dot q^\varepsilon(t), t)dt &\\
+& \vdots &\
+\end{flalign*}
+MISSING
+\end{proof}
