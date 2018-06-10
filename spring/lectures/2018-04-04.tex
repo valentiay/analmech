@@ -1,0 +1,34 @@
+\begin{flalign*}
+	&(1)\begin{cases}
+		\tilde q = \tilde q(q, t, \alpha) \\
+		\tilde t = \tilde t(q, t, \alpha) \\
+	\end{cases}
+	\qquad
+	\det\pd{(\tilde q_1, \ldots, \tilde q_n, \tilde t)}{(q_1, \ldots, q_n, t)} \neq 0
+	&\\
+	& \tilde q(q, t, 0) = q,\; \tilde t(q, t, 0) = t,\ \tilde L(\tilde q, \tilde q', \tilde t) = L(\tilde q, \tilde q', \tilde t) &\\
+	& f = (\eta \cdot p) - \zeta H = const &\\
+	& p = \pd{L}{\dot q},\; \eta = \left.\pd{\tilde q}{\alpha}\right|_\alpha = 0,\; H = \left( \pd{L}{\dot q},\; \dot q \right) - L,\; \zeta = \left.\pd{\tilde t}{\alpha}\right|_\alpha = 0 &\\
+\end{flalign*}
+\begin{proof}
+\begin{flalign*}
+	& (1) \Rightarrow \begin{cases}
+		\tilde q = q + \alpha \eta + O_2(\alpha) \\
+		\tilde t = t + \alpha \zeta + O_2(\alpha) \\
+	\end{cases} (1') &\\
+	& \begin{cases}
+		q = \tilde q - \alpha \eta + O_2(\alpha) \\
+		t = \tilde t - \alpha \zeta + O_2(\alpha) \\
+	\end{cases} &\\
+	& \dot q = \frac{dq}{dt} = \frac{d}{dt}(\tilde q - \alpha \eta + O_2(\alpha)) = \frac{d\tilde q}{d\tilde t}\frac{d\tilde t}{dt} - \alpha \dot\eta + O_2(\alpha) = &\\
+	& = q'(1 + \alpha \dot \zeta) - \alpha \dot \eta + O_2(\alpha) &\\
+	& \dot q = \tilde q' + \alpha(\dot \zeta \tilde q' - \dot \eta) + O_2(\alpha) = \tilde q' + \alpha(\zeta \dot q - \dot \eta) + O_2(\alpha) \quad (2) &\\
+	& \tilde L(\tilde q, \tilde q', \tilde t) = L(q, \dot q, t)|_{(1'),(2)} \cdot \frac{d t}{d \tilde t} = &\\
+	& = L(\tilde q - \alpha \eta + O_2,\; \tilde q' + \alpha(\zeta\dot q - \dot \eta) + O_2,\; \tilde t - \alpha \zeta + O_2)\cdot \frac{dt}{d \tilde t} = &\\
+	& = \left( L(\tilde q, \tilde q', \tilde t) + \alpha \left[ \left( \pd{L}{q}, -\eta \right) + \left( \pd{L}{\dot q}, \zeta \dot q - \dot \eta \right) + \pd{L}{t}(-\zeta)\right] + O_2\right)(1 - \alpha\dot \zeta + O_2) = &\\
+	& = L(\tilde q, \tilde q', \tilde t) + \alpha\left[ -\left( \frac{d}{dt}\pd{L}{\dot q}, \eta \right) - \left( \pd{L}{\dot q}, \dot \eta \right) + \dot \zeta\left( \pd{L}{\dot q}, \dot q \right) - \dot \zeta L - \pd{L}{t}\zeta\right] + O_2 = &\\
+	& = L(\tilde q ,\tilde q', \tilde t) + \alpha\left[ -(\dot p, \eta) - (p, \dot \eta) + \dot \zeta H + \pd{H}{t} \zeta\right] + O_2 = &\\
+	& L(\tilde q, \tilde q', \tilde t) - \alpha \frac{d}{dt}f + O_2(\alpha) = L(\tilde q, \tilde q', \tilde t) &\\
+	& \left.\frac{d}{d\alpha}\right|_{\alpha = 0} \Leftrightarrow \frac{f}{t} = 0 \Leftrightarrow f = const &\\
+\end{flalign*}
+\end{proof}
