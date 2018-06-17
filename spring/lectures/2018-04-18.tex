@@ -1,0 +1,170 @@
+\begin{flalign*}
+	& (1) \begin{cases}
+		\dot q = \pd{H}{p} \\
+		\dot p = -\pd{H}{q} \\
+	\end{cases}
+	\qquad
+	(2) \begin{cases}
+		\tilde q = \tilde q(q,\; p,\; t) \\
+		\tilde p = \tilde p(q,\; p,\; t) \\
+	\end{cases} &\\
+\end{flalign*}
+\begin{teo}
+	$(2)$ канонично тогда, и только тогда, когда $\exists c\neq 0,\; F(q, p, t):$
+	\[
+		c((p, dq) - Hdt) = (\tilde p, d\tilde q) - \tilde Hdt + dF \qquad(3)
+	\]
+\end{teo}
+\begin{df}
+	Если $c = 1$, преобразование унивалентно. 
+\end{df}
+\begin{flalign*}
+	& dF = \left( \pd{F}{q}, dq \right) + \left( \pd{F}{p}, dp \right) + \pd{F}{t}dt = \delta F + \pd{F}{t}dt &\\
+	& dq = \delta q &\\
+	& d\tilde q = \delta \tilde q + \pd{\tilde q}{t}dt &\\
+	& (3) \Rightarrow c((p, \delta q) - Hdt) = (\tilde p, \delta \tilde q) + \left( \tilde p, \pd{\tilde q}{t} \right)dt - \tilde Hdt + \delta F + \pd{F}{t}dt \Leftrightarrow &\\
+	& \Leftrightarrow \begin{cases}
+		-cH = \left( \tilde p, \pd{\tilde q}{t} \right)  - \tilde H + \pd{F}{t} \\
+		c(p, \delta q) = (\tilde p, \delta \tilde q) + \delta F \\
+	\end{cases} \Leftrightarrow
+	\tilde H = cH + \left(\tilde p, \pd{\tilde q}{t}\right) + \pd{F}{t}
+\end{flalign*}
+\begin{cor}
+	Преобразование $(2)$ канонично тогда, и только тогда, когда $\exists c \neq 0,\; F:$
+	\[
+		c(p, \delta q) = (\tilde p, \delta\tilde q) + \delta F \qquad(3')
+	\]
+\end{cor}
+\begin{cor}
+	$\tilde H = cH + \left( \tilde p, \pd{\tilde q}{t} \right) + \pd{F}{t}$--- правило преобразований Гамильтона
+\end{cor}
+Рассмотрим $z = (q_1,\ldots, q_n, p_1, \ldots, p_n)^T$
+\begin{flalign*}
+	& (1) \Leftrightarrow \dot z = J\pd{H}{z} \qquad J = \left( \begin{matrix}
+		0 & E_n \\
+		-E_n & 0 \\
+	\end{matrix} \right) &\\
+\end{flalign*}
+\begin{df}
+	$J$ --- симплектическая единица.
+\end{df}
+\begin{flalign*}
+	& J^T = J^{-1} = -J; \quad J^2 = -E_{2n}; \quad \det J = 1 &\\
+	& \text{Пусть } \tilde z = \tilde z (z,\; q) &\\
+	& M = \pd{\tilde z}{z} = \pd{(\tilde q, \tilde p)}{(q, p)} = \left( \begin{matrix}
+		\pd{\tilde q_1}{q_1} & \ldots & \pd{\tilde q_n}{q_1} & \pd{\tilde p_1}{q_1} & \ldots & \pd{\tilde p_n}{q_1} \\
+		\vdots & \ddots & \vdots & \vdots & \ddots & \vdots \\
+		\pd{\tilde q_1}{q_n} & \ldots & \pd{\tilde q_n}{q_n} & \pd{\tilde p_1}{q_n} & \ldots & \pd{\tilde p_n}{q_n} \\
+		\pd{\tilde q_1}{p_1} & \ldots & \pd{\tilde q_n}{p_1} & \pd{\tilde p_1}{p_1} & \ldots & \pd{\tilde p_n}{p_1} \\
+		\vdots & \ddots & \vdots & \vdots & \ddots & \vdots \\	
+		\pd{\tilde q_1}{p_n} & \ldots & \pd{\tilde q_n}{p_n} & \pd{\tilde p_1}{p_n} & \ldots & \pd{\tilde p_n}{p_n} \\
+	\end{matrix} \right) &\\
+	& \det M \neq 0 &\\
+	& I.(3')\; c(p, \delta q) = \left( \tilde p, \pd{\tilde q}{q}\delta q + \pd{\tilde q}{p}\delta p \right) + \left( \pd{F}{q}, \delta q \right) + \left( \pd{F}{p}, \delta p \right) &\\
+	& \pd{F}{q_j} = cp_i - \left( \tilde p, \pd{\tilde q}{q_i} \right),\; i = 1,\ldots, n &\\
+	& \pd{F}{p_j} = -\left( \tilde p, \pd{\tilde q}{p_j} \right),\; j = 1,\ldots, n &\\
+	& \text{Так как предполагаем, что } F \in C^2: &\\
+	& \frac{\partial^2 F}{\partial p_j\partial q_i} = \frac{\partial^2 F}{\partial q_i \partial p_j} \Leftrightarrow 0 - \left( \pd{\tilde p}{q_j}, \pd{\tilde q}{q_i} \right) - \left( \tilde p, \frac{\partial^2 \tilde q}{\partial q_j\partial q_i} \right) = -\left( \pd{\tilde p}{q_i}, \pd{\tilde q}{p_j} \right) - \left( \tilde p, \frac{\partial^2 \tilde q}{\partial q_i \partial q_j} \right) \Leftrightarrow &\\
+	& \Leftrightarrow \left( \pd{\tilde q}{q_i}, \pd{\tilde p}{q_j} \right) - \left( \pd{\tilde q}{q_j}, \pd{\tilde p}{q_i} \right) = 0 \qquad (4) &\\
+	& \frac{\partial^2 F}{\partial p_i\partial p_j} = \frac{\partial^2 F}{\partial p_j \partial p_i} \Leftrightarrow \left( \pd{\tilde q}{p_i}, \pd{\tilde p}{p_j}, \pd{\tilde p}{p_i} \right) = 0 \qquad (5) &\\
+	& \frac{\partial^2 F}{\partial p_j\partial q_i} = \frac{\partial^2 F}{\partial q_i \partial p_j} \Leftrightarrow c\delta_{ij} - \left( \pd{\tilde p}{p_j}, \pd{\tilde q}{q_i} \right) - \cancel{\left(\tilde p, \frac{\partial^2 \tilde q}{\partial p_j \partial q_i} \right)} = -\left( \pd{\tilde p}{q_i}, \pd{\tilde q}{p_j} \right) - \cancel{\left( \tilde p, \frac{\partial^2 \tilde q}{\partial q_i \partial p_j} \right)} \Leftrightarrow &\\
+	& \Leftrightarrow \left( \pd{\tilde q}{q_i}, \pd{\tilde p}{p_j} \right) - \left( \pd{\tilde q}{p_j}, \pd{\tilde p}{q_i} \right) = c\delta_{ij} \qquad (6) &\\
+\end{flalign*}
+\begin{flalign*}
+	& II.\; M^TJM = \left( \begin{matrix}
+		\left( \pd{\tilde q}{q} \right)^T & \left( \pd{\tilde q}{p} \right)^T \\
+		\left( \pd{\tilde p}{q} \right)^T & \left( \pd{\tilde p}{p} \right)^T \\
+	\end{matrix} \right)\left( \begin{matrix}
+		0 & E_n \\
+		-E_n & 0 \\
+	\end{matrix} \right)\left( \begin{matrix}
+		\pd{\tilde q}{q} & \pd{\tilde q}{p} \\
+		\pd{\tilde p}{q} & \pd{\tilde p}{p} \\
+	\end{matrix} \right) = \left( \begin{matrix}
+		\left( \pd{\tilde q}{q} \right)^T & \left( \pd{\tilde q}{p} \right)^T \\
+		\left( \pd{\tilde p}{q} \right)^T & \left( \pd{\tilde p}{p} \right)^T \\
+	\end{matrix} \right)\left( \begin{matrix}
+		\pd{\tilde q}{q} & \pd{\tilde q}{p} \\
+		-\pd{\tilde p}{q} & -\pd{\tilde p}{p} \\
+	\end{matrix} \right) &\\
+	& (M^TJM)_{i,j} = \left( \pd{\tilde q_i}{q}, \pd{\tilde q_j}{p} \right) - \left( \pd{\tilde q_i}{p}, \pd{\tilde q_j}{q} \right) = \{\tilde q_i, \tilde q_j\} &\\
+	& (M^TJM)_{i,n+j} = \left( \pd{\tilde q_i}{q}, \pd{\tilde p_j}{p} \right) - \left( \pd{\tilde p_i}{q}, \pd{\tilde q_j}{p} \right) = \{\tilde q_i, \tilde p_j\} &\\
+	& (M^TJM)_{n+i,j} = \{\tilde p_i, \tilde q_j\} &\\
+	& (M^TJM)_{n+i,n+j} = \{\tilde p_i, \tilde p_j\} &\\
+\end{flalign*}
+\begin{ass}
+	$M^TJM = cJ,\; c \neq 0 \Leftrightarrow MJM^T = cJ,\; c \neq 0$
+\end{ass}
+\begin{proof}
+	\begin{flalign*}
+		& J = c\left(M^T\right)^{-1}JM^{-1} = c\left(MJ^{-1}M^T\right)^{-1} &\\
+		& J^{-1} = \frac{1}{c}MJ^{-1}M^T \Rightarrow MJM^T = cJ &\\
+	\end{flalign*}
+\end{proof}
+\begin{teo}
+	Преобразование канонично тогда, и только тогда, когда $\exists c \neq 0: MJM^T = cJ$.
+\end{teo}
+\begin{proof}
+	\begin{flalign*}
+		& I.\; (3') \Leftrightarrow (4), (5), (6) &\\
+		& II.\; (MJM^T)_{i,j} = \left( \pd{\tilde q}{q_i}, \pd{\tilde q}{q_j} \right) - \left( \pd{\tilde p}{q_i}, \pd{\tilde q}{q_j} \right) = 0 \Leftarrow (4) &\\
+		& (MJM^T)_{i,n+j} = \left( \pd{\tilde q}{q_i}, \pd{\tilde p}{p_j} \right) - \left( \pd{\tilde q}{p_i}, \pd{\tilde p}{q_j} \right) = c\delta_{ij} \Leftrightarrow (6) &\\
+		& (MJM^T)_{n+i,j} = \ldots = -c\delta_{ij} &\\
+		& (MJM^T)_{n+i,n+j} = 0 \Leftrightarrow (5) &\\
+	\end{flalign*}
+\end{proof}
+\begin{teo}
+	Преобразование канонично тогда, и только тогда, когда $\exists c \neq 0$:
+	\[
+		\{\tilde q_i, \tilde q_j\} = \{\tilde p_i,\tilde p_j\} = 0,\; \{\tilde q_i,\tilde p_j\} = c\delta_{ij}
+	\]
+\end{teo}
+\begin{proof}
+	\begin{flalign*}
+		& MJM^T = cJ \Leftrightarrow M^TJM = cJ \Leftrightarrow \ldots &\\
+	\end{flalign*}
+\end{proof}
+\begin{df}
+	Если $M^TJM = J$, то $M$ --- симплектическая. Если $M^TJM = cJ,\; c \neq 0$, то $M$ --- обобщенно симлектическая.
+\end{df}
+\begin{ntc}
+	$(\det M)^2 = \det(M^TJM) = \det(cJ) = c^{2n}$, $\det M \neq 0 \Leftrightarrow c \neq 0$.
+\end{ntc}
+\begin{xmp}
+	$\tilde q = q,\; \tilde p = p \Leftrightarrow M = E \Rightarrow$ преобразование канонично (унивалентно).
+\end{xmp}
+\begin{ass}
+	Если $M$ --- обобщенная симлектическая, то $M^{-1}$ обобщенная симплектическая (обратное преобразование каноническое).
+\end{ass}
+\begin{proof}
+	\begin{flalign*}
+		& \left(M^{-1}\right)^TJM^{-1} = -\left(MJM^T\right)^{-1} = cJ \Leftrightarrow MJM^T = c'J,\; c = \frac{1}{c} &\\
+	\end{flalign*}
+\end{proof}
+\begin{ass}
+	Композиция канонических преобразований канонична.
+\end{ass}
+\begin{proof}
+	\begin{flalign*}
+		& z \rightarrow z_1 = z_1(z, t),\; M_1 = \pd{z_1}{z},\; M_1^TJM = c_1J &\\
+		& z_1 \rightarrow z_2 = z_2(z_1, t),\; M_2 = \pd{z_2}{z},\; M_2^TJM_2 = c_2J &\\
+		& \tilde z = z_2(z_1(z, t), t) &\\
+		& \pd{\tilde z}{z} = \pd{z_2}{z},\; \pd{z_1}{z} = M_2M_1 &\\
+		& (M_2M_1)^TJ(M_2M_1) = M_1^T\underbrace{M_2^TJM_2}_{c_2J}M_1 = c_2M_1^TJM_1 = c_1c_2J = cJ,\; c= c_1c_2 \neq 0 &\\
+	\end{flalign*}
+\end{proof}
+\begin{cor}
+	Множество симплистических матриц (множество канонических преобразований) образуют группу.
+\end{cor}
+\begin{xmp}
+	\begin{flalign*}
+		& \dot z = J\pd{H}{z},\; z = z(z_0, t) &\\
+		& M = \pd{z}{z_0} &\\
+		& \frac{d}{dt}M = \frac{d}{dt}\left( \pd{z}{z_0} \right) = \pdd{J\pd{H}{z}}{z_0} = J\pd{^2 H}{z^2}\pd{z}{z_0} = J\pd{^2H}{z^2}H &\\
+		& \dot{(M^T)} = M^T\pd{^2 H}{z^2}J^T &\\
+		& \dot{(M^TJM)} = 0 \Rightarrow M^TJM = const = 1, \text{ т.к. } M\vert_{t = 0} = \pd{z_0}{z_0} = 1 &\\ 
+	\end{flalign*}
+\end{xmp}
+\begin{cor}
+	Определитель $\det M = 1 \Rightarrow$ фазовый поток сохраняется ($V = const$).
+\end{cor}
