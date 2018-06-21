@@ -1,0 +1,432 @@
+<?xml version="1.0"?>
+<!DOCTYPE ipe SYSTEM "ipe.dtd">
+<ipe version="70206" creator="Ipe 7.2.7">
+<info created="D:20180621230518" modified="D:20180621230518"/>
+<ipestyle name="basic">
+<symbol name="arrow/arc(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/farc(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/ptarc(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/fptarc(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="mark/circle(sx)" transformations="translations">
+<path fill="sym-stroke">
+0.6 0 0 0.6 0 0 e
+0.4 0 0 0.4 0 0 e
+</path>
+</symbol>
+<symbol name="mark/disk(sx)" transformations="translations">
+<path fill="sym-stroke">
+0.6 0 0 0.6 0 0 e
+</path>
+</symbol>
+<symbol name="mark/fdisk(sfx)" transformations="translations">
+<group>
+<path fill="sym-fill">
+0.5 0 0 0.5 0 0 e
+</path>
+<path fill="sym-stroke" fillrule="eofill">
+0.6 0 0 0.6 0 0 e
+0.4 0 0 0.4 0 0 e
+</path>
+</group>
+</symbol>
+<symbol name="mark/box(sx)" transformations="translations">
+<path fill="sym-stroke" fillrule="eofill">
+-0.6 -0.6 m
+0.6 -0.6 l
+0.6 0.6 l
+-0.6 0.6 l
+h
+-0.4 -0.4 m
+0.4 -0.4 l
+0.4 0.4 l
+-0.4 0.4 l
+h
+</path>
+</symbol>
+<symbol name="mark/square(sx)" transformations="translations">
+<path fill="sym-stroke">
+-0.6 -0.6 m
+0.6 -0.6 l
+0.6 0.6 l
+-0.6 0.6 l
+h
+</path>
+</symbol>
+<symbol name="mark/fsquare(sfx)" transformations="translations">
+<group>
+<path fill="sym-fill">
+-0.5 -0.5 m
+0.5 -0.5 l
+0.5 0.5 l
+-0.5 0.5 l
+h
+</path>
+<path fill="sym-stroke" fillrule="eofill">
+-0.6 -0.6 m
+0.6 -0.6 l
+0.6 0.6 l
+-0.6 0.6 l
+h
+-0.4 -0.4 m
+0.4 -0.4 l
+0.4 0.4 l
+-0.4 0.4 l
+h
+</path>
+</group>
+</symbol>
+<symbol name="mark/cross(sx)" transformations="translations">
+<group>
+<path fill="sym-stroke">
+-0.43 -0.57 m
+0.57 0.43 l
+0.43 0.57 l
+-0.57 -0.43 l
+h
+</path>
+<path fill="sym-stroke">
+-0.43 0.57 m
+0.57 -0.43 l
+0.43 -0.57 l
+-0.57 0.43 l
+h
+</path>
+</group>
+</symbol>
+<symbol name="arrow/fnormal(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/pointed(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/fpointed(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/linear(spx)">
+<path stroke="sym-stroke" pen="sym-pen">
+-1 0.333 m
+0 0 l
+-1 -0.333 l
+</path>
+</symbol>
+<symbol name="arrow/fdouble(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+-1 0 m
+-2 0.333 l
+-2 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/double(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+-1 0 m
+-2 0.333 l
+-2 -0.333 l
+h
+</path>
+</symbol>
+<pen name="heavier" value="0.8"/>
+<pen name="fat" value="1.2"/>
+<pen name="ultrafat" value="2"/>
+<symbolsize name="large" value="5"/>
+<symbolsize name="small" value="2"/>
+<symbolsize name="tiny" value="1.1"/>
+<arrowsize name="large" value="10"/>
+<arrowsize name="small" value="5"/>
+<arrowsize name="tiny" value="3"/>
+<color name="red" value="1 0 0"/>
+<color name="green" value="0 1 0"/>
+<color name="blue" value="0 0 1"/>
+<color name="yellow" value="1 1 0"/>
+<color name="orange" value="1 0.647 0"/>
+<color name="gold" value="1 0.843 0"/>
+<color name="purple" value="0.627 0.125 0.941"/>
+<color name="gray" value="0.745"/>
+<color name="brown" value="0.647 0.165 0.165"/>
+<color name="navy" value="0 0 0.502"/>
+<color name="pink" value="1 0.753 0.796"/>
+<color name="seagreen" value="0.18 0.545 0.341"/>
+<color name="turquoise" value="0.251 0.878 0.816"/>
+<color name="violet" value="0.933 0.51 0.933"/>
+<color name="darkblue" value="0 0 0.545"/>
+<color name="darkcyan" value="0 0.545 0.545"/>
+<color name="darkgray" value="0.663"/>
+<color name="darkgreen" value="0 0.392 0"/>
+<color name="darkmagenta" value="0.545 0 0.545"/>
+<color name="darkorange" value="1 0.549 0"/>
+<color name="darkred" value="0.545 0 0"/>
+<color name="lightblue" value="0.678 0.847 0.902"/>
+<color name="lightcyan" value="0.878 1 1"/>
+<color name="lightgray" value="0.827"/>
+<color name="lightgreen" value="0.565 0.933 0.565"/>
+<color name="lightyellow" value="1 1 0.878"/>
+<dashstyle name="dashed" value="[4] 0"/>
+<dashstyle name="dotted" value="[1 3] 0"/>
+<dashstyle name="dash dotted" value="[4 2 1 2] 0"/>
+<dashstyle name="dash dot dotted" value="[4 2 1 2 1 2] 0"/>
+<textsize name="large" value="\large"/>
+<textsize name="Large" value="\Large"/>
+<textsize name="LARGE" value="\LARGE"/>
+<textsize name="huge" value="\huge"/>
+<textsize name="Huge" value="\Huge"/>
+<textsize name="small" value="\small"/>
+<textsize name="footnote" value="\footnotesize"/>
+<textsize name="tiny" value="\tiny"/>
+<textstyle name="center" begin="\begin{center}" end="\end{center}"/>
+<textstyle name="itemize" begin="\begin{itemize}" end="\end{itemize}"/>
+<textstyle name="item" begin="\begin{itemize}\item{}" end="\end{itemize}"/>
+<gridsize name="4 pts" value="4"/>
+<gridsize name="8 pts (~3 mm)" value="8"/>
+<gridsize name="16 pts (~6 mm)" value="16"/>
+<gridsize name="32 pts (~12 mm)" value="32"/>
+<gridsize name="10 pts (~3.5 mm)" value="10"/>
+<gridsize name="20 pts (~7 mm)" value="20"/>
+<gridsize name="14 pts (~5 mm)" value="14"/>
+<gridsize name="28 pts (~10 mm)" value="28"/>
+<gridsize name="56 pts (~20 mm)" value="56"/>
+<anglesize name="90 deg" value="90"/>
+<anglesize name="60 deg" value="60"/>
+<anglesize name="45 deg" value="45"/>
+<anglesize name="30 deg" value="30"/>
+<anglesize name="22.5 deg" value="22.5"/>
+<opacity name="10%" value="0.1"/>
+<opacity name="30%" value="0.3"/>
+<opacity name="50%" value="0.5"/>
+<opacity name="75%" value="0.75"/>
+<tiling name="falling" angle="-60" step="4" width="1"/>
+<tiling name="rising" angle="30" step="4" width="1"/>
+</ipestyle>
+<page>
+<layer name="alpha"/>
+<view layers="alpha" active="alpha"/>
+<path layer="alpha" stroke="black">
+96 224 m
+96 352 l
+</path>
+<path stroke="black">
+32 0 0 32 96 288 e
+</path>
+<path stroke="black">
+88 352 m
+88 328 l
+</path>
+<path stroke="black">
+104 352 m
+104 328 l
+</path>
+<path stroke="black">
+88 240 m
+88 216 l
+104 216 l
+104 240 l
+</path>
+<path stroke="black">
+104 344 m
+112 352 l
+112 352 l
+</path>
+<path stroke="black">
+104 336 m
+112 344 l
+</path>
+<path stroke="black">
+104 328 m
+112 336 l
+</path>
+<path stroke="black">
+80 328 m
+88 336 l
+</path>
+<path stroke="black">
+80 336 m
+88 344 l
+</path>
+<path stroke="black">
+80 344 m
+88 352 l
+</path>
+<path stroke="black">
+80 232 m
+88 240 l
+</path>
+<path stroke="black">
+80 224 m
+88 232 l
+</path>
+<path stroke="black">
+80 216 m
+88 224 l
+88 224 l
+</path>
+<path stroke="black">
+80 208 m
+88 216 l
+</path>
+<path stroke="black">
+88 208 m
+96 216 l
+</path>
+<path stroke="black">
+96 208 m
+112 224 l
+</path>
+<path stroke="black">
+104 208 m
+112 216 l
+</path>
+<path stroke="black">
+104 224 m
+112 232 l
+</path>
+<path stroke="black">
+104 232 m
+112 240 l
+</path>
+<path stroke="black">
+96 288 m
+118.996 265.747 l
+</path>
+<path stroke="black">
+96 272.302 m
+104 264
+107.339 277.027 c
+</path>
+<path stroke="black" arrow="normal/normal">
+64 328 m
+96 308.663
+128 328 c
+</path>
+<text transformations="translations" pos="136 328" stroke="black" type="label" width="7.718" height="5.147" depth="0" valign="baseline" size="large" style="math">\omega</text>
+<text matrix="1 0 0 1 8.95854 0" transformations="translations" pos="80 272" stroke="black" type="label" width="5.6" height="5.147" depth="0" valign="baseline" size="large" style="math">r</text>
+<text matrix="1 0 0 1 3.16184 6.32368" transformations="translations" pos="99.9107 256.24" stroke="black" type="label" width="7.668" height="5.152" depth="2.32" valign="baseline" size="large" style="math">\varphi</text>
+<path stroke="black" arrow="normal/normal">
+176 288 m
+336 288 l
+</path>
+<path stroke="black" arrow="normal/normal">
+184 224 m
+184 352 l
+</path>
+<path stroke="black">
+104 360 m
+104 352 l
+104 352 l
+</path>
+<path stroke="black">
+104 352 m
+112 360 l
+</path>
+<path stroke="black">
+80 352 m
+88 360 l
+88 352 l
+</path>
+<path stroke="black">
+184 336 m
+320 336 l
+</path>
+<path stroke="black">
+184 240 m
+320 240 l
+</path>
+<text transformations="translations" pos="344 288" stroke="black" type="label" width="7.718" height="5.147" depth="0" valign="baseline" size="large" style="math">\omega</text>
+<text transformations="translations" pos="192 344" stroke="black" type="label" width="7.668" height="5.152" depth="2.32" valign="baseline" size="large" style="math">\varphi</text>
+<text transformations="translations" pos="208 336" stroke="black" type="label" width="9.298" height="6.98" depth="0.99" valign="baseline" size="large" style="math">-</text>
+<text transformations="translations" pos="232 336" stroke="black" type="label" width="9.298" height="6.98" depth="0.99" valign="baseline" size="large" style="math">-</text>
+<text transformations="translations" pos="256 336" stroke="black" type="label" width="9.298" height="6.98" depth="0.99" valign="baseline" size="large" style="math">-</text>
+<text transformations="translations" pos="280 336" stroke="black" type="label" width="9.298" height="6.98" depth="0.99" valign="baseline" size="large" style="math">-</text>
+<text transformations="translations" pos="304 336" stroke="black" type="label" width="9.298" height="6.98" depth="0.99" valign="baseline" size="large" style="math">-</text>
+<text transformations="translations" pos="208 232" stroke="black" type="label" width="9.298" height="6.98" depth="0.99" valign="baseline" size="large" style="math">-</text>
+<text transformations="translations" pos="232 232" stroke="black" type="label" width="9.298" height="6.98" depth="0.99" valign="baseline" size="large" style="math">-</text>
+<text transformations="translations" pos="256 232" stroke="black" type="label" width="9.298" height="6.98" depth="0.99" valign="baseline" size="large" style="math">-</text>
+<text transformations="translations" pos="280 232" stroke="black" type="label" width="9.298" height="6.98" depth="0.99" valign="baseline" size="large" style="math">-</text>
+<text transformations="translations" pos="304 232" stroke="black" type="label" width="9.298" height="6.98" depth="0.99" valign="baseline" size="large" style="math">-</text>
+<text transformations="translations" pos="200 288" stroke="black" type="label" width="9.105" height="6.894" depth="0.91" valign="baseline" size="large" style="math">+</text>
+<text transformations="translations" pos="224 288" stroke="black" type="label" width="9.105" height="6.894" depth="0.91" valign="baseline" size="large" style="math">+</text>
+<text transformations="translations" pos="280 288" stroke="black" type="label" width="9.298" height="6.98" depth="0.99" valign="baseline" size="large" style="math">-</text>
+<text transformations="translations" pos="304 288" stroke="black" type="label" width="9.298" height="6.98" depth="0.99" valign="baseline" size="large" style="math">-</text>
+<text transformations="translations" pos="168 240" stroke="black" type="label" width="16.368" height="6.98" depth="0.99" valign="baseline" size="large" style="math">-\pi</text>
+<text matrix="1 0 0 1 8 8" transformations="translations" pos="168 328" stroke="black" type="label" width="7.069" height="5.147" depth="0" valign="baseline" size="large" style="math">\pi</text>
+<text matrix="1 0 0 1 -8 64" transformations="translations" pos="200 256" stroke="black" type="label" width="35.265" height="10.244" depth="5.67" valign="baseline" size="large" style="math">\frac{\partial \Pi}{\partial \varphi} &gt; 0</text>
+<text matrix="1 0 0 1 0 -48" transformations="translations" pos="200 256" stroke="black" type="label" width="35.265" height="10.244" depth="5.67" valign="baseline" size="large" style="math">\frac{\partial \Pi}{\partial \varphi} &gt; 0</text>
+<text matrix="1 0 0 1 -8 -8" transformations="translations" pos="200 256" stroke="black" type="label" width="35.265" height="10.244" depth="5.67" valign="baseline" size="large" style="math">\frac{\partial \Pi}{\partial \varphi} &lt; 0</text>
+<text matrix="1 0 0 1 0 104" transformations="translations" pos="200 256" stroke="black" type="label" width="35.265" height="10.244" depth="5.67" valign="baseline" size="large" style="math">\frac{\partial \Pi}{\partial \varphi} &lt; 0</text>
+<text matrix="1 0 0 1 -16 0" transformations="translations" pos="232 272" stroke="black" type="label" width="34.904" height="9.477" depth="4.12" valign="baseline" size="large" style="math">\omega^2 = \frac{g}{r}</text>
+<path stroke="black">
+320 312 m
+184 288
+320 264 c
+</path>
+<use name="mark/disk(sx)" pos="252 288" size="normal" stroke="black"/>
+<text transformations="translations" pos="264 264" stroke="black" type="label" width="9.105" height="6.894" depth="0.91" valign="baseline" size="large" style="math">+</text>
+<text transformations="translations" pos="296 256" stroke="black" type="label" width="9.105" height="6.894" depth="0.91" valign="baseline" size="large" style="math">+</text>
+<text transformations="translations" pos="264 304" stroke="black" type="label" width="9.105" height="6.894" depth="0.91" valign="baseline" size="large" style="math">+</text>
+<text transformations="translations" pos="296 312" stroke="black" type="label" width="9.105" height="6.894" depth="0.91" valign="baseline" size="large" style="math">+</text>
+<path stroke="black" dash="dashed">
+184 264 m
+320 264 l
+</path>
+<path stroke="black" dash="dashed">
+184 312 m
+320 312 l
+</path>
+<text transformations="translations" pos="168 264" stroke="black" type="label" width="16.838" height="8.141" depth="4.12" valign="baseline" size="large" style="math">-\frac{\pi}{2}</text>
+<text matrix="1 0 0 1 8 8" transformations="translations" pos="168 304" stroke="black" type="label" width="7.54" height="8.141" depth="4.12" valign="baseline" size="large" style="math">\frac{\pi}{2}</text>
+<text transformations="translations" pos="168 288" stroke="black" type="label" width="5.853" height="7.704" depth="0" valign="baseline" size="large" style="math">0</text>
+</page>
+</ipe>

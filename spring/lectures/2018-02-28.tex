@@ -94,14 +94,94 @@
 \end{proof}
 
 \begin{xmp}
-MISSING
+\begin{flalign*}
+	& \ddot x = 0,\; x = 0 \text{ --- неустойчиво.} &\\
+	& \ddot x = -k\dot x,\; k > 0 &\\
+	& \lambda^2 + k\lambda = 0 \Rightarrow \begin{cases}
+		\lambda = 0 \\
+		\lambda = -k < 0 \\
+	\end{cases}&\\
+	& \ddot x = 0,\; x = 0 \text{ --- неустойчиво.} &\\
+	& \ddot x = -k\dot x,\; k > 0 &\\
+	& \lambda^2 + k\lambda = 0 \Rightarrow \begin{cases}
+		\lambda = 0 \\
+		\lambda = -k < 0 \\
+	\end{cases}&\\
+	& x = 0 \text{ --- устойчиво.} &\\
+\end{flalign*}
+\end{xmp}
+\begin{xmp}[Гироскопическая стабильность]
+	\begin{flalign*}
+		& T = \frac{\dot x^2 + \dot y^2}{2} \qquad \Pi = -\frac{x^2 + y^2}{2} \qquad \v Q^* = \alpha \dot y \v e_x - \alpha \dot x \v e_y &\\
+		& (\v Q^*,\dv q) = \alpha \dot y\dot x - \alpha \dot x\dot y = 0 &\\
+		& \begin{cases}
+			\ddot x - x = \alpha \dot y \\
+			\ddot y - y = -\alpha \dot x \\
+		\end{cases} \qquad \left( \dv x = A\v x,\ \det(A - \lambda E) = 0 \right) &\\
+		& A\ddot{\v x} + B\dv x + C \v x = 0 &\\
+		& \det(A\lambda^2 + B\lambda + C) = 0 &\\
+		& A = \left( \begin{matrix}
+			1 & 0 \\
+			0 & 1 \\
+		\end{matrix} \right) \qquad B = \left( \begin{matrix}
+			0 & -2 \\
+			2 & 0 \\
+		\end{matrix} \right) \qquad C = \left( \begin{matrix}
+			-1 & 0 \\
+			0 & -1 \\
+		\end{matrix} \right) &\\
+		& \det(A\lambda^2 + B\lambda + C) = \begin{vmatrix}
+			\lambda^2 - 1 & -2\lambda \\
+			2\lambda & \lambda^2 - 1 \\
+		\end{vmatrix} = \lambda^4 - 2\lambda^2 + 1 + \alpha ^2\lambda^2 &\\
+		& \left[ \begin{array}{l}
+			\lambda^2 = -2 \\
+			\lambda^2 = -\frac{1}{2} \\
+		\end{array} \right. \qquad \begin{array}{l}
+			\lambda = \pm \sqrt 2 i \\
+			\lambda = \pm \frac{\sqrt 2}{2}i \\
+		\end{array} &\\
+		& x = y = 0 \text{ --- устойчивое.} &\\
+	\end{flalign*}
 \end{xmp}
 
 \subsection{Элементы теории бифуркации}
 \begin{flalign*}
 & \dv x = \v f(\v x, \alpha),\; \v x \in \R^{n},\; \alpha \in \R^n &\\
 & \text{Кривые равновесий } \v x = \v x(\alpha): \v f(\v x(\alpha), \alpha) = 0 &\\
-& \text{Точка бифуркации } (\v x_*, \alpha_*): \left.\pd{\v f}{\v x} \right|_{\v x = \v x^*(\alpha_x), \; \alpha = \alpha_*} = 0
+& \text{Точка бифуркации } (\v x_*, \alpha_*): \left.\pd{\v f}{\v x} \right|_{\v x = \v x^*(\alpha_*), \; \alpha = \alpha_*} = 0
 \end{flalign*}
 
-MISSING
+\begin{figure}[H]
+	\includegraphics{4_1.eps}
+\end{figure}
+\begin{flalign*}
+	& \underline{n = 1}\quad \dot x = f(x,\;\alpha) &\\
+	& \dot x = f'_x(x - x(\alpha)) + O_2(x - x(\alpha)) &\\
+	& \lambda = f_x' > 0 \Rightarrow x = x(\alpha) \text{ --- неустойчиво.} &\\
+	& \lambda = f_x' < 0 \Rightarrow x = x(\alpha) \text{ --- устойчиво.} &\\
+	& \lambda = f_x' = 0 \Rightarrow \text{бифуркация.} &\\
+\end{flalign*}
+\subsubsection*{Основные типы бифуркаций.}
+\begin{figure}[H]
+	\includegraphics{4_2.eps}
+	\caption*{1) Смена устойчивости, 2) вилка, 3) складка.}
+\end{figure}
+\begin{flalign*}
+	& \frac{d}{dt}\pd{L}{\dv q} - \pd{L}{\v q} = 0 \qquad L = \frac{1}{2}\left( A(q)\dv q,\; \dv q \right) - \Pi(\v q,\; \alpha) &\\
+	& \text{Кривая равновесия } \left.\pd{\Pi}{\v q}\right|_{\v q = \v q(\alpha)} = 0 &\\
+	& \text{Точка бифуркации } \det\left( \left.\pd{^2 \Pi}{\v q^2}\right|_{\v q_* = \v q(\alpha_*), \alpha = \alpha_*} \right) = 0 &\\
+	& \underline{n = 1}\quad a\ddot q + bq = 0,\; b = \pd{^2 \Gamma}{q^2} &\\
+	& a\lambda^2 + b = 0 &\\
+	& \lambda^2 = -\frac{b}{a} &\\
+	& 1) b > 0 \quad \lambda = \pm\sqrt{\frac{b}{a}}i \text{ --- устойчиво.} &\\
+	& 2) b < 0 \quad \lambda = \pm \sqrt{-\frac{b}{a}} \text{ --- неустойчиво.} &\\
+	& \text{Равновесия: } \left[\begin{array}{l}
+		\varphi = 0 \\
+		\varphi = \pi \\
+		\varphi = \pm \arccos \frac{g}{\omega^2r} \\
+	\end{array}\right.
+\end{flalign*}
+\begin{figure}[H]
+	\includegraphics{4_3.eps}
+\end{figure}
