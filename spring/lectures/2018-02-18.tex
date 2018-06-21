@@ -98,12 +98,18 @@ x = C_1\sin t + C_2\cos t \\
 y = C_1\cos t - C_2\sin t \\
 \end{cases} &\\
 & V = \frac{x^2 + y^2}{2} \quad \dot V = (\dot x x + \dot y y)\vert_{(**)} = \alpha x^4 &\\
-& \alpha < 0 : V(0) = 0 \quad V(x) > 0 \;\forall \v x \neq 0 \quad \dot V \leqslant 0 \;\forall \v x \in U_\varepsilon &\\
+& \underline{\alpha < 0} : V(0) = 0 \quad V(x) > 0 \;\forall \v x \neq 0 \quad \dot V \leqslant 0 \;\forall \v x \in U_\varepsilon &\\
 & \dot V = 0 \Leftrightarrow x \equiv 0 \quad (**)\vert_{x \equiv 0} \quad \begin{cases}
 0 = y + 0 \\
 \dot y = 0 \\
 \end{cases} \Leftrightarrow y = 0 \Rightarrow \v x = 0 \text{ --- устойчиво асимптотически.} &\\
-& \alpha > 0: \Omega = U_{\varepsilon \setminus \{0\}} &\\
+\end{flalign*}
+\begin{figure}[H]
+\includegraphics{3_1.eps}
+\caption*{Бифуркационная диаграмма}
+\end{figure}
+\begin{flalign*}
+& \underline{\alpha} > 0: \Omega = U_{\varepsilon \setminus \{0\}} &\\
 & V(\v x) > 0, \quad \dot V(\v x) > 0, \quad \forall \v x \in \Omega &\\
 & V(0) = 0, \quad V(\v x) = 0, \quad \forall \v x \in \partial \Omega (x = 0) &\\
 & \Rightarrow \text{ неустойчивость, т.к. } \dot V = 0 \Rightarrow x = y = 0 &\\
@@ -146,7 +152,8 @@ y = C_1\cos t - C_2\sin t \\
 \]
 \end{xmp}
 
-\paragraph*{Критерий Рауса-Гурвица} $\forall i \re \lambda_i < 0 \Leftrightarrow$ все главные диагональные миноры определены положительно
+\begin{teo}[Критерий Рауса-Гурвица][б/д] 
+$\forall i \re \lambda_i < 0 \Leftrightarrow$ все главные диагональные миноры определены положительно
 \[
 	\Delta = \left(
 	\begin{matrix}
@@ -159,9 +166,7 @@ y = C_1\cos t - C_2\sin t \\
 	\right),
 	\qquad \Delta_i > 0
 \]
-\begin{proof}
-\emph{Б/Д}
-\end{proof}
+\end{teo}
 
 \begin{ntc}
 \[
@@ -206,6 +211,9 @@ e^{ -\frac{1}{\abs{q}}} \cdot \cos \frac{1}{\abs{q}},\; q \neq 0
 & 3)\; T + \Pi = h = const &\\
 & \Pi \leqslant h, \; x = 0 \text{ --- устойчиво по Ляпунову (по опр.)} &\\
 \end{flalign*}
+\begin{figure}[H]
+	\includegraphics{3_2.eps}
+\end{figure}
 \end{xmp}
 \begin{flalign*}
 & \Pi(\v q) = \Pi(\v q_0) + \Pi^{(1)}(\v q) + \Pi^{(2)}(\v q) + \ldots + \Pi^{(m)}(\v q) &\\
