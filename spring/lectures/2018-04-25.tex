@@ -1,0 +1,199 @@
+\begin{flalign*}
+	& (1) \begin{cases}
+			\dot q = \pd{H}{P} \\
+			\dot p = - \pd{H}{q} \\
+	\end{cases} \qquad (2) \begin{cases}
+		\tilde q = \tilde q(q,\; p,\; t) & (2.1) \\
+		\tilde p = \tilde p(q,\; p,\; t) & (2.2) \\
+	\end{cases} \qquad \det \pd{(\tilde q, \tilde p)}{(q, p)} \neq 0 &\\
+	& (3)\;\;c((p, dq) - Hdt) = (\tilde p, d\tilde q) - \tilde Hdt + dF(q,\; p,\; t) &\\
+\end{flalign*}
+
+\subsection{Свободные канонические преобразования}
+\begin{df}
+	Преобразование вида $(2)$ --- своободное, если $\det \pd{\tilde q}{p} \neq 0$.
+\end{df}
+\begin{flalign*}
+	& (2.1),\; \det \pd{\tilde q}{p} \neq 0 \Rightarrow p = p(q,\; \tilde q,\; t) &\\
+	& (2.2),\; p = p(q,\; \tilde q,\; t) \Rightarrow \tilde p = \tilde p(q,\; \tilde q, t) &\\
+	& F(q,\; p(q,\; \tilde q,\; t),\; t) = S(q,\; \tilde q,\; t) &\\
+	& (3) \Rightarrow c((p, dq) - Hdt) = (\tilde p, d\tilde q) - \tilde Hdt + \left( \pd{S}{q}, dq \right) + \left( \pd{S}{\tilde q}, d\tilde q \right) + \pd{S}{t}dt &\\
+	& \begin{cases}
+		\pd{S}{q} = cp \\
+		\pd{S}{\tilde q} = -\tilde p \\
+		\tilde H = cH + \pd{S}{t}
+	\end{cases} &\\
+	& \det \pd{\tilde q}{p} \neq 0 \Leftrightarrow \det \pd{p}{\tilde q} \neq 0 \Leftrightarrow \det \frac{\partial^2 S}{\partial \tilde q \partial q} \neq 0 \quad (4) &\\
+\end{flalign*}
+\begin{ass}
+	Свободное преобразование канонично тогда, и только тогда, когда $\exists \Phi,\; S(q,\; \tilde q, t),\; c\neq 0$:
+	\[
+		\begin{cases}
+			\pd{S}{q} = cp \\
+			\pd{S}{\tilde q} = -\tilde p \\
+		\end{cases}.
+	\]
+	Тогда, если преобразование канонично, гамильтонова система в новых переменных имеет вид:
+	\[
+		\tilde H = \left.\left( cH(q,\;p,\;t) + \pd{S(q,\; \tilde q,\; t)}{t} \right)\right|_{\begin{array}{l}
+			q = q(\tilde q,\; \tilde p,\; t) \\
+			p = p(\tilde q,\; \tilde p,\; t) \\
+		\end{array}}
+	\]	
+\end{ass}
+\begin{ntc}
+	Функция $S(q,\; \tilde q,\; t)$, удовлетворяющая условию $(4)$, однозначно определена преобразованием заданной валентности.
+\end{ntc}
+\begin{proof}
+	\begin{flalign*}
+		& \pd{S(q,\; \tilde q,\; t)}{q} = cp,\; \det \frac{\partial^2 S}{\partial \tilde q \partial q} \neq 0 \Rightarrow \tilde q = \tilde q(q,\; p,\; t) &\\
+		& \tilde p = - \pd{S(q,\; \tilde q,\; t)}{\tilde q},\; \tilde q = \tilde q(q,\; p,\; t) \Rightarrow \tilde p = \tilde p(q,\; p,\; t) &\\
+	\end{flalign*}
+\end{proof}
+\begin{xmp}
+	\begin{flalign*}
+		& \tilde q = q,\; \tilde p = p &\\
+		& \det \pd{q^2}{p} = 0 \text{ --- не свободное.}
+	\end{flalign*}
+\end{xmp}
+\begin{ntc}
+	Вместо $(q,\; \tilde q,\; t)$ можно рассматривать $(q,\; \tilde p,\; t)$, $(\tilde q,\; p,\; t)$, $(p,\; \tilde p,\; t)$.
+\end{ntc}
+Рассмотрим, например, $(q,\; \tilde p,\; t)$:
+\begin{flalign*}
+	& (2) \text{ --- полусвободное, если } \det \pd{\tilde p}{p} \neq 0 &\\
+	& \tilde p = \tilde p(q,\; p,\; t),\; \det \pd{\tilde p}{p} \neq 0 \Rightarrow p = p(q,\; \tilde p,\; t),\; \tilde q = \tilde q(q,\; \tilde p,\; t) &\\
+	& c(p,dq) - cHdt = (\tilde p, d\tilde q) - \tilde Hdt + dF &\\
+	& (\tilde p, d\tilde q) = d(\tilde p, \tilde q) - (\tilde q, d\tilde p),\; F(q,\; p,\; t) + (\tilde p, \tilde q) = S_1(q,\; \tilde p,\; y) \Rightarrow &\\
+	& \Rightarrow c(p,dq) - cHdt = -(\tilde q, d\tilde p) - \tilde Hdt + \left( \pd{S}{q},dq \right) + \left( \pd{S}{\tilde p}, d\tilde p \right) + \pd{S}{t}dt &\\
+	& \begin{cases}
+		\pd{S_1}{q} = cp \\
+		\pd{S_1}{\tilde p} = \tilde q &\\
+		\tilde H = cH + \pd{S_1}{t}
+	\end{cases}
+\end{flalign*}
+\begin{xmp}
+	\begin{flalign*}
+		& p = \tilde p,\; q = \tilde q,\; c = 1 &\\
+		& \begin{cases}
+			\pd{S_1(q,\; \tilde p,\; t)}{q} = \tilde p \\
+			\pd{S_1}{\tilde p} = q \\
+		\end{cases} \qquad S_1 = (q,\; \tilde p) &\\
+	\end{flalign*}
+\end{xmp}
+
+\subsection{Уравнение Гамильтона-Якоби. Метод Якоби}
+\begin{flalign*}
+	& \tilde H = 0 \qquad \begin{cases}
+		\dot{\tilde q} = \pd{\tilde H}{\tilde p} \\
+		\dot{\tilde p} = -\pd{\tilde H}{\tilde q} \\
+	\end{cases} \qquad \begin{array}{l}
+		\tilde q = \alpha = const \\
+		\tilde p = \beta = const \\
+	\end{array} &\\
+\end{flalign*}
+Будем искать унивалентное исходное преобразование, переводящее гамильтониан в ноль.
+\begin{flalign*}
+	& \pd{S}{t} + H\left( q,\; \pd{S}{q},\; t \right) = 0 \quad (*) &\\
+\end{flalign*}
+Соответствует системе с гамильтонианом $H(q,\; p,\; t)$.
+\begin{xmp}[Математический маятник]
+	\begin{flalign*}
+		& L = \frac{ml^2}{2}\dot \varphi^2 + mgl\cos\varphi &\\
+		& \text{Т.к. } L = \frac{1}{2}(A(q)\dot q,\; \dot q) - \Pi(q)\text{, то } H = \frac{1}{2}(A^{-1}(q)\dot p,\; \dot p) + \Pi(q) &\\
+		& H = \frac{p\varphi^2}{2ml^2} - mgl\cos\varphi &\\
+		& \pd{S}{t} + \frac{1}{2ml^2}\left( \pd{S}{\varphi} \right)^2 - mgl\cos\varphi = 0&\\
+	\end{flalign*}
+\end{xmp}
+\begin{df}
+	Полным интегралом уравнения Гамильтона-Якоби называется функция $S(q,\; \alpha,\; t)$ такая, что
+	\begin{enumerate}
+		\item удовлетворяет уравнению Гамильтона-Якоби,
+		\item $\det \frac{\partial^2 S}{\partial \alpha \partial q} \neq 0$.
+	\end{enumerate}
+\end{df}
+$\Rightarrow$ $S$ --- полный интеграл уравнения Гамильтона-Якоби.
+\begin{teo}[Гамильтона-Якоби]
+	Если известен полный интеграл Гамильтона-Якоби, то общее решения соответствующих уравнений Гамильтона определяется из соотношения
+	\[
+		\pd{S}{q} = p,\; \pd{S}{\alpha} = -\beta \Rightarrow \begin{cases}
+			q = q(\alpha,\; \beta,\; t) \\
+			p = p(\alpha,\; \beta,\; t) \\
+		\end{cases}.
+	\]
+\end{teo}
+\begin{ntc}
+	Можно заменить $\beta$ на $-\beta$.
+\end{ntc}
+\begin{xmp}[Движение точки по прямой]
+	\begin{flalign*}
+		& x(0) = x_0,\; \dot x(0) = \dot x_0 &\\
+		& L = \frac{m}{2}\dot x^2 \quad H = \frac{p_x^2}{2m} &\\
+		& \pd{S}{t} + \frac{1}{2m}\left( \pd{S}{x} \right)^2 = 0,\; S = S(x,\; \alpha,\; t) &\\
+		& S = \frac{m(x + \alpha)^2}{2t},\; \pd{S}{t} = - \frac{m(x+\alpha)^2}{2t^2} &\\
+		& \pd{S}{x} = \frac{m(x + \alpha)}{t},\; \frac{\partial^2 S}{\partial \alpha \partial x} = \frac{m}{t} \neq 0 &\\
+		& S \text{ --- полный интеграл уравнения } (*) &\\
+		& \begin{cases}
+			p_x = \pd{S}{x} = \frac{m(x + \alpha)}{t} \\
+			- \beta = \pd{S}{\alpha} = \frac{m(x + \alpha)}{t} \\
+		\end{cases} \qquad
+		\begin{cases}
+			p_x = - \beta \\
+			x = -\frac{\beta}{m}t - \alpha \\
+		\end{cases} \qquad
+		\begin{cases}
+			p_x = mx_0^2 \\
+			x = \dot x_0 t + x_0
+		\end{cases} &\\
+		& \begin{cases}
+			p_x(0) = m\dot x_0 = -\beta \\
+			x(0) = x_0 = -\alpha \\
+		\end{cases} \qquad
+		\begin{cases}
+			\beta = -m \dot x_0 \\
+			\alpha = -x_0 \\
+		\end{cases} &\\
+		& S = S_1(x,\; \alpha) + S_2(t,\; \alpha) &\\
+		& S = -\alpha t + S_1(x,\; \alpha) \rightarrow (*) &\\
+		& -\alpha + \frac{1}{2m}\left( \pd{S_1}{x} \right)^2 = 0 \qquad \pd{S_1}{x} = \pm \sqrt{2m\alpha} \qquad S_1 = \pm x\sqrt{2m\alpha} &\\
+		& \text{Тогда } S = -\alpha t \pm x\sqrt{2m\alpha} &\\
+		& \text{<<$+$>> в области } p_x \geqslant 0\text{, <<$-$>> в области } p_x < 0 &\\
+	\end{flalign*}
+\end{xmp}
+Рассмотрим натуральную систему с одной степенью свободы.
+\begin{xmp}
+	\begin{flalign*}
+		& L = \frac{1}{2}a(q)\dot q^2 - \Pi(q) &\\
+		& H = \frac{p^2}{2a(q)} + \Pi(q) &\\
+		& \pd{S}{t} + \frac{1}{2a(q)}\left( \pd{S}{q} \right)^2 + \Pi(q) = 0 &\\
+		& S = -h(\alpha)t + S_1(q,\; \alpha): &\\
+		& -h(\alpha) + \frac{1}{2a(q)}\left( \pd{S_1}{q} \right)^2 + \Pi(q) = 0 &\\
+		& \pd{S_1}{q} = \pm\sqrt{2a(q)(h(\alpha) - \Pi(q))} &\\
+		& S = -h(\alpha)t \pm \int\limits_{q_0(\alpha)}^{q}\sqrt{2a(\xi)(h(\alpha) - \Pi(\xi))}d\xi &\\
+		& \det \frac{\partial^2 S}{\partial q \partial \alpha} \neq 0 &\\
+		& p = \pd{S}{q} = \pm \sqrt{2a(q)(h(\alpha) - \Pi(q))} &\\
+		& -\beta = \pd{S}{\alpha} = -\frac{dh}{d\alpha}t \pm \int\limits_{q_0(\alpha)}^{q_0}\frac{d\xi \sqrt{a(\xi)}}{\sqrt{(h(\alpha) - \Pi(\xi))}} \mp \underbrace{\frac{dq_0}{d\alpha}}_0\underbrace{\sqrt{2a(q)(h(\alpha) - \Pi(q))}}_0 &\\
+	\end{flalign*}
+\end{xmp}
+
+\subsection{Метод разделения переменных}
+\begin{teo}[об отделении времени]
+	Если $\pd{H}{t} = 0$, то $S(q,\; \alpha,\; t)$ --- полный интеграл уравнения
+	\[
+		\pd{S}{t} + H\left(q,\; \pd{S}{q}\right) = 0 \Leftrightarrow S = -h(\alpha)t + S_1(q,\; \alpha),
+	\]
+	где $S_1$ --- полный интеграл уравнения $H\left( q,\;\pd{S_1}{q} \right) = h(\alpha) \left( \text{т.е.} \det \frac{\partial^2 S_1}{\partial q, \partial \alpha} \neq 0 \right)$.
+\end{teo}
+\begin{proof}
+	\begin{flalign*}
+		& S = S_0(t,\; \alpha) + S_1(q,\; \alpha) &\\
+		& \pd{S}{t} = \pd{S_0}{t},\; \pd{S}{q} = \pd{S_1}{q} &\\
+		& -\frac{dS_0(t, \alpha)}{dt} \equiv H\left( q,\; \pd{S_1(q,\; \alpha)}{2q} \right) \equiv h(\alpha) &\\
+		& \begin{cases}
+			\pd{S_0}{t} = -h(\alpha) \Leftrightarrow S_0 = -h(\alpha)t + C(\alpha),\; C(\alpha) = const \\
+			H\left( q,\; \pd{S_1}{q} \right) = h(\alpha) \\
+		\end{cases} &\\
+		& \frac{dS_0}{d\alpha} = -\frac{dh}{d\alpha}t + \frac{dC}{d\alpha} \neq 0,\; \frac{dh}{d\alpha} \neq 0 &\\
+		& \det \frac{\partial^2 S_1}{\partial q \partial \alpha} \neq 0 \Leftrightarrow \det \frac{\partial^2 S}{\partial q \partial \alpha} \neq 0 &\\
+	\end{flalign*}
+\end{proof}
