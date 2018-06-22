@@ -1,3 +1,47 @@
+\begin{xmp}[Бифуркация Андронова-Копфа]
+	\begin{flalign*}
+		& \begin{cases}
+			\dot x = \alpha x - y - x(x^2 + y^2) \\
+			\dot y = x + \alpha y - y(x^2 + y^2) \\
+		\end{cases} &\\
+		& x = y = 0 \text{ равновесие. Откинем квадратичную часть.} &\\
+		& \det(A - \lambda E) = \begin{vmatrix}
+			\alpha - \lambda & - 1 \\
+			1 & \alpha - \lambda \\
+		\end{vmatrix} = \lambda^2 - 2\alpha\lambda + \alpha^2 + 1 &\\
+		& \alpha < 0 \Rightarrow x = y = 0 \text{ --- устойчиво.} &\\
+		& \alpha > 0 \Rightarrow x = y = 0 \text{ --- неустойчиво.} &\\
+	\end{flalign*}
+	\begin{figure}[H]
+		\includegraphics{5_1.eps}
+	\end{figure}
+	\begin{flalign*}
+		& x = r\cos\varphi,\; y = r\sin\varphi &\\
+		& \begin{cases}
+			\dot r\cos\varphi - r\dot\varphi\sin\varphi = \alpha r \cos\varphi - r\sin\varphi - r\cos\varphi\cdot r^2 & | \cdot \cos\varphi\\
+			\dot r\sin\varphi + r\dot\varphi\cos\varphi = r\cos\varphi + \alpha r\sin\varphi - r\sin\varphi\cdot r^2 & | \cdot \sin\varphi\\
+		\end{cases} &\\
+		& \begin{cases}
+			\dot r = \alpha r - r^3  & (1)\\
+			\dot \varphi = 1 \\
+		\end{cases} &\\
+		& r = 0,\; r = \pm\sqrt{\alpha} \text{ --- равносильные уравнению } (1). &\\
+	\end{flalign*}
+	\begin{figure}[H]
+		\includegraphics{5_2.eps}
+	\end{figure}
+	\begin{flalign*}
+		& \delta r = r - \sqrt{\alpha} &\\
+		& \delta \dot r = \dot r,\; r = \delta r + \sqrt{\alpha} &\\
+		& (1) \Leftrightarrow \delta \dot r - (\delta r + \sqrt{\alpha})(-\delta r)(\delta r + 2\sqrt \alpha) = -2\alpha\delta r + O_2(\delta r) &\\
+		& \delta r = o(r \pm \sqrt \alpha) \text{ --- устойчивое.}
+	\end{flalign*}
+	\begin{figure}[H]
+		\includegraphics{5_3.eps}
+		\caption*{1) Дивергенция. 2) Флаттер.}
+	\end{figure}
+\end{xmp}
+
 \subsection{Малые Колебания}
 \begin{flalign*}
 & T = \frac{1}{2}(\Phi(\v q)\dv q, \dv q), \; \Pi(\v q), \; \v q = 0 \text{ --- положение равновесия} &\\
@@ -141,14 +185,20 @@ III.& \exists k_m < 0, \v q = 0 (\xi = 0) \text{ --- неустойчиво.} &\
 \end{cases} &\\
 & x = C_1\sin \omega_0t + C_2\cos \omega_0 t + \frac{f}{\omega_0^2 - \omega^2}\cos\omega t
 \end{flalign*}
-РИСУНОК биений
+\begin{figure}[H]
+	\includegraphics{5_4.eps}
+	\caption*{Биения.}
+\end{figure}
 \begin{flalign*}
 & 2)\; \omega = \omega_0 \quad x_r = \alpha t \sin \omega_0 t &\\
 & \qquad \dot x_r = \alpha \sin\omega_0t + \alpha \omega_0t\cos \omega_0t &\\
 & \qquad \ddot x_r = \alpha \omega_0 \cos \omega_0 t - \alpha \omega_0 t \sin \omega_0 t \Rightarrow 2\alpha \omega_0 = f \Rightarrow \alpha = \frac{f}{2\omega_0} &\\
 & x = C_1 \sin \omega_0t + C_2\cos \omega_0t + \frac{f}{2\omega_0}t \sin \omega_0t
 \end{flalign*}
-РУСУНОК резонанса
+\begin{figure}[H]
+	\includegraphics{5_5.eps}
+	\caption*{Резонанс.}
+\end{figure}
 \begin{flalign*}
 & A\ddot{\v q} + C \v q = \v Q, \quad \v Q = \v F \cos \omega t &\\
 & \v q = U \v \xi, \quad A \rightarrow E, \; C \rightarrow K &\\
