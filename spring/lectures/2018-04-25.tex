@@ -197,3 +197,103 @@ $\Rightarrow$ $S$ --- полный интеграл уравнения Гами�
 		& \det \frac{\partial^2 S_1}{\partial q \partial \alpha} \neq 0 \Leftrightarrow \det \frac{\partial^2 S}{\partial q \partial \alpha} \neq 0 &\\
 	\end{flalign*}
 \end{proof}
+
+\begin{flalign*}
+	& H = H(q,\; p,\; t) &\\
+	& \pd{S}{t} + H(q,\; \pd{S}{q},\; t) = 0 &\\
+	& \det \frac{\partial^2 S}{\partial q \partial \alpha} \neq 0,\; \alpha = const. &\\
+\end{flalign*}
+
+\begin{teo}[Об отделении координаты]
+	Если $H = H(f(q_1,\; p_1),\; q_2,\ldots,q_n,\; p_2,\ldots,p_n,\; t)$, где $\pd{H}{f} \neq 0$, $\pd{f}{p_q} \neq 0$, то функция 
+	\[
+		S(q,\;\alpha) = S_1(q,\; \alpha_1) + S_2(q_2,\ldots,q_n,\; p_1,\ldots,p_n, t)
+	\]
+	является полным интегралом соответствующего уравнения Гамильтона-Якоби $\Leftrightarrow$
+	\begin{enumerate}
+		\item $S_1(q_1,\; \alpha_1)$ --- решение $f(q_1, \pd{S_1}{q_1} = \alpha_1$;
+		\item $S_2(q_1,\; \ldots, t)$ --- полный интеграл уравнения \[
+			\pd{S_2}{t} + H\left( \alpha_1,\; q_2,\ldots,q_n,\; \pd{S_2}{q_2},\ldots,\pd{S_2}{q_n},\; t \right) = 0.
+		\]	
+	\end{enumerate}
+\end{teo}
+\begin{proof}
+	\ovalbox{$\Rightarrow$}
+	\begin{flalign*}
+		& \pd{S}{t} + H\left( f\left(q_1,\; \pd{S}{q_1}\right),\; q_2,\ldots,q_n,\; \pd{S}{q_2},\ldots,\pd{S}{q_n},\; t \right) &\\
+		& \det \frac{\partial^2 S}{\partial q \partial \alpha} \neq 0 &\\
+		& S = S_1 + S_2 \qquad \pd{S_2}{t} + H\left( f\left(q_1, \pd{S_1}{q_1}\right), q_2,\ldots q_n,\; \pd{S_2}{q_2},\ldots \pd{S_2}{q_n}, t \right) = 0 &\\
+		& \det \frac{\partial^2 S}{\partial q \partial\alpha} = \frac{\partial^2 S_1}{\partial q_1\partial\alpha}\cdot \det\left( \frac{\partial S_2}{\partial q_i \partial q_j} \right) \neq 0 &\\
+		& (1)\; \pd{H}{f} = 0 \Rightarrow f\left( q_1, \frac{dS_1}{dq_1} \right) = F(q_2,\ldots,q_n,\; \pd{S_2}{q_2},\ldots,\pd{S_2}{q_n},\; t) &\\
+		& S_1 = S_1(q_1,\; \alpha_1)\pd{S_2}{q_1} = 0 \Leftrightarrow f\left( q_1,\; \frac{dS_1}{dq_1} \right) = g(\alpha_1) = \tilde \alpha_1 &\\
+		& \left.\begin{array}{l}
+			\pd{f}{p_1} \neq 0 \Rightarrow \frac{dS_1}{dq_1} = G(q_1,\; \tilde \alpha_1) \\
+			\frac{\partial^2 S_1}{\partial q_1\partial \alpha_1} \neq 0 \\
+		\end{array}\right| \Rightarrow \alpha_1 = \tilde G(q_1,\; \tilde\alpha_1),\; 0 = \pd{\tilde G}{q_1} \Rightarrow \alpha_1 = \tilde g(\tilde \alpha_1) \Rightarrow 1. &\\
+		& \left.\begin{array}{l}
+		1.,\; (1) \Rightarrow \pd{S_2}{t} + H\left( \alpha_1,\; q_2,\ldots, q_n,\; \pd{S_2}{q_2},\ldots,\pd{S_2}{q_n},\; t \right) = 0 \\
+		\det\left( \frac{\partial^2 S_2}{\partial q_i \partial \alpha_j} \right)_{i,j=2,\ldots,n} \neq 0 \\		
+		\end{array}\right| \Rightarrow 2.
+	\end{flalign*}
+	\ovalbox{$\Leftarrow$}
+\begin{flalign*}
+	& 1., 2. \Rightarrow S = S_1 + S_2 \text{ --- решения уравнения Гамильтона-Якоби.} &\\
+	& \frac{dS_1}{dq_1} = \mu(q_1,\; \alpha_1) \qquad f(q_1,\; \mu(q_1,\;\alpha_1)) = \alpha_1 \quad |\; \pd{}{\alpha_1} &\\
+	& \pd{f}{\mu}\pd{\mu}{\alpha_1} = 1 \Rightarrow \pd{\mu}{\alpha_1} \neq 0 \Rightarrow \frac{\partial^2 S_1}{\partial q \partial \alpha_1} \neq 0 &\\
+	& \det\left( \frac{\partial^2 S_2}{\partial q_i \partial q_j} \right)_{i,j} \neq 0 \Rightarrow \det \frac{\partial^2 S}{\partial q \partial \alpha} \neq 0 &\\ 
+\end{flalign*}
+\end{proof}
+
+\subsubsection*{Метод разделения переменных}
+\begin{enumerate}
+	\item \begin{flalign*}
+		& H = H(q,\; p) \left( \pd{H}{t} = 0 \right) \Rightarrow S = -h(\alpha)t + S_1(q,\; \alpha): &\\
+		& S_1(q,\; \alpha) \text{ --- полный интеграл уравнения } H\left( q,\; \pd{S_1}{q} \right) = h(\alpha) &\\
+	\end{flalign*}
+
+	\item \begin{flalign*}
+		& H = H(q_2,\ldots,q_n,\; p_1,\ldots,p_n,\; t) \quad \left( \pd{H}{q_1} = 0 \right) \Rightarrow &\\
+		& S = \alpha_1q_q + s_2(q_2,\ldots,q_n,\; t)\text{, где } S_2(q_2,\ldots,q_n,\alpha_2,\;t) = 0 \text{ --- полный интеграл } &\\
+		& \pd{S_2}{t} + H\left( q_2,\ldots,q_n,\; \alpha_1,\; \pd{S_2}{q_2},\ldots,\pd{S_2}{q_n},\; t \right) = 0 &\\
+	\end{flalign*}
+	\begin{proof}
+		\begin{flalign*}
+			& f(q_1,\; p_1) = p_1\; \left( \pd{f}{p_1} \neq 0 \right) \; S = S_1 + S_2 &\\
+			& f\left(q_1,\; \pd{S_1}{q_q}\right) = 0\alpha_1 \qquad \frac{dS_1}{dq_1} = \alpha_1 \Rightarrow S_1 = q_1\alpha_1 &\\
+		\end{flalign*}
+	\end{proof}
+
+	\item \begin{flalign*}
+		& H = H(f(q_1\;,p_1),\; q_2,\ldots,q_n,\; p_2,\ldots,p_n) \Rightarrow S = S_1(q_1,\alpha_1) + S_2(q_2,\ldots,q_n,\; \alpha,\; t) &\\
+		& \begin{cases}
+			f\left( q_1,\; \frac{dS_1}{dq_1} \right) = \alpha_1 \\
+			\pd{S_2}{t} + H\left(\alpha,\;q_2,\ldots,q_n,\;\pd{S_2}{q_2},\ldots,\pd{S_2}{q_n},\;t\right) = 0 \\
+		\end{cases} &\\
+	\end{flalign*}
+
+	\item \begin{flalign*}
+		& H = H\left( f_2(f_1(q_1,\; p_1),\; q_2,\; p_2), q_3,\ldots,q_n,\;p_3,\ldots,p_n,\;t \right) &\\
+		& S = S_1(q_1,\; \alpha_1) + S_2(q_2,\; \alpha_1,\; \alpha_2) + S_3(q_3,\ldots, q_n,\; \alpha_1,\ldots, \alpha_n,\; t) &\\
+		& \begin{cases}
+			f_1(q_1,\; \pd{S_1}{q_1}) = \alpha_1 \\
+			f_2\left(\alpha_2,\; q_2,\; \pd{S_2}{q_2}\right) = \alpha_2 \\
+			\pd{S_3}{t} + H\left( \alpha_2,\; q_3,\ldots,q_n,\;\pd{S_3}{q_3},\ldots,\pd{S_3}{q_n},\; t \right) = 0 \\
+		\end{cases} 
+	\end{flalign*}
+\end{enumerate}
+
+\begin{xmp}
+	\begin{flalign*}
+		& H = H(f_1(q_1,\; p_1), \ldots,f_m(q_m,\; p_m),\; q_{m + 1}, \ldots q_n,\; p_{m + 1},\ldots, p_n) &\\
+		& S = S_1(q_1,\; \alpha_1) + S_2(q_2,\; \alpha) + \ldots + S_m(q_m,\; \alpha_m) + \alpha_{m + 1}q_{m + 1} + \ldots + \alpha_{n - 1}q_{n - 1} - ht + S_0(q_n,\; \alpha_1,\ldots,\alpha_{n - 1},\; h(\alpha)) &\\
+		& \begin{cases}
+			f_1\left( q_1, \frac{dS_1}{d_1} \right) = \alpha_1 \\
+			\ldots \\
+			f_m\left( q_m, \frac{dS_m}{q_m} \right) = \alpha_m \\
+			-n + H\left( \alpha_1,\ldots,\alpha_m,\; q_n,\; \alpha_{m + 1} \ldots \alpha_{n - 1}\frac{dS_n}{dq_m} \right) &\\
+		\end{cases} &\\
+		& \frac{dS_1}{dq_1} = F_1(q_1,\; \alpha_1) \Rightarrow S_1 = \int\limits_{q_0}^{q_1}F_1(\xi,\; \alpha_1)d\xi &\\
+		& \frac{dS_m}{dq_m} = F_m &\\
+		& S_n = \int\limits_{q_m}^{q_n}F_n(\xi,\; \alpha_1,\; \ldots, \alpha_{n - 1},\; h)d\xi &\\
+	\end{flalign*}
+\end{xmp}
