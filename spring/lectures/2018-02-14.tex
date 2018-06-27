@@ -45,7 +45,7 @@ $\dot V$ --- производная функции $V$ по времени вд�
 \begin{enumerate}
 \item 
 \[
-	V(0) = 0, \ \forall x \in U_\varepsilon \setminus \{ 0 \},
+	V(0) = 0, \; V(x) > 0\; \forall x \in U_\varepsilon \setminus \{ 0 \},
 \]
 \item
 \[
@@ -85,19 +85,20 @@ $V(x_1, x_2) = x_1^2$ --- не является положительно опр�
 Если в условии теоремы Ляпунова в условии $2)$ поставить строгое неравенство, устойчивость станет асимптотической.
 \end{ntc}
 
-\begin{teo}{Барбашина-Красовского}
-Если $\exists V(x) \in C^1 : U_\varepsilon \rightarrow \R$, то
+\begin{teo}[Барбашина-Красовского]
+Если $\exists V(x) \in C^1 : U_\varepsilon \rightarrow \R$, то из того, что
 \begin{enumerate}
 \item 
 \[
-	V(0) = 0 \ V(\v x) > 0 \ \forall \v x \in U_\varepsilon \setminus \{ 0 \},
+	V(0) = 0,\; V(\v x) > 0 \ \forall \v x \in U_\varepsilon \setminus \{ 0 \},
 \]
 \item
 \[
-	\dot V \leqslant 0 \  \forall \v x \in U_\varepsilon,
+	\dot V \leqslant 0 \;  \forall \v x \in U_\varepsilon,
 \]
-\item множество $\{\v x : \dot V (\v x) = 0\}$ не содержит целиком решения системы \eqref{stable}, кроме равновесия $\v x = 0 \Rightarrow \v x = 0$ --- установившееся асимптотически.
+\item множество $\{\v x : \dot V (\v x) = 0\}$ не содержит целиком решения системы \eqref{stable}, кроме равновесия $\v x = 0$,
 \end{enumerate}
+слеудует, что $\v x = 0$ --- устойчиво асимптотически.
 \end{teo}
 
 \begin{ntc}
@@ -136,13 +137,14 @@ $V(x_1, x_2) = x_1^2$ --- не является положительно опр�
 \end{proof}
 
 \begin{teo}[Красовского]
-$\exists V \in C^1: U_\varepsilon \rightarrow \R$ и область $\Omega$:
+Если $\exists V \in C^1: U_\varepsilon \rightarrow \R$ и область $\Omega$, а также
 \begin{enumerate}
 \item $V(0) = 0,\  V(\v x) > 0\  \forall \v x \in U_\varepsilon \cap \Omega$ \\
-$\v x = 0 \in \partial \Omega, V(\v x) = 0 \ \forall \v x \in \partial \Omega$
-\item $\dot V \leqslant 0 \ \forall \v x \in U_\varepsilon \cap \Omega$
-\item $\{ \v x: \dot V = 0 \} \Rightarrow \v x = 0$ --- неустойчивое.
+$\v x = 0 \in \partial \Omega, V(\v x) = 0 \ \forall \v x \in \partial \Omega$,
+\item $\dot V \leqslant 0 \ \forall \v x \in U_\varepsilon \cap \Omega$,
+\item множество $\{\v x : \dot V (\v x) = 0\}$ не содержит целиком решения системы \eqref{stable}, кроме равновесия $\v x = 0$,
 \end{enumerate}
+то $\v x = 0$ --- неустойчивое.
 \end{teo}
 \begin{proof}
 \begin{flalign*}

@@ -70,7 +70,7 @@
 
 \begin{ass}
 \begin{flalign*}
-& \det (A \omega^2 _ C) = 0 &\\
+& \det (A \omega^2 - C) = 0 &\\
 & \begin{cases}
 A(\omega_i^2 - C) e_i = 0 \\
 (A \v e_i, \v e_i) = 1 \\
@@ -169,11 +169,11 @@ III.& \exists k_m < 0, \v q = 0 (\xi = 0) \text{ --- неустойчиво.} &\
 \subsection{Вынужденные колебания в линейных системах}
 \begin{flalign*}
 & \ddot x + \omega_0^2x = f\cos\omega t &\\
-& x = x_{\text{одн}} + x_r &\\
+& x = x_{\text{одн}} + x\text{ч} &\\
 & x_{\text{одн}} = C_1 \sin \omega_0 t + C_2\cos \omega_0t &\\
-& 1)\; \omega \neq \omega_0: x_r = \alpha\sin \omega t + \beta\cos \omega t \quad /\; \omega_0^2 &\\
-& \qquad \dot x_r = \alpha\omega\cos\omega t - \beta\omega\sin\omega t \quad /\; 0 &\\
-& \qquad \ddot x_r = -\alpha\omega^2\sin\omega t - \beta\omega^2\cos\omega t \quad /\; 1 &\\
+& 1)\; \omega \neq \omega_0: x\text{ч} = \alpha\sin \omega t + \beta\cos \omega t \quad /\; \omega_0^2 &\\
+& \qquad \dot x\text{ч} = \alpha\omega\cos\omega t - \beta\omega\sin\omega t \quad /\; 0 &\\
+& \qquad \ddot x\text{ч} = -\alpha\omega^2\sin\omega t - \beta\omega^2\cos\omega t \quad /\; 1 &\\
 & \begin{cases}
 \alpha \omega_0^2 - \alpha \omega^2 = 0 \\
 \beta \omega_0^2 - \beta \omega^2 = f \\
@@ -190,9 +190,9 @@ III.& \exists k_m < 0, \v q = 0 (\xi = 0) \text{ --- неустойчиво.} &\
 	\caption*{Биения.}
 \end{figure}
 \begin{flalign*}
-& 2)\; \omega = \omega_0 \quad x_r = \alpha t \sin \omega_0 t &\\
-& \qquad \dot x_r = \alpha \sin\omega_0t + \alpha \omega_0t\cos \omega_0t &\\
-& \qquad \ddot x_r = \alpha \omega_0 \cos \omega_0 t - \alpha \omega_0 t \sin \omega_0 t \Rightarrow 2\alpha \omega_0 = f \Rightarrow \alpha = \frac{f}{2\omega_0} &\\
+& 2)\; \omega = \omega_0 \quad x\text{ч} = \alpha t \sin \omega_0 t &\\
+& \qquad \dot x\text{ч} = \alpha \sin\omega_0t + \alpha \omega_0t\cos \omega_0t &\\
+& \qquad \ddot x\text{ч} = \alpha \omega_0 \cos \omega_0 t - \alpha \omega_0 t \sin \omega_0 t \Rightarrow 2\alpha \omega_0 = f \Rightarrow \alpha = \frac{f}{2\omega_0} &\\
 & x = C_1 \sin \omega_0t + C_2\cos \omega_0t + \frac{f}{2\omega_0}t \sin \omega_0t
 \end{flalign*}
 \begin{figure}[H]

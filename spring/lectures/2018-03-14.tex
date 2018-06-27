@@ -10,7 +10,7 @@
 \right. &\\
 & 2)\; \v Q \text{ периодично по $t$: } (\v Q(t + T) = \v Q(t), \forall t \in (0; +\infty)) &\\
 & \v Q(t) = \v F\left(a_0 + \sum_{k = 1}^{+\infty} A_k \cos\left(\frac{2\pi k t}{T} + Q_k \right)\right) &\\
-& \v q = \v q_{\text{одн}} + \sum_{k = 0}^{+\infty}\v q_r^{(k)} &\\
+& \v q = \v q_{\text{одн}} + \sum_{k = 0}^{+\infty}\v q\text{ч}^{(k)} &\\
 & \omega_i = \frac{2\pi k}{T}
 \end{flalign*}
 
@@ -19,9 +19,9 @@
 & \ddot x + k \dot x + \omega_0^2 x = f \sin \omega t, \; k > 0 &\\
 & x = 0 \text{ --- равновесие (установившееся асимптотически) свободной системы} &\\
 & \lim_{x \rightarrow +\infty} x_\text{одн} = 0 &\\
-& x_r = R\sin(\omega t + \varphi) &\\
-& \dot x_r = R\omega\sin(\omega t + \varphi) &\\
-& \ddot x_r = - R\omega^2\sin(\omega t + \varphi) &\\
+& x\text{ч} = R\sin(\omega t + \varphi) &\\
+& \dot x\text{ч} = R\omega\sin(\omega t + \varphi) &\\
+& \ddot x\text{ч} = - R\omega^2\sin(\omega t + \varphi) &\\
 & R(\omega_0^2 - \omega^2)\sin(\omega t + \varphi) + KR\omega\cos(\omega t + \varphi) = f\sin \omega t &\\
 & R = \frac{f}{\sqrt{(\omega^2 - \omega^2)^2 + k^2 \omega^2}}, \quad \varphi = - \arctg \frac{k\omega}{\omega_0^2 - \omega^2} &\\
 & ((\omega_0^2 - \omega^2) + k^2\omega^2)'_\omega = -2(\omega_0^2 - \omega^2)\cdot 2\omega + 2k^2\omega = 0 \Leftrightarrow 
@@ -42,7 +42,7 @@
 & \det(A\lambda^2 + B\lambda + C) = 0 \Leftrightarrow \re \lambda_i < 0, \; i = 1, \ldots, n &\\
 & P(\lambda) = A\lambda^2 + B\lambda + C &\\
 & \v Q(t) = \v F \sin \omega t \Rightarrow \v Q(t) = \v Fe^{i\omega t} &\\
-& \v q = \v q_r = \v h e^{i\omega t} \quad \dv q = \v h i \omega e^{i \omega t} \quad \ddot{\v q} = \v h(i\omega)^2 e^{i\omega t} &\\
+& \v q = \v q\text{ч} = \v h e^{i\omega t} \quad \dv q = \v h i \omega e^{i \omega t} \quad \ddot{\v q} = \v h(i\omega)^2 e^{i\omega t} &\\
 & D(i\omega) \v h = \v F \quad \det D(i\omega) \neq 0 &\\
 & \v h = [D(i\omega)]^{-1} \v F = W(i\omega) \v F, \; W(i\omega) = (w_{kj}), \; k,j = 1, \ldots, n &\\
 & w_{kj} = |w_{kj}|e^{i\arg \omega_{kj}} = R_{kj}e^{i\varphi_{kj}} &\\

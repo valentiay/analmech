@@ -112,11 +112,11 @@
 \end{xmp}
 \begin{xmp}[Гироскопическая стабильность]
 	\begin{flalign*}
-		& T = \frac{\dot x^2 + \dot y^2}{2} \qquad \Pi = -\frac{x^2 + y^2}{2} \qquad \v Q^* = \alpha \dot y \v e_x - \alpha \dot x \v e_y &\\
-		& (\v Q^*,\dv q) = \alpha \dot y\dot x - \alpha \dot x\dot y = 0 &\\
+		& T = \frac{\dot x^2 + \dot y^2}{2} \qquad \Pi = -\frac{x^2 + y^2}{2} \qquad \v Q^* = 2 \dot y \v e_x - 2 \dot x \v e_y &\\
+		& (\v Q^*,\dv q) = 2 \dot y\dot x - 2 \dot x\dot y = 0 &\\
 		& \begin{cases}
-			\ddot x - x = \alpha \dot y \\
-			\ddot y - y = -\alpha \dot x \\
+			\ddot x - x = 2 \dot y \\
+			\ddot y - y = -2 \dot x \\
 		\end{cases} \qquad \left( \dv x = A\v x,\ \det(A - \lambda E) = 0 \right) &\\
 		& A\ddot{\v x} + B\dv x + C \v x = 0 &\\
 		& \det(A\lambda^2 + B\lambda + C) = 0 &\\
@@ -133,7 +133,7 @@
 		& \det(A\lambda^2 + B\lambda + C) = \begin{vmatrix}
 			\lambda^2 - 1 & -2\lambda \\
 			2\lambda & \lambda^2 - 1 \\
-		\end{vmatrix} = \lambda^4 - 2\lambda^2 + 1 + \alpha ^2\lambda^2 &\\
+		\end{vmatrix} = \lambda^4 - 2\lambda^2 + 1 + 2 ^2\lambda^2 &\\
 		& \left[ \begin{array}{l}
 			\lambda^2 = -2 \\
 			\lambda^2 = -\frac{1}{2} \\
