@@ -8,7 +8,7 @@
 	&\\
 	& \tilde q(q, t, 0) = q,\; \tilde t(q, t, 0) = t,\ \tilde L(\tilde q, \tilde q', \tilde t) = L(\tilde q, \tilde q', \tilde t) &\\
 	& f = (\eta \cdot p) - \zeta H = const &\\
-	& p = \pd{L}{\dot q},\; \eta = \left.\pd{\tilde q}{\alpha}\right|_\alpha = 0,\; H = \left( \pd{L}{\dot q},\; \dot q \right) - L,\; \zeta = \left.\pd{\tilde t}{\alpha}\right|_\alpha = 0 &\\
+	& p = \pd{L}{\dot q},\; \eta = \left.\pd{\tilde q}{\alpha}\right|_{\alpha = 0},\; H = \left( \pd{L}{\dot q},\; \dot q \right) - L,\; \zeta = \left.\pd{\tilde t}{\alpha}\right|_{\alpha = 0} &\\
 \end{flalign*}
 \begin{proof}
 \begin{flalign*}
@@ -70,7 +70,7 @@
 
 \begin{df}
 	\[
-		I = \oint\big[A(p,\; q,\; t) + (B(q,\; p, \; t), \delta p) + \gamma(q,\; p, \; t)\delta t\big]
+		I = \oint\big[(A(q,\; p,\; t),\delta q) + (B(q,\; p, \; t), \delta p) + \gamma(q,\; p, \; t)\delta t\big]
 	\]
 	$I$ --- относительный интегральный инвариант первого порядка системы $(*)$, если $I$ сохраняет свое значение на всех согласованных контурах, охватывающих одну и ту же трубку прямых путей.
 \end{df}

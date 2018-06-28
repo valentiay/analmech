@@ -5,7 +5,7 @@
 \end{equation}\
 
 \begin{df}
-$ \v x = \v x_0 $ --- положение равновесия \eqref{stable}, если $\v f(\v x_0) = 0$ $\left(\v x(t, \v x_0 \equiv \v x_0)\right)$, $\v x_0 = 0$ без ограничения общности. 
+$ \v x = \v x_0 $ --- положение равновесия \eqref{stable}, если $\v f(\v x_0) = 0$ $\left(\v x(t, \v x_0) \equiv \v x_0\right)$, $\v x_0 = 0$ без ограничения общности. 
 \end{df}
 
 \begin{df}
@@ -120,19 +120,19 @@ $V(x_1, x_2) = x_1^2$ --- не является положительно опр�
 \end{figure}
 \begin{fl}
 \label{triplesec}
-& \boxed{\forall t \ V(\v x_0(t)) \geqslant V} &\\
+& \boxed{\forall t \ V(\v x_0(t)) \geqslant v} &\\
 \end{fl}
 \begin{fl*}
 & IV)\ \text{Рассмотрим} \v x_s(t) = \v x(t, \v x_s) = \v x_0(t + t_{k_s}, \v x_0) &\\
 & V)\ \v x_*(t) = \v x(t, \v x_*) &\\
-& V(\v x_*) = V, \ 2),\; 3) \Rightarrow \exists t^*: \underbrace{V(\v x_*(t_*))}_{V_*} < V &\\
+& V(\v x_*) = v, \ 2),\; 3) \Rightarrow \exists t^*: \underbrace{V(\v x_*(t_*))}_{v_*} < v &\\
 & VI)\ V \text{ --- непрерывная б.т. } \v x_*(t_*) &\\
 & \forall \varepsilon_1 > 0 \ \exists \delta_1 > 0 \ \forall x \ \abs{\v x - \v x_*(t_*)} < \delta_1 \Rightarrow \abs{V(\v x) - V(x_*(t_*))} < \varepsilon_1 &\\
 & \text{Решения \eqref{stable} непрерывно и зависит от начальных условий ($t < \infty$)} &\\
 & \forall \varepsilon_2 > 0 \ \exists \delta_2 > 0 \ \forall x \ \abs{\v x - \v x_*(t_*)} < \delta_2 \Rightarrow \abs{\v x(t_*) - x_*(t_*)} < \varepsilon_2 &\\
 & \forall \varepsilon_3 > 0 \ \exists s: \abs{\v x_s - x_*} < \varepsilon_3 \forall s > S &\\
-& \varepsilon_1 = V - V_* > 0 \rightarrow S: \ \abs{V(\v x_s(t_*)) - \underbrace{V(\v x_*(t_*))}_{V_*}} < V - V_* &\\
-& V(\v x_s(t_*)) - V_* < V - V_* \text{ --- противоречие с \eqref{triplesec}}
+& \varepsilon_1 = v - v_* > 0 \rightarrow S: \ \abs{V(\v x_s(t_*)) - \underbrace{V(\v x_*(t_*))}_{v_*}} < v - v_* &\\
+& V(\v x_s(t_*)) - v_* < v - v_* \text{ --- противоречие с \eqref{triplesec}}
 \end{fl*}
 \end{proof}
 
@@ -141,7 +141,7 @@ $V(x_1, x_2) = x_1^2$ --- не является положительно опр�
 \begin{enumerate}
 \item $V(0) = 0,\  V(\v x) > 0\  \forall \v x \in U_\varepsilon \cap \Omega$ \\
 $\v x = 0 \in \partial \Omega, V(\v x) = 0 \ \forall \v x \in \partial \Omega$,
-\item $\dot V \leqslant 0 \ \forall \v x \in U_\varepsilon \cap \Omega$,
+\item $\dot V \geqslant 0 \ \forall \v x \in U_\varepsilon \cap \Omega$,
 \item множество $\{\v x : \dot V (\v x) = 0\}$ не содержит целиком решения системы \eqref{stable}, кроме равновесия $\v x = 0$,
 \end{enumerate}
 то $\v x = 0$ --- неустойчивое.
@@ -151,8 +151,8 @@ $\v x = 0 \in \partial \Omega, V(\v x) = 0 \ \forall \v x \in \partial \Omega$,
 & \exists \v x = 0 \text{ --- устойчивое, т.е. } &\\
 & \forall \varepsilon > 0 \exists \delta > 0: \abs{\v x_0} < \delta \Rightarrow \abs{\v x_0(t)} < \varepsilon &\\
 & 1), 2) \Rightarrow \exists \delta: \abs{\v x_0(t)} > 0 \Rightarrow \exists\{ x_s \} \rightarrow \v x_*, &\\
-& V(\v x_s(t)) \leqslant V(\v x_*) = V &\\
-& \v x_*(t),\  3) \Rightarrow \exists t_* > 0: (\v x_*(t_*)) > V \text {--- противоречие как в предыдущей теореме} &\\
+& V(\v x_s(t)) \leqslant V(\v x_*) = v &\\
+& \v x_*(t),\  3) \Rightarrow \exists t_* > 0: (\v x_*(t_*)) > v \text {--- противоречие как в предыдущей теореме} &\\
 \end{flalign*}
 \begin{figure}[H]
 \includegraphics{2_4.eps}

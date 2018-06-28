@@ -50,7 +50,7 @@
 & T = \frac{1}{2}\left(\left(\Phi(0) + O(\norm{\v q})\right)\dv q, \dv q\right) = \frac{1}{2}(A \dv q, \dv q) + O_3(\v q, \dv q) &\\
 & A = \Phi(0) = const, \; A = A^T &\\
 & L = \tilde L + O_3(\v q,\dv q),\; \tilde L = \frac{1}{2}(A\dv q, \dv q) - \frac{1}{2}(C\v q, \v q) &\\
-& \pd{\tilde L}{\dv q} = \frac{1}{2}\underbrace{(A\dv q + A^T \dv q)}_{\text{Из 3 семестра}} = A \dv q, \quad \frac{\tilde L}{\v q} = -C\v q \text{ --- аналогично} &\\
+& \pd{\tilde L}{\dv q} = \frac{1}{2}\underbrace{(A\dv q + A^T \dv q)}_{\text{Из 3 семестра}} = A \dv q, \quad \frac{\partial\tilde L}{\partial\v q} = -C\v q \text{ --- аналогично} &\\
 & \frac{d}{dt}\pd{\tilde L}{\dv q} - \pd{\tilde L}{\v q} = 0 \Leftrightarrow \boxed{A\ddot{\v q} + C\v q = 0} &\\
 & \text{$A$ положительно определена } \xrightarrow{\text{Из линейной алгебры}} \exists \v e_1, \ldots, \v e_n: \: A \rightarrow E, C \rightarrow k &\\
 & \v q = \sum \xi_i \v e_i = u \v \xi, \tilde L = \frac{1}{2}(E \dv \xi, \dv \xi) - \frac{1}{2}(k \v \xi, \v \xi), &\\
@@ -169,11 +169,11 @@ III.& \exists k_m < 0, \v q = 0 (\xi = 0) \text{ --- неустойчиво.} &\
 \subsection{Вынужденные колебания в линейных системах}
 \begin{flalign*}
 & \ddot x + \omega_0^2x = f\cos\omega t &\\
-& x = x_{\text{одн}} + x\text{ч} &\\
+& x = x_{\text{одн}} + x_\text{ч} &\\
 & x_{\text{одн}} = C_1 \sin \omega_0 t + C_2\cos \omega_0t &\\
-& 1)\; \omega \neq \omega_0: x\text{ч} = \alpha\sin \omega t + \beta\cos \omega t \quad /\; \omega_0^2 &\\
-& \qquad \dot x\text{ч} = \alpha\omega\cos\omega t - \beta\omega\sin\omega t \quad /\; 0 &\\
-& \qquad \ddot x\text{ч} = -\alpha\omega^2\sin\omega t - \beta\omega^2\cos\omega t \quad /\; 1 &\\
+& 1)\; \omega \neq \omega_0: x_\text{ч} = \alpha\sin \omega t + \beta\cos \omega t \quad /\; \omega_0^2 &\\
+& \qquad \dot x_\text{ч} = \alpha\omega\cos\omega t - \beta\omega\sin\omega t \quad /\; 0 &\\
+& \qquad \ddot x_\text{ч} = -\alpha\omega^2\sin\omega t - \beta\omega^2\cos\omega t \quad /\; 1 &\\
 & \begin{cases}
 \alpha \omega_0^2 - \alpha \omega^2 = 0 \\
 \beta \omega_0^2 - \beta \omega^2 = f \\
@@ -190,9 +190,9 @@ III.& \exists k_m < 0, \v q = 0 (\xi = 0) \text{ --- неустойчиво.} &\
 	\caption*{Биения.}
 \end{figure}
 \begin{flalign*}
-& 2)\; \omega = \omega_0 \quad x\text{ч} = \alpha t \sin \omega_0 t &\\
-& \qquad \dot x\text{ч} = \alpha \sin\omega_0t + \alpha \omega_0t\cos \omega_0t &\\
-& \qquad \ddot x\text{ч} = \alpha \omega_0 \cos \omega_0 t - \alpha \omega_0 t \sin \omega_0 t \Rightarrow 2\alpha \omega_0 = f \Rightarrow \alpha = \frac{f}{2\omega_0} &\\
+& 2)\; \omega = \omega_0 \quad x_\text{ч} = \alpha t \sin \omega_0 t &\\
+& \qquad \dot x_\text{ч} = \alpha \sin\omega_0t + \alpha \omega_0t\cos \omega_0t &\\
+& \qquad \ddot x_\text{ч} = \alpha \omega_0 \cos \omega_0 t - \alpha \omega_0 t \sin \omega_0 t \Rightarrow 2\alpha \omega_0 = f \Rightarrow \alpha = \frac{f}{2\omega_0} &\\
 & x = C_1 \sin \omega_0t + C_2\cos \omega_0t + \frac{f}{2\omega_0}t \sin \omega_0t
 \end{flalign*}
 \begin{figure}[H]

@@ -17,7 +17,7 @@ $q_k$ --- циклическая переменная, если $\pd{H}{q_k} = 0
 \end{ass}
 \begin{proof}
 \begin{flalign*}
-& \frac{dH(q, p, t)}{t} = \left( \pd{H}{q}, \dot q \right) + \left( \pd{H}{p}, \dot p \right) + \pd{H}{t} = \pd{H}{t} = 0 \Rightarrow H = const &\\
+& \frac{dH(q, p, t)}{dt} = \left( \pd{H}{q}, \dot q \right) + \left( \pd{H}{p}, \dot p \right) + \pd{H}{t} = \pd{H}{t} = 0 \Rightarrow H = const &\\
 \end{flalign*}
 \end{proof}
 
@@ -150,7 +150,7 @@ $K(\tilde q, \tilde p, \tau, h)$ --- функция Уиттекера.
 \end{ass}
 \begin{proof}
 \begin{flalign*}
-& \pd{F}{t} = \left( \pd{F}{q}, \dot q \right) + \left( \pd{F}{p}, \dot p \right) + \pd{F}{t} = \{F, H\} + \pd{F}{t} &\\
+& \frac{dF}{dt} = \left( \pd{F}{q}, \dot q \right) + \left( \pd{F}{p}, \dot p \right) + \pd{F}{t} = \{F, H\} + \pd{F}{t} &\\
 \end{flalign*}
 \end{proof}
 \begin{ntc}
@@ -171,8 +171,8 @@ $K(\tilde q, \tilde p, \tau, h)$ --- функция Уиттекера.
 \end{proof}
 
 \begin{flalign*}
-& L = \frac{1}{2}(A\dot q, \dot q) + (B, \dot q) - \Pi(q, t) &\\
-& H = \frac{1}{2}(A^{-1}(p - B), (p - B)) + \Pi(1, t) = \underbrace{\frac{1}{2}(A^{-1}p, p)}_{H_2} - \underbrace{(A^{-1}p, B)}_{H_1} + \underbrace{\Pi(q, t) + \frac{1}{2}(A^{-1}B, B)}_{H_0}
+& L = \frac{1}{2}(A\dot q, \dot q) + (b, \dot q) - \Pi(q, t) &\\
+& H = \frac{1}{2}(A^{-1}(p - b), (p - b)) + \Pi(1, t) = \underbrace{\frac{1}{2}(A^{-1}p, p)}_{H_2} - \underbrace{(A^{-1}p, b)}_{H_1} + \underbrace{\Pi(q, t) + \frac{1}{2}(A^{-1}b, b)}_{H_0}
 \end{flalign*}
 
 \begin{ass}
