@@ -142,7 +142,7 @@
 	\end{figure}
 	\begin{flalign*}
 		& C \xrightarrow{(2)} \tilde C &\\
-		& \oint\limits_{\tilde C}(\tilde p, d \tilde q) - \tilde Hdt = \oint\limits_{\tilde C: t = const} (\tilde p, \delta \tilde q), \qquad\begin{array}{l}
+		& \oint\limits_{\tilde C}(\tilde p, d \tilde q) - \tilde Hdt = \oint\limits_{\tilde C_t: t = const} (\tilde p, \delta \tilde q), \qquad\begin{array}{l}
 			\tilde p = \tilde p(q,\; p,\; t) \\
 			\tilde q = \tilde q(q,\; p,\; t) \\
 		\end{array} &\\
@@ -152,8 +152,8 @@
 	\end{flalign*}
 	\ovalbox{$\Leftarrow$} Проинтегрируем равенство
 	\begin{flalign*}
-		& \oint\limits_C (\tilde p, d\tilde q) - \tilde Hdt = c\oint\limits_C(p, dq) - Hdt - \underbrace{\oint df}_{0} = I &\\
-		& \oint\limits_{C} (\tilde p, d\tilde q) - \tilde Hdt = \oint\limits_{\tilde C} (\tilde p, d\tilde q) - \tilde Hdt \text{ --- инвариант, т.к. $I$ --- инвариант.} &\\
+		& \oint\limits_C (\tilde p, d\tilde q) - \tilde Hdt = c\oint\limits_C(p, dq) - Hdt - \underbrace{\oint\limits_C df}_{0} = I &\\
+		& \oint\limits_{\tilde C} (\tilde p, d\tilde q) - \tilde Hdt = \oint\limits_{C} (p, dq) - Hdt \text{ --- инвариант, т.к. $I$ --- инвариант.} &\\
 		& \text{По второй обратной теореме система гамильтонова с гамильтонианом $\tilde H$.} &\\
 	\end{flalign*}
 \end{proof}
