@@ -19,6 +19,7 @@
 \usepackage{cancel}
 \usepackage{fancybox}
 \usepackage{caption}
+\usepackage{datetime}
 
 \captionsetup{justification=raggedright,singlelinecheck=false}
 
@@ -86,6 +87,9 @@ top=20mm,
 % \setcounter{secnumdepth}{0}
 \setcounter{tocdepth}{2}
 
+\newdate{date}{29}{06}{2018}
+\date{\displaydate{date}}
+
 \author{Муницына Мария Александровна}
 \title{Лекции по аналитической механике. Весенний семестр.}
 
@@ -97,14 +101,16 @@ top=20mm,
   \begin{center}
 
   {\itshape\small Набор и рисунки: Александр Валентинов.\\
-  За рукописные конспекты спасибо Павлу Цаю и Алексею Петрову.}
+    За рукописные конспекты спасибо Павлу Цаю и Алексею Петрову.}
   \vspace{1em}
 
-  {\itshape\small Источник: \url{https://github.com/valentiay/analmech} \\
-  Сообщить о ошибках можно здесь \url{https://github.com/valentiay/analmech/issues} \\
-  или здесь \url{https://vk.com/valentiay}. Pull-реквесты приветствуются.}
-  \vspace{1em}
-  
+  {\itshape\small Исходный код: \url{https://github.com/valentiay/analmech}}
+  \vspace{5em}
+
+  \fbox{\begin{minipage}{25em}
+    \centering
+    Конспект не проходил проффесиональную редактуру и может содержать смысловые ошибки
+  \end{minipage}}
   \vfill
 
   \end{center}

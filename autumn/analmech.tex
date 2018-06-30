@@ -46,7 +46,11 @@ top=20mm,
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\pdd}[2]{\frac{\partial}{\partial #2} \left(#1\right)}
-\newcommand{\lline}{\begin{center}\line(1,0){450}\end{center}}
+
+\newcounter{lecturesCounter}
+\newcommand{\lline}[1]{\subsection*{
+\centering\stepcounter{lecturesCounter}\underline{Лекция \arabic{lecturesCounter} от #1}}}
+
 \allowdisplaybreaks
 
 \DeclareMathOperator{\grad}{grad}
@@ -84,19 +88,20 @@ top=20mm,
   \label{title}
   \vfill
   \begin{titlepage}
+  
   \maketitle
   \begin{center}
-  {\itshape\small Набор и рисунки: Александр Валентиновю \\
-  За рукописные конспекты спасибо Павлу Цаю и Никите Свешникову, \\ 
-  а всему ПМФ ФИВТ спасибо за помощь с исправлением ошибок.}
+  {\itshape\small Набор и рисунки: Александр Валентинов.\\
+    За рукописные конспекты спасибо Павлу Цаю и Никите Свешникову.}
+  \vspace{1em}
 
-  \vspace{1em}
-  
-  {\itshape\small Fork me on github: \url{https://github.com/valentiay/analmech}}
-  
-  \vspace{1em}
-  
-  {\itshape\small Горизонтальные черты обозначают границы между лекциями.}
+  {\itshape\small Исходный код: \url{https://github.com/valentiay/analmech}}
+  \vspace{5em}
+
+  \fbox{\begin{minipage}{25em}
+    \centering
+    Конспект не проходил проффесиональную редактуру и может содержать смысловые ошибки
+  \end{minipage}}
   \vfill
 
   \end{center}
@@ -115,18 +120,19 @@ top=20mm,
   \tableofcontents
   \pagebreak
   
-  \input{lectures/2017-09-06}  \lline
-  \input{lectures/2017-09-13}  \lline
-  \input{lectures/2017-09-20}  \lline
-  \input{lectures/2017-09-27}  \lline
-  \input{lectures/2017-10-11}  \lline
-  \input{lectures/2017-10-18}  \lline
-  \input{lectures/2017-10-25}  \lline
-  \input{lectures/2017-11-01}  \lline
-  \input{lectures/2017-11-08}  \lline
-  \input{lectures/2017-11-15}  \lline
-  \input{lectures/2017-11-22}  \lline
-  \input{lectures/2017-11-29}  \lline
-  \input{lectures/2017-12-06}  \lline
-  \input{lectures/2017-12-13}
+  \lline{06.09.2017}\input{lectures/2017-09-06}
+  \lline{13.09.2017}\input{lectures/2017-09-13}
+  \lline{20.09.2017}\input{lectures/2017-09-20}
+  \lline{27.09.2017}\input{lectures/2017-09-27}
+  \lline{04.10.2017}\input{lectures/2017-10-04}
+  \lline{11.10.2017}\input{lectures/2017-10-11}
+  \lline{18.10.2017}\input{lectures/2017-10-18}
+  \lline{25.10.2017}\input{lectures/2017-10-25}
+  \lline{01.11.2017}\input{lectures/2017-11-01}
+  \lline{08.11.2017}\input{lectures/2017-11-08}
+  \lline{15.11.2017}\input{lectures/2017-11-15}
+  \lline{22.11.2017}\input{lectures/2017-11-22}
+  \lline{29.11.2017}\input{lectures/2017-11-29}
+  \lline{06.12.2017}\input{lectures/2017-12-06}
+  \lline{13.12.2017}\input{lectures/2017-12-13}
 \end{document}
